@@ -1,0 +1,14 @@
+{
+  "name": "vsc-devcontainers-base",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [],
+      "settings": {}
+    }
+  },
+  "remoteUser": "vscode"
+}
