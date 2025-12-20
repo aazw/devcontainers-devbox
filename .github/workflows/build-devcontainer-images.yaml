@@ -12,7 +12,6 @@ on:
         required: true
         type: choice
         options:
-          - all
           - base
           - go
           - rust
@@ -20,7 +19,7 @@ on:
           - swift
           - pythonuv
           # 他のイメージ名を随時追加
-        default: "all"
+        default: "base"
 
 run-name: |
   ${{ 
@@ -55,15 +54,9 @@ jobs:
         run: |
           TARGET="${{ github.event.inputs.target }}"
 
-          if [ "$TARGET" = "all" ]; then
-            # すべてのDockerfileを取得
-            FILES=$(git ls-files 'images/*/.devcontainer/Dockerfile' \
-              | jq -R -s -c 'split("\n") | map(select(length > 0))')
-          else
-            # 特定のイメージのみ
-            FILES=$(echo "images/$TARGET/.devcontainer/Dockerfile" | jq -R -s -c 'split("\n") | map(select(length > 0))')
-          fi
-
+          # 特定のイメージのみ
+          FILES=$(echo "images/$TARGET/.devcontainer/Dockerfile" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          
           echo "devcontainers_files=$FILES" >> "$GITHUB_OUTPUT"
 
   build-devcontainer-images:
