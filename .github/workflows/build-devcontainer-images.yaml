@@ -104,7 +104,7 @@ jobs:
         id: prep
         run: |
           DOCKERFILE='${{ matrix.dockerfile }}' # e.g. images/base/.devcontainer/Dockerfile
-          CONTEXT="$(dirname "$DOCKERFILE/..")" # => images/base/
+          CONTEXT="$(dirname $(dirname "$DOCKERFILE"))" # => images/base/
           IMAGE_NAME="$(basename "$(dirname "$(dirname "$DOCKERFILE")")")" # => base
           echo "context=$CONTEXT" >> "$GITHUB_OUTPUT"
           echo "image=$IMAGE_NAME" >> "$GITHUB_OUTPUT"
