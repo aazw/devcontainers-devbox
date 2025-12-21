@@ -1181,7 +1181,7 @@
         }
       }
     },
-    "lsd@latest": {
+    "lsd@1.2.0": {
       "last_modified": "2025-11-23T21:50:36Z",
       "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#lsd",
       "source": "devbox-search",
