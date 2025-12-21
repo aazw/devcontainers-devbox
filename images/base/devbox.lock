@@ -229,51 +229,51 @@
         }
       }
     },
-    "claude-code@latest": {
-      "last_modified": "2025-12-16T16:49:59Z",
-      "resolved": "github:NixOS/nixpkgs/e8d16d2186d6ed9f047eb30948e97e7e01886d10#claude-code",
+    "claude-code@0.2.122": {
+      "last_modified": "2025-05-20T08:00:33Z",
+      "resolved": "github:NixOS/nixpkgs/2f9173bde1d3fbf1ad26ff6d52f952f9e9da52ea#claude-code",
       "source": "devbox-search",
-      "version": "2.0.70",
+      "version": "0.2.122",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/hkjfz70cypap44hhvmiqc2wrfjb8h729-claude-code-2.0.70",
+              "path": "/nix/store/7rmy90sni1jdn6f3h327bqdbl55q5dan-claude-code-0.2.122",
               "default": true
             }
           ],
-          "store_path": "/nix/store/hkjfz70cypap44hhvmiqc2wrfjb8h729-claude-code-2.0.70"
+          "store_path": "/nix/store/7rmy90sni1jdn6f3h327bqdbl55q5dan-claude-code-0.2.122"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/341pkbdwggm7h4d9qyjml4np20932ixp-claude-code-2.0.70",
+              "path": "/nix/store/lycfpgpcafyhqh8v0pgvmjzyyqh6nch2-claude-code-0.2.122",
               "default": true
             }
           ],
-          "store_path": "/nix/store/341pkbdwggm7h4d9qyjml4np20932ixp-claude-code-2.0.70"
+          "store_path": "/nix/store/lycfpgpcafyhqh8v0pgvmjzyyqh6nch2-claude-code-0.2.122"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/ymracgfi1wrdr2516iv847slba9wlk60-claude-code-2.0.70",
+              "path": "/nix/store/qsrhw4qw8939y59pzc93jf1rd003pzlq-claude-code-0.2.122",
               "default": true
             }
           ],
-          "store_path": "/nix/store/ymracgfi1wrdr2516iv847slba9wlk60-claude-code-2.0.70"
+          "store_path": "/nix/store/qsrhw4qw8939y59pzc93jf1rd003pzlq-claude-code-0.2.122"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/0iaq8ailps3vja4ak4wiri51zq21vwbi-claude-code-2.0.70",
+              "path": "/nix/store/3d5gj2x239crz9w5cc019yy04ma6iiph-claude-code-0.2.122",
               "default": true
             }
           ],
-          "store_path": "/nix/store/0iaq8ailps3vja4ak4wiri51zq21vwbi-claude-code-2.0.70"
+          "store_path": "/nix/store/3d5gj2x239crz9w5cc019yy04ma6iiph-claude-code-0.2.122"
         }
       }
     },

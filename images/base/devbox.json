@@ -65,7 +65,7 @@
     "go-task@latest",
 
     // AI コーディング支援
-    "claude-code@latest",
+    "claude-code@0.2.122",
     "codex@latest",
 
     // 依存関係・更新管理
