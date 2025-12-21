@@ -1,0 +1,190 @@
+name: Cleanup devcontainer images
+
+on:
+  schedule:
+    # 毎週日曜日 午前3時（UTC）に自動実行
+    # ※日本時間では正午12時
+    - cron: "0 3 * * 0"
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+
+    # タイムアウトを設定（デフォルトは360分）
+    timeout-minutes: 30
+
+    # 複数のパッケージを並列処理
+    strategy:
+      matrix:
+        package:
+          - base
+          - go
+          - rust
+          - java
+          - swift
+      fail-fast: false # 1つ失敗しても他は続行
+
+    steps:
+      - name: Cleanup old versions of ${{ matrix.package }}
+        env:
+          # GitHub API認証用トークン（自動的に提供される）
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          # エラー時に即座に終了、未定義変数使用時にエラー、パイプライン内のエラーを検出
+          set -euo pipefail
+
+          # ========================================
+          # 変数の初期化
+          # ========================================
+          IMAGE_NAME="${{ matrix.package }}"
+          PKG="devcontainers-devbox/${IMAGE_NAME}"
+
+          # URLエンコード: / を %2F に変換（GitHub API のURL用）
+          PKG_ENC="${PKG//\//%2F}"  # URLエンコード (/ -> %2F)
+          OWNER="${{ github.repository_owner }}"
+
+
+          # ========================================
+          # 全バージョンの取得（ページネーション対応）
+          # ========================================
+          echo "::group::Fetching versions for ${PKG}"
+
+          # 全バージョンを格納する配列（JSON形式）
+          ALL_VERSIONS='[]'
+          PAGE=1
+          PER_PAGE=100 # GitHub APIの最大値
+
+          # ページネーションループ
+          while true; do
+            # GitHub API でパッケージバージョン一覧を取得
+            # エラー時は空配列を返す
+            RESPONSE="$(gh api "/users/${OWNER}/packages/container/${PKG_ENC}/versions?per_page=${PER_PAGE}&page=${PAGE}" || echo '[]')"
+            COUNT=$(echo "${RESPONSE}" | jq 'length')
+
+            # レスポンスが空(取得データなし)の場合はループ終了
+            if [ "${COUNT}" -eq 0 ]; then
+              break
+            fi
+
+            # 取得したバージョンを既存の配列に追加
+            ALL_VERSIONS="$(echo "${ALL_VERSIONS}" "${RESPONSE}" | jq -s 'add')"
+
+            # 取得件数が PER_PAGE 未満の場合は最終ページなのでループ終了
+            if [ "${COUNT}" -lt "${PER_PAGE}" ]; then
+              break
+            fi
+
+            # 次のページへ
+            PAGE=$((PAGE + 1))
+          done
+
+          echo "Total versions fetched: $(echo "${ALL_VERSIONS}" | jq 'length')"
+          echo "::endgroup::"
+
+          # ========================================
+          # 番号タグを持つバージョンの抽出と整理
+          # ========================================
+          echo "::group::Identifying numeric-tagged versions"
+
+          # 番号タグ（^[0-9]+$）を持つバージョンのみを抽出
+          # 各バージョンには複数のタグが付いている可能性がある（例: "123", "abc123def456..."）
+          # ここでは番号タグのみを抽出し、番号タグを持つバージョンを特定する
+          NUMERIC_VERSIONS="$(echo "${ALL_VERSIONS}" | jq -c '
+            map(
+              . as $version |
+              {
+                id: .id,                 # バージョンID
+                name: .name,             # バージョン名
+                created_at: .created_at, # 作成日時
+                tags: [.metadata.container.tags[]? | select(test("^[0-9]+$"))],  # 番号タグのみ抽出
+                all_tags: .metadata.container.tags  # 全タグを保持（ログ出力用） 
+              } |
+              select(.tags | length > 0)  # 番号タグを持つバージョンのみ
+            ) | sort_by(.tags[0] | tonumber) | reverse  # 番号タグの降順でソート（最新が先頭）
+          ')"
+
+          # 抽出結果をログ出力
+          echo "Versions with numeric tags:"
+          echo "${NUMERIC_VERSIONS}" | jq -r '.[] | "\(.tags[0]) (ID: \(.id), Tags: \(.all_tags | join(", ")))"'
+          echo "::endgroup::"
+
+          # ========================================
+          # 削除対象の決定（最新3つを除く）
+          # ========================================
+          echo "::group::Determining versions to delete"
+
+          # 最新3つを除いた削除対象を特定
+          # 配列の4番目以降（インデックス3以降）が削除対象
+          TO_DELETE="$(echo "${NUMERIC_VERSIONS}" | jq -c '.[3:]')"  # 配列の[3:]でスライス（4番目以降）
+          DELETE_COUNT="$(echo "${TO_DELETE}" | jq 'length')"
+
+          # 保持するバージョン（最新3つ）を表示
+          echo "Versions to keep (latest 3):"
+          echo "${NUMERIC_VERSIONS}" | jq -r '.[:3][] | "  \(.tags[0]) (Tags: \(.all_tags | join(", ")))"'
+
+          # 削除対象のバージョンを表示
+          echo ""
+          echo "Versions to delete (${DELETE_COUNT}):"
+          echo "${TO_DELETE}" | jq -r '.[] | "  \(.tags[0]) (Tags: \(.all_tags | join(", ")))"'
+          echo "::endgroup::"
+
+          # ========================================
+          # 番号タグ付きバージョンの削除実行
+          # ========================================
+
+          # バージョンを削除すると、そのバージョンに紐づく全タグ（番号タグ + SHA タグ）が削除される
+          if [ "${DELETE_COUNT}" -gt 0 ]; then
+            echo "::group::Deleting old versions"
+
+            # 削除対象のバージョンIDをループ処理
+            echo "${TO_DELETE}" | jq -r '.[] | .id' | while read -r VERSION_ID; do
+              # 削除するバージョンの情報を取得（ログ出力用）
+              VERSION_INFO="$(echo "${TO_DELETE}" | jq -r --arg id "${VERSION_ID}" '.[] | select(.id == ($id | tonumber))')"
+              NUMERIC_TAG="$(echo "${VERSION_INFO}" | jq -r '.tags[0]')"
+              ALL_TAGS="$(echo "${VERSION_INFO}" | jq -r '.all_tags | join(", ")')"
+
+              echo "Deleting version ID ${VERSION_ID} (numeric tag: ${NUMERIC_TAG}, all tags: ${ALL_TAGS})..."
+              
+              # GitHub API でバージョンを削除（このバージョンに紐づく全タグが削除される）
+              if gh api -X DELETE "/users/${OWNER}/packages/container/${PKG_ENC}/versions/${VERSION_ID}"; then
+                echo "  ✓ Successfully deleted"
+              else
+                # エラーが発生しても処理を継続
+                echo "  ✗ Failed to delete (continuing...)"
+              fi
+            done
+            echo "::endgroup::"
+          else
+            echo "No versions to delete (keeping latest 3 numeric-tagged versions)"
+          fi
+
+          # ========================================
+          # 未タグバージョンの削除
+          # ========================================
+          echo "::group::Deleting untagged versions"
+
+          # タグが1つも付いていないバージョンを抽出
+          # （ビルド失敗などで残った中間イメージ）
+          UNTAGGED="$(echo "${ALL_VERSIONS}" | jq -c '[.[] | select(.metadata.container.tags | length == 0)]')"
+          UNTAGGED_COUNT="$(echo "${UNTAGGED}" | jq 'length')"
+
+          echo "Untagged versions found: ${UNTAGGED_COUNT}"
+
+          if [ "${UNTAGGED_COUNT}" -gt 0 ]; then
+            echo "${UNTAGGED}" | jq -r '.[] | .id' | while read -r VERSION_ID; do
+              echo "Deleting untagged version ID ${VERSION_ID}..."
+              if gh api -X DELETE "/users/${OWNER}/packages/container/${PKG_ENC}/versions/${VERSION_ID}"; then
+                echo "  ✓ Successfully deleted"
+              else
+                echo "  ✗ Failed to delete (continuing...)"
+              fi
+            done
+          fi
+          echo "::endgroup::"
+
+          echo "Cleanup completed for ${PKG}"
+          
