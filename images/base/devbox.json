@@ -7,7 +7,7 @@
     // 証明書・通信
     "cacert@latest",
     "curl@latest",
-    "wget@latest",
+    "wget@1.25.0",
 
     // 端末エディタ・閲覧・一覧表示
     "nano@latest",
