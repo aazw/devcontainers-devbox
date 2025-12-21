@@ -41,7 +41,7 @@
     "xq@latest",
 
     // 図・ドキュメント生成
-    "mermaid-cli@latest",
+    "mermaid-cli@10.9.0",
 
     // セキュリティ（秘匿情報検知）
     "gitleaks@latest",
