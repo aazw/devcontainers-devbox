@@ -1437,51 +1437,51 @@
         }
       }
     },
-    "repomix@latest": {
-      "last_modified": "2025-12-11T04:04:52Z",
-      "resolved": "github:NixOS/nixpkgs/5d6bdbddb4695a62f0d00a3620b37a15275a5093#repomix",
+    "repomix@0.3.9": {
+      "last_modified": "2025-06-20T02:24:11Z",
+      "resolved": "github:NixOS/nixpkgs/076e8c6678d8c54204abcb4b1b14c366835a58bb#repomix",
       "source": "devbox-search",
-      "version": "1.9.2",
+      "version": "0.3.9",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/pb24d6ajmilgaxxdz0bw5br3f395a9i6-repomix-1.9.2",
+              "path": "/nix/store/nya80wmssidxgdl8a9jh4v0a2gnrbwfh-repomix-0.3.9",
               "default": true
             }
           ],
-          "store_path": "/nix/store/pb24d6ajmilgaxxdz0bw5br3f395a9i6-repomix-1.9.2"
+          "store_path": "/nix/store/nya80wmssidxgdl8a9jh4v0a2gnrbwfh-repomix-0.3.9"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/7g3vrd6fpc7x66kmyng0sgxaw8bfddma-repomix-1.9.2",
+              "path": "/nix/store/m8d8rxc0mvp4mpaiixfy16wxcmlfxsia-repomix-0.3.9",
               "default": true
             }
           ],
-          "store_path": "/nix/store/7g3vrd6fpc7x66kmyng0sgxaw8bfddma-repomix-1.9.2"
+          "store_path": "/nix/store/m8d8rxc0mvp4mpaiixfy16wxcmlfxsia-repomix-0.3.9"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/nnalcr70zgyky5kfhba048yjjvzfdmqq-repomix-1.9.2",
+              "path": "/nix/store/jn4dbh77rfs9v4nyyz1r36k745a2r6fv-repomix-0.3.9",
               "default": true
             }
           ],
-          "store_path": "/nix/store/nnalcr70zgyky5kfhba048yjjvzfdmqq-repomix-1.9.2"
+          "store_path": "/nix/store/jn4dbh77rfs9v4nyyz1r36k745a2r6fv-repomix-0.3.9"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/i4sg2n6j7acasvbhvksnm95r67jqj7bm-repomix-1.9.2",
+              "path": "/nix/store/pzam7ibr48aqwqpsns2bhqlqix524mv8-repomix-0.3.9",
               "default": true
             }
           ],
-          "store_path": "/nix/store/i4sg2n6j7acasvbhvksnm95r67jqj7bm-repomix-1.9.2"
+          "store_path": "/nix/store/pzam7ibr48aqwqpsns2bhqlqix524mv8-repomix-0.3.9"
         }
       }
     },
