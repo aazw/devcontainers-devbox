@@ -1733,7 +1733,7 @@
         }
       }
     },
-    "tokei@latest": {
+    "tokei@13.0.0": {
       "last_modified": "2025-11-26T06:22:50Z",
       "resolved": "github:NixOS/nixpkgs/bb813de6d2241bcb1b5af2d3059f560c66329967#tokei",
       "source": "devbox-search",
