@@ -12,7 +12,7 @@
     // 端末エディタ・閲覧・一覧表示
     "nano@latest",
     "bat@latest",
-    "eza@latest",
+    "eza@0.23.4",
     "lsd@latest",
     "broot@latest",
 
