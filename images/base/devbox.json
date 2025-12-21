@@ -21,7 +21,7 @@
     "unzip@latest",
 
     // 検索・絞り込み
-    "fd@latest",
+    "fd@10.3.0",
     "ripgrep@latest",
     "fzf@latest",
 
