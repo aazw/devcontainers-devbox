@@ -44,7 +44,7 @@
     "mermaid-cli@latest",
 
     // セキュリティ（秘匿情報検知）
-    "gitleaks@latest",
+    "gitleaks@8.30.0",
 
     // DB クライアント（SQL 実行・接続確認）
     "usql@latest",
