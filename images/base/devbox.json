@@ -62,7 +62,7 @@
     "taplo@latest",
 
     // タスクランナー
-    "go-task@latest",
+    "go-task@3.45.5",
 
     // AI コーディング支援
     "claude-code@latest",
