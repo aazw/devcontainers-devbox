@@ -47,7 +47,7 @@
     "gitleaks@latest",
 
     // DB クライアント（SQL 実行・接続確認）
-    "usql@latest",
+    "usql@0.19.26",
 
     // ブラウザ（自動化/レンダリング）
     "chromium@latest",
