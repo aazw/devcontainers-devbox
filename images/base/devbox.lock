@@ -1181,51 +1181,51 @@
         }
       }
     },
-    "lsd@latest": {
-      "last_modified": "2025-11-23T21:50:36Z",
-      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#lsd",
+    "lsd@0.23.1": {
+      "last_modified": "2023-08-22T06:04:29Z",
+      "resolved": "github:NixOS/nixpkgs/9d757ec498666cc1dcc6f2be26db4fd3e1e9ab37#lsd",
       "source": "devbox-search",
-      "version": "1.2.0",
+      "version": "0.23.1",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/nqa7riyvq7c7n2jhkpc0wrdjqdx6f788-lsd-1.2.0",
+              "path": "/nix/store/g999c07i9p2j6nhff7s7f12hb7l8rmhf-lsd-0.23.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/nqa7riyvq7c7n2jhkpc0wrdjqdx6f788-lsd-1.2.0"
+          "store_path": "/nix/store/g999c07i9p2j6nhff7s7f12hb7l8rmhf-lsd-0.23.1"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/yg1ck0c753idpxap52kd098m8xpv74n6-lsd-1.2.0",
+              "path": "/nix/store/04aic6icvjr4cd0ygaqiiafhn769jpdf-lsd-0.23.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/yg1ck0c753idpxap52kd098m8xpv74n6-lsd-1.2.0"
+          "store_path": "/nix/store/04aic6icvjr4cd0ygaqiiafhn769jpdf-lsd-0.23.1"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/08jgshgfzpnm88h8v4n7bk5j4bvwlsy8-lsd-1.2.0",
+              "path": "/nix/store/41xsqsfadijla72c07w7mgiavr8gly0p-lsd-0.23.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/08jgshgfzpnm88h8v4n7bk5j4bvwlsy8-lsd-1.2.0"
+          "store_path": "/nix/store/41xsqsfadijla72c07w7mgiavr8gly0p-lsd-0.23.1"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/aks897zx74r2gc2qra253pxdgsz6y6jz-lsd-1.2.0",
+              "path": "/nix/store/rib4amk863pl5wjw13802l3gnki94fji-lsd-0.23.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/aks897zx74r2gc2qra253pxdgsz6y6jz-lsd-1.2.0"
+          "store_path": "/nix/store/rib4amk863pl5wjw13802l3gnki94fji-lsd-0.23.1"
         }
       }
     },

@@ -13,7 +13,7 @@
     "nano@latest",
     "bat@latest",
     "eza@latest",
-    "lsd@latest",
+    "lsd@0.23.1",
     "broot@latest",
 
     // 圧縮・展開
