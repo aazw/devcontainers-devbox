@@ -69,6 +69,6 @@
     "codex@latest",
 
     // 依存関係・更新管理
-    "renovate@latest",
+    "renovate@37.440.7",
   ],
 }
