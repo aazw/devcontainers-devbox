@@ -38,7 +38,7 @@
     // 構造化データ処理（JSON/YAML/XML）
     "jq@latest",
     "yq@latest",
-    "xq@latest",
+    "xq@0.4.1",
 
     // 図・ドキュメント生成
     "mermaid-cli@latest",
