@@ -53,7 +53,7 @@
     "chromium@latest",
 
     // フォーマッタ／リンタ
-    "prettier@latest",
+    "prettier@3.6.2",
     "yamlfmt@latest",
     "shfmt@latest",
     "shellcheck@latest",
