@@ -1277,67 +1277,19 @@
         }
       }
     },
-    "nano@latest": {
-      "last_modified": "2025-11-23T21:50:36Z",
-      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#nano",
+    "nano@5.6.1": {
+      "last_modified": "2021-04-25T18:34:42Z",
+      "resolved": "github:NixOS/nixpkgs/79cb2cb9869d7bb8a1fac800977d3864212fd97d#nano",
       "source": "devbox-search",
-      "version": "8.7",
+      "version": "5.6.1",
       "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/673gqfgs6al3d7w3k96mprsx3bm03alz-nano-8.7",
-              "default": true
-            },
-            {
-              "name": "info",
-              "path": "/nix/store/4xj5g2840ngalp2nwz3wv3vkgc4vgdc5-nano-8.7-info"
-            }
-          ],
-          "store_path": "/nix/store/673gqfgs6al3d7w3k96mprsx3bm03alz-nano-8.7"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/fxb0zh0xi44g7ksaranxlp2r79blgcnb-nano-8.7",
-              "default": true
-            },
-            {
-              "name": "info",
-              "path": "/nix/store/g3cm6c8357yjgzl2n2nydyskcrx5g5ra-nano-8.7-info"
-            }
-          ],
-          "store_path": "/nix/store/fxb0zh0xi44g7ksaranxlp2r79blgcnb-nano-8.7"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/6hysv59fjl9m7ns8wlrin6hf5kllk6ww-nano-8.7",
-              "default": true
-            },
-            {
-              "name": "info",
-              "path": "/nix/store/qxf42qwks3m07y80jnaar7az6cb2xnxc-nano-8.7-info"
-            }
-          ],
-          "store_path": "/nix/store/6hysv59fjl9m7ns8wlrin6hf5kllk6ww-nano-8.7"
-        },
         "x86_64-linux": {
           "outputs": [
             {
-              "name": "out",
-              "path": "/nix/store/hy63wnc1ppz40myklkn5cymmzsd0qg9g-nano-8.7",
+              "path": "/tmp/containerbase/cache/nix/store/jd4y4cjifzj1g6ajivw5ignqvly8yi6a-nano-5.6.1",
               "default": true
-            },
-            {
-              "name": "info",
-              "path": "/nix/store/vq341l5ggc019sqpn265y687xj1a30wy-nano-8.7-info"
             }
-          ],
-          "store_path": "/nix/store/hy63wnc1ppz40myklkn5cymmzsd0qg9g-nano-8.7"
+          ]
         }
       }
     },

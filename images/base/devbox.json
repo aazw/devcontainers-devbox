@@ -10,7 +10,7 @@
     "wget@latest",
 
     // 端末エディタ・閲覧・一覧表示
-    "nano@latest",
+    "nano@5.6.1",
     "bat@latest",
     "eza@latest",
     "lsd@latest",
