@@ -449,7 +449,7 @@
         }
       }
     },
-    "delta@latest": {
+    "delta@0.18.2": {
       "last_modified": "2025-11-25T14:41:04Z",
       "resolved": "github:NixOS/nixpkgs/dc205f7b4fdb04c8b7877b43edb7b73be7730081#delta",
       "source": "devbox-search",

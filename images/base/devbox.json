@@ -28,7 +28,7 @@
     // バージョン管理（Git）
     "git@latest",
     "lazygit@latest",
-    "delta@latest",
+    "delta@0.18.2",
 
     // リポジトリ/コード統計・解析
     "tokei@latest",
