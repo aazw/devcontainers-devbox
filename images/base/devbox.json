@@ -26,7 +26,7 @@
     "fzf@latest",
 
     // バージョン管理（Git）
-    "git@latest",
+    "git@2.51.2",
     "lazygit@latest",
     "delta@latest",
 
