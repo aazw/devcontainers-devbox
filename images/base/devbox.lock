@@ -1133,7 +1133,7 @@
         }
       }
     },
-    "lazygit@latest": {
+    "lazygit@0.57.0": {
       "last_modified": "2025-12-09T08:49:39Z",
       "resolved": "github:NixOS/nixpkgs/677fbe97984e7af3175b6c121f3c39ee5c8d62c9#lazygit",
       "source": "devbox-search",

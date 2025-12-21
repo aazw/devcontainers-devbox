@@ -27,7 +27,7 @@
 
     // バージョン管理（Git）
     "git@latest",
-    "lazygit@latest",
+    "lazygit@0.57.0",
     "delta@latest",
 
     // リポジトリ/コード統計・解析
