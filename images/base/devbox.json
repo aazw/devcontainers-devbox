@@ -56,7 +56,7 @@
     "prettier@latest",
     "yamlfmt@latest",
     "shfmt@latest",
-    "shellcheck@latest",
+    "shellcheck@0.11.0",
     "dockerfmt@latest",
     "hadolint@latest",
     "taplo@latest",
