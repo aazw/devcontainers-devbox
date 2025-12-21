@@ -5,70 +5,70 @@
     "zsh@latest",
 
     // 証明書・通信
-    "cacert@latest",
-    "curl@latest",
-    "wget@latest",
+    "cacert@3.113.1",
+    "curl@7.88.1",
+    "wget@1.25.0",
 
     // 端末エディタ・閲覧・一覧表示
     "nano@latest",
-    "bat@latest",
-    "eza@latest",
-    "lsd@latest",
-    "broot@latest",
+    "bat@0.26.1",
+    "eza@0.23.4",
+    "lsd@0.23.1",
+    "broot@0.20.3",
 
     // 圧縮・展開
     "zip@latest",
     "unzip@latest",
 
     // 検索・絞り込み
-    "fd@latest",
+    "fd@8.7.1",
     "ripgrep@latest",
-    "fzf@latest",
+    "fzf@0.67.0",
 
     // バージョン管理（Git）
-    "git@latest",
-    "lazygit@latest",
-    "delta@latest",
+    "git@2.51.2",
+    "lazygit@0.57.0",
+    "delta@0.18.2",
 
     // リポジトリ/コード統計・解析
     "tokei@latest",
-    "gitingest@latest",
-    "repomix@latest",
+    "gitingest@0.3.1",
+    "repomix@0.3.9",
 
     // 構造化データ処理（JSON/YAML/XML）
-    "jq@latest",
-    "yq@latest",
-    "xq@latest",
+    "jq@1.8.1",
+    "yq@2.14.0",
+    "xq@0.4.1",
 
     // 図・ドキュメント生成
-    "mermaid-cli@latest",
+    "mermaid-cli@10.9.0",
 
     // セキュリティ（秘匿情報検知）
-    "gitleaks@latest",
+    "gitleaks@7.6.1",
 
     // DB クライアント（SQL 実行・接続確認）
-    "usql@latest",
+    "usql@0.19.26",
 
     // ブラウザ（自動化/レンダリング）
     "chromium@latest",
 
     // フォーマッタ／リンタ
-    "prettier@latest",
-    "yamlfmt@latest",
-    "shfmt@latest",
-    "shellcheck@latest",
-    "dockerfmt@latest",
-    "hadolint@latest",
-    "taplo@latest",
+    "prettier@3.6.2",
+    "yamlfmt@0.20.0",
+    "shfmt@3.12.0",
+    "shellcheck@0.11.0",
+    "dockerfmt@0.3.9",
+    "hadolint@1.23.0",
+    "taplo@0.10.0",
 
     // タスクランナー
     "go-task@latest",
 
     // AI コーディング支援
-    "claude-code@latest",
-    "codex@latest",
+    "claude-code@0.2.122",
+    "codex@0.73.0",
 
     // 依存関係・更新管理
-    "renovate@latest",
+    "renovate@37.440.7",
   ],
 }
