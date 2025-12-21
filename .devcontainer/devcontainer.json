@@ -1,0 +1,47 @@
+{
+  "name": "vsc-devcontainers-devbox",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest",
+      "enableNonRootDocker": "true",
+      "moby": "true"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "emeraldwalk.runonsave",
+        "ms-azuretools.vscode-containers",
+        "ms-azuretools.vscode-docker",
+        "jetpack-io.devbox"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "mounts": [
+    {
+      "source": "${localWorkspaceFolder}/.claude",
+      "target": "/home/vscode/.claude",
+      "type": "bind"
+    }
+  ],
+  "containerUser": "root",
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "TZ": "Asia/Tokyo",
+    "TASK_X_ENV_PRECEDENCE": "1"
+  },
+  "runArgs": [
+    "--name",
+    "vsc-devcontainers-devbox",
+    "--add-host",
+    "host.docker.internal:host-gateway"
+  ]
+}
