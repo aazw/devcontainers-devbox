@@ -36,7 +36,7 @@
     "repomix@latest",
 
     // 構造化データ処理（JSON/YAML/XML）
-    "jq@latest",
+    "jq@1.8.1",
     "yq@latest",
     "xq@latest",
 

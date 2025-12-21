@@ -1017,9 +1017,9 @@
         }
       }
     },
-    "jq@latest": {
-      "last_modified": "2025-12-15T12:53:45Z",
-      "resolved": "github:NixOS/nixpkgs/ac9a217389ee622d4e1e727c4efcc9c4bc9089ba#jq",
+    "jq@1.8.1": {
+      "last_modified": "2025-12-16T16:49:59Z",
+      "resolved": "github:NixOS/nixpkgs/e8d16d2186d6ed9f047eb30948e97e7e01886d10#jq",
       "source": "devbox-search",
       "version": "1.8.1",
       "systems": {
