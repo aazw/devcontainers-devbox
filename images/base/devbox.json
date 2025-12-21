@@ -32,7 +32,7 @@
 
     // リポジトリ/コード統計・解析
     "tokei@latest",
-    "gitingest@latest",
+    "gitingest@0.3.1",
     "repomix@latest",
 
     // 構造化データ処理（JSON/YAML/XML）

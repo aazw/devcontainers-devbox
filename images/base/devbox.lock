@@ -805,7 +805,7 @@
       "last_modified": "2025-12-18T02:44:17Z",
       "resolved": "github:NixOS/nixpkgs/def3da69945bbe338c373fddad5a1bb49cf199ce?lastModified=1766025857"
     },
-    "gitingest@latest": {
+    "gitingest@0.3.1": {
       "last_modified": "2025-11-23T21:50:36Z",
       "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#gitingest",
       "source": "devbox-search",
