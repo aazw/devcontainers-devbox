@@ -37,7 +37,7 @@
 
     // 構造化データ処理（JSON/YAML/XML）
     "jq@latest",
-    "yq@latest",
+    "yq@3.4.3",
     "xq@latest",
 
     // 図・ドキュメント生成

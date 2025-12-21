@@ -2021,7 +2021,7 @@
         }
       }
     },
-    "yq@latest": {
+    "yq@3.4.3": {
       "last_modified": "2025-11-23T21:50:36Z",
       "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#yq",
       "source": "devbox-search",
