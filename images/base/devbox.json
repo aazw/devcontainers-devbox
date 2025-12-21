@@ -58,7 +58,7 @@
     "shfmt@latest",
     "shellcheck@latest",
     "dockerfmt@latest",
-    "hadolint@latest",
+    "hadolint@1.23.0",
     "taplo@latest",
 
     // タスクランナー
