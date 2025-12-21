@@ -49,51 +49,19 @@
         }
       }
     },
-    "broot@latest": {
-      "last_modified": "2025-12-09T08:49:39Z",
-      "resolved": "github:NixOS/nixpkgs/677fbe97984e7af3175b6c121f3c39ee5c8d62c9#broot",
+    "broot@0.20.3": {
+      "last_modified": "2020-09-04T00:19:47Z",
+      "resolved": "github:NixOS/nixpkgs/0fd664e0b0098c4da88b9dda730b406a0bbf546d#broot",
       "source": "devbox-search",
-      "version": "1.54.0",
+      "version": "0.20.3",
       "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/4828zp6789fb3bp9g09m42rg508jswih-broot-1.54.0",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/4828zp6789fb3bp9g09m42rg508jswih-broot-1.54.0"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/zs7wv86h2ci5xbqfiszb8kva5a47466p-broot-1.54.0",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/zs7wv86h2ci5xbqfiszb8kva5a47466p-broot-1.54.0"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/jw2dw7y4b0474x12y9m8dnnbdxdg3n3n-broot-1.54.0",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/jw2dw7y4b0474x12y9m8dnnbdxdg3n3n-broot-1.54.0"
-        },
         "x86_64-linux": {
           "outputs": [
             {
-              "name": "out",
-              "path": "/nix/store/hrgrhkkd46cqkjjqc9x7x1pn1d3046yd-broot-1.54.0",
+              "path": "/tmp/containerbase/cache/nix/store/vazvrf31rpz32w0g99w39785mh5in318-broot-0.20.3",
               "default": true
             }
-          ],
-          "store_path": "/nix/store/hrgrhkkd46cqkjjqc9x7x1pn1d3046yd-broot-1.54.0"
+          ]
         }
       }
     },

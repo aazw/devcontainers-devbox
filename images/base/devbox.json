@@ -14,7 +14,7 @@
     "bat@latest",
     "eza@latest",
     "lsd@latest",
-    "broot@latest",
+    "broot@0.20.3",
 
     // 圧縮・展開
     "zip@latest",
