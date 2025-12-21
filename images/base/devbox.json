@@ -22,7 +22,7 @@
 
     // 検索・絞り込み
     "fd@latest",
-    "ripgrep@latest",
+    "ripgrep@15.1.0",
     "fzf@latest",
 
     // バージョン管理（Git）
