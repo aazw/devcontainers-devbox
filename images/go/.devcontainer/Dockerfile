@@ -12,5 +12,10 @@ RUN devbox install
 
 FROM ghcr.io/aazw/devcontainers-devbox/base:1 AS runtime
 
+USER root
+COPY --from=builder /nix/store /nix/store
 COPY --from=builder /code/go/.devbox /code/go/.devbox
+USER vscode
+
 ENV PATH="/code/go/.devbox/nix/profile/default/bin:${PATH}"
+
