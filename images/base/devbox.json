@@ -59,7 +59,7 @@
     "shellcheck@latest",
     "dockerfmt@latest",
     "hadolint@latest",
-    "taplo@latest",
+    "taplo@0.10.0",
 
     // タスクランナー
     "go-task@latest",
