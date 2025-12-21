@@ -6,23 +6,23 @@
 
     // 証明書・通信
     "cacert@3.113.1",
-    "curl@7.88.1",
+    "curl@8.17.0",
     "wget@1.25.0",
 
     // 端末エディタ・閲覧・一覧表示
-    "nano@latest",
+    "nano@5.6.1",
     "bat@0.26.1",
     "eza@0.23.4",
-    "lsd@0.23.1",
-    "broot@0.20.3",
+    "lsd@1.2.0",
+    "broot@1.54.0",
 
     // 圧縮・展開
     "zip@latest",
     "unzip@latest",
 
     // 検索・絞り込み
-    "fd@8.7.1",
-    "ripgrep@latest",
+    "fd@10.3.0",
+    "ripgrep@15.1.0",
     "fzf@0.67.0",
 
     // バージョン管理（Git）
@@ -31,20 +31,20 @@
     "delta@0.18.2",
 
     // リポジトリ/コード統計・解析
-    "tokei@latest",
+    "tokei@13.0.0",
     "gitingest@0.3.1",
-    "repomix@0.3.9",
+    "repomix@1.9.2",
 
     // 構造化データ処理（JSON/YAML/XML）
     "jq@1.8.1",
-    "yq@2.14.0",
+    "yq@3.4.3",
     "xq@0.4.1",
 
     // 図・ドキュメント生成
-    "mermaid-cli@10.9.0",
+    "mermaid-cli@11.12.0",
 
     // セキュリティ（秘匿情報検知）
-    "gitleaks@7.6.1",
+    "gitleaks@8.30.0",
 
     // DB クライアント（SQL 実行・接続確認）
     "usql@0.19.26",
@@ -58,17 +58,17 @@
     "shfmt@3.12.0",
     "shellcheck@0.11.0",
     "dockerfmt@0.3.9",
-    "hadolint@1.23.0",
+    "hadolint@2.14.0",
     "taplo@0.10.0",
 
     // タスクランナー
-    "go-task@latest",
+    "go-task@3.45.5",
 
     // AI コーディング支援
-    "claude-code@0.2.122",
+    "claude-code@2.0.70",
     "codex@0.73.0",
 
     // 依存関係・更新管理
-    "renovate@37.440.7",
+    "renovate@42.57.1",
   ],
 }
