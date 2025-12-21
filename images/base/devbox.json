@@ -55,7 +55,7 @@
     // フォーマッタ／リンタ
     "prettier@latest",
     "yamlfmt@latest",
-    "shfmt@latest",
+    "shfmt@3.12.0",
     "shellcheck@latest",
     "dockerfmt@latest",
     "hadolint@latest",
