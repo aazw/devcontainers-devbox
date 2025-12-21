@@ -5,7 +5,7 @@
     "zsh@latest",
 
     // 証明書・通信
-    "cacert@latest",
+    "cacert@3.113.1",
     "curl@latest",
     "wget@latest",
 
