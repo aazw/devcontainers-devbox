@@ -1,20 +1,74 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
   "packages": [
-    "dockerfmt@latest",
-    "claude-code@latest",
+    // シェル
+    "zsh@latest",
+
+    // 証明書・通信
     "cacert@latest",
     "curl@latest",
-    "devbox@latest"
+    "wget@latest",
+
+    // 端末エディタ・閲覧・一覧表示
+    "nano@latest",
+    "bat@latest",
+    "eza@latest",
+    "lsd@latest",
+    "broot@latest",
+
+    // 圧縮・展開
+    "zip@latest",
+    "unzip@latest",
+
+    // 検索・絞り込み
+    "fd@latest",
+    "ripgrep@latest",
+    "fzf@latest",
+
+    // バージョン管理（Git）
+    "git@latest",
+    "lazygit@latest",
+    "delta@latest",
+
+    // リポジトリ/コード統計・解析
+    "tokei@latest",
+    "gitingest@latest",
+    "repomix@latest",
+
+    // 構造化データ処理（JSON/YAML/XML）
+    "jq@latest",
+    "yq@latest",
+    "xq@latest",
+
+    // 図・ドキュメント生成
+    "mermaid-cli@latest",
+
+    // セキュリティ（秘匿情報検知）
+    "gitleaks@latest",
+
+    // DB クライアント（SQL 実行・接続確認）
+    "usql@latest",
+
+    // ブラウザ（自動化/レンダリング）
+    "chromium@latest",
+
+    // フォーマッタ／リンタ
+    "prettier@latest",
+    "yamlfmt@latest",
+    "shfmt@latest",
+    "shellcheck@latest",
+    "dockerfmt@latest",
+    "hadolint@latest",
+    "taplo@latest",
+
+    // タスクランナー
+    "go-task@latest",
+
+    // AI コーディング支援
+    "claude-code@latest",
+    "codex@latest",
+
+    // 依存関係・更新管理
+    "renovate@latest",
   ],
-  "shell": {
-    "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null"
-    ],
-    "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
-      ]
-    }
-  }
 }
