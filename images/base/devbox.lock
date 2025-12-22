@@ -97,103 +97,103 @@
         }
       }
     },
-    "cacert@3.113.1": {
-      "last_modified": "2025-08-12T09:17:37Z",
-      "resolved": "github:NixOS/nixpkgs/372d9eeeafa5b15913201e2b92e8e539ac7c64d1#cacert",
+    "cacert@3.115": {
+      "last_modified": "2025-12-15T04:22:15Z",
+      "resolved": "github:NixOS/nixpkgs/09b8fda8959d761445f12b55f380d90375a1d6bb#cacert",
       "source": "devbox-search",
-      "version": "3.113.1",
+      "version": "3.115",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/4jlypb4bpdm0lbln6qryylxjr54czw71-nss-cacert-3.113.1",
+              "path": "/nix/store/z6hzprzrkqj48m9kk4xkzfs6v9hmrylj-nss-cacert-3.115",
               "default": true
             },
             {
-              "name": "unbundled",
-              "path": "/nix/store/7424c8mfk48847bcwin117j93c2gkf8y-nss-cacert-3.113.1-unbundled"
-            },
-            {
               "name": "hashed",
-              "path": "/nix/store/yszxhd8858yhb22rld9i7kq8266ydyaj-nss-cacert-3.113.1-hashed"
+              "path": "/nix/store/4iifghvgqblib13hkiaasanp7a86xl0d-nss-cacert-3.115-hashed"
             },
             {
               "name": "p11kit",
-              "path": "/nix/store/s8hjnkdpdwi2171l2bm4n0fv8kzlf8jq-nss-cacert-3.113.1-p11kit"
+              "path": "/nix/store/6gjwh81l4ip31ssjc16ndvdychcyhxq5-nss-cacert-3.115-p11kit"
+            },
+            {
+              "name": "unbundled",
+              "path": "/nix/store/ka8cdvfy0v32gnyqbsz9arixhaqi3csk-nss-cacert-3.115-unbundled"
             }
           ],
-          "store_path": "/nix/store/4jlypb4bpdm0lbln6qryylxjr54czw71-nss-cacert-3.113.1"
+          "store_path": "/nix/store/z6hzprzrkqj48m9kk4xkzfs6v9hmrylj-nss-cacert-3.115"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/dizc1gwzfn1w888c0b4drcbb3bf0ylhw-nss-cacert-3.113.1",
+              "path": "/nix/store/5nn718glxxf6hbk3s1gji28drxdc78my-nss-cacert-3.115",
               "default": true
             },
             {
               "name": "hashed",
-              "path": "/nix/store/q97q7qd2l0bxc0fhzjqpps0iapnk4cal-nss-cacert-3.113.1-hashed"
+              "path": "/nix/store/s8sic6a0al2ar1914jhnxgfdsb0ngdhj-nss-cacert-3.115-hashed"
             },
             {
               "name": "p11kit",
-              "path": "/nix/store/d16xbkrfr59ixfy9rv4nbyzr3q5hsria-nss-cacert-3.113.1-p11kit"
+              "path": "/nix/store/rnyrykyhwg1c599lf8n2lwgwxd1d1m68-nss-cacert-3.115-p11kit"
             },
             {
               "name": "unbundled",
-              "path": "/nix/store/3vcivsyq69ljgmf9bpz3ra1dsv5irl14-nss-cacert-3.113.1-unbundled"
+              "path": "/nix/store/rqyqs88sz079gyjycmhgpkc4c9idgp1f-nss-cacert-3.115-unbundled"
             }
           ],
-          "store_path": "/nix/store/dizc1gwzfn1w888c0b4drcbb3bf0ylhw-nss-cacert-3.113.1"
+          "store_path": "/nix/store/5nn718glxxf6hbk3s1gji28drxdc78my-nss-cacert-3.115"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/5c89rq5a8qd6gda46n27s2yr87j2x62j-nss-cacert-3.113.1",
+              "path": "/nix/store/0hhr5z21br915rvfqzpknldrm8khdrg3-nss-cacert-3.115",
               "default": true
             },
             {
-              "name": "hashed",
-              "path": "/nix/store/2pw48himfhmwrmjs0priajipph7jpp51-nss-cacert-3.113.1-hashed"
-            },
-            {
               "name": "p11kit",
-              "path": "/nix/store/racdx832d4fix24iv6fz0psydnprcw6a-nss-cacert-3.113.1-p11kit"
+              "path": "/nix/store/v2qp7bcgvj0vdifibg40v5wn3a5bqf6j-nss-cacert-3.115-p11kit"
             },
             {
               "name": "unbundled",
-              "path": "/nix/store/1yv7rqgkgsngzxwmyyds76gfyfkc2qv9-nss-cacert-3.113.1-unbundled"
+              "path": "/nix/store/8w3mdwn1xs7qf94gds9br2a6rcrv1s0d-nss-cacert-3.115-unbundled"
+            },
+            {
+              "name": "hashed",
+              "path": "/nix/store/94ryfrwwygzhnk3141sxlgqcagm5ajiw-nss-cacert-3.115-hashed"
             }
           ],
-          "store_path": "/nix/store/5c89rq5a8qd6gda46n27s2yr87j2x62j-nss-cacert-3.113.1"
+          "store_path": "/nix/store/0hhr5z21br915rvfqzpknldrm8khdrg3-nss-cacert-3.115"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/zxzfby84r1fcvrb7b6mcyax1l1ysz6kc-nss-cacert-3.113.1",
+              "path": "/nix/store/m65dckzfgr1lr90g5v6jx0iynnz38nsk-nss-cacert-3.115",
               "default": true
             },
             {
-              "name": "p11kit",
-              "path": "/nix/store/fc8cgmjb00f77nr1r5d1c9cmb6bjzi43-nss-cacert-3.113.1-p11kit"
-            },
-            {
               "name": "unbundled",
-              "path": "/nix/store/g96c5v5hvlmaa55ijfl7mblz837l3xgr-nss-cacert-3.113.1-unbundled"
+              "path": "/nix/store/631psvvfhdhsw5z9s3qj9m00nd6c2lbr-nss-cacert-3.115-unbundled"
             },
             {
               "name": "hashed",
-              "path": "/nix/store/j8dp457yv4zj8h5x21yq9kc2421qh39l-nss-cacert-3.113.1-hashed"
+              "path": "/nix/store/bhnghgzv1z1a20yqbf74halfqp5vzrn7-nss-cacert-3.115-hashed"
+            },
+            {
+              "name": "p11kit",
+              "path": "/nix/store/j3kvsaal1g5hk9afc3l1s23abm9mb23q-nss-cacert-3.115-p11kit"
             }
           ],
-          "store_path": "/nix/store/zxzfby84r1fcvrb7b6mcyax1l1ysz6kc-nss-cacert-3.113.1"
+          "store_path": "/nix/store/m65dckzfgr1lr90g5v6jx0iynnz38nsk-nss-cacert-3.115"
         }
       }
     },
-    "chromium@latest": {
+    "chromium@143.0.7499.146": {
       "last_modified": "2025-12-17T01:17:14Z",
       "resolved": "github:NixOS/nixpkgs/af84f9d270d404c17699522fab95bbf928a2d92f#chromium",
       "source": "devbox-search",
@@ -802,8 +802,8 @@
       }
     },
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
-      "last_modified": "2025-12-18T02:44:17Z",
-      "resolved": "github:NixOS/nixpkgs/def3da69945bbe338c373fddad5a1bb49cf199ce?lastModified=1766025857"
+      "last_modified": "2025-12-21T10:48:17Z",
+      "resolved": "github:NixOS/nixpkgs/306ea70f9eb0fb4e040f8540e2deab32ed7e2055?lastModified=1766314097&narHash=sha256-laJftWbghBehazn%2FzxVJ8NdENVgjccsWAdAqKXhErrM%3D"
     },
     "gitingest@0.3.1": {
       "last_modified": "2025-11-23T21:50:36Z",
@@ -1277,19 +1277,67 @@
         }
       }
     },
-    "nano@5.6.1": {
-      "last_modified": "2021-04-25T18:34:42Z",
-      "resolved": "github:NixOS/nixpkgs/79cb2cb9869d7bb8a1fac800977d3864212fd97d#nano",
+    "nano@8.7": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#nano",
       "source": "devbox-search",
-      "version": "5.6.1",
+      "version": "8.7",
       "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/673gqfgs6al3d7w3k96mprsx3bm03alz-nano-8.7",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/4xj5g2840ngalp2nwz3wv3vkgc4vgdc5-nano-8.7-info"
+            }
+          ],
+          "store_path": "/nix/store/673gqfgs6al3d7w3k96mprsx3bm03alz-nano-8.7"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fxb0zh0xi44g7ksaranxlp2r79blgcnb-nano-8.7",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/g3cm6c8357yjgzl2n2nydyskcrx5g5ra-nano-8.7-info"
+            }
+          ],
+          "store_path": "/nix/store/fxb0zh0xi44g7ksaranxlp2r79blgcnb-nano-8.7"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6hysv59fjl9m7ns8wlrin6hf5kllk6ww-nano-8.7",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/qxf42qwks3m07y80jnaar7az6cb2xnxc-nano-8.7-info"
+            }
+          ],
+          "store_path": "/nix/store/6hysv59fjl9m7ns8wlrin6hf5kllk6ww-nano-8.7"
+        },
         "x86_64-linux": {
           "outputs": [
             {
-              "path": "/tmp/containerbase/cache/nix/store/jd4y4cjifzj1g6ajivw5ignqvly8yi6a-nano-5.6.1",
+              "name": "out",
+              "path": "/nix/store/hy63wnc1ppz40myklkn5cymmzsd0qg9g-nano-8.7",
               "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/vq341l5ggc019sqpn265y687xj1a30wy-nano-8.7-info"
             }
-          ]
+          ],
+          "store_path": "/nix/store/hy63wnc1ppz40myklkn5cymmzsd0qg9g-nano-8.7"
         }
       }
     },
@@ -1733,7 +1781,7 @@
         }
       }
     },
-    "unzip@latest": {
+    "unzip@6.0": {
       "last_modified": "2025-11-23T21:50:36Z",
       "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#unzip",
       "source": "devbox-search",
@@ -2037,7 +2085,7 @@
         }
       }
     },
-    "zip@latest": {
+    "zip@3.0": {
       "last_modified": "2025-11-23T21:50:36Z",
       "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#zip",
       "source": "devbox-search",
@@ -2085,7 +2133,7 @@
         }
       }
     },
-    "zsh@latest": {
+    "zsh@5.9": {
       "last_modified": "2025-12-15T04:22:15Z",
       "resolved": "github:NixOS/nixpkgs/09b8fda8959d761445f12b55f380d90375a1d6bb#zsh",
       "source": "devbox-search",
