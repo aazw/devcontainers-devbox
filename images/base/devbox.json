@@ -2,23 +2,23 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
   "packages": [
     // シェル
-    "zsh@latest",
+    "zsh@5.9",
 
     // 証明書・通信
-    "cacert@3.113.1",
+    "cacert@3.115",
     "curl@8.17.0",
     "wget@1.25.0",
 
     // 端末エディタ・閲覧・一覧表示
-    "nano@5.6.1",
+    "nano@8.7",
     "bat@0.26.1",
     "eza@0.23.4",
     "lsd@1.2.0",
     "broot@1.54.0",
 
     // 圧縮・展開
-    "zip@latest",
-    "unzip@latest",
+    "zip@3.0",
+    "unzip@6.0",
 
     // 検索・絞り込み
     "fd@10.3.0",
@@ -50,7 +50,7 @@
     "usql@0.19.26",
 
     // ブラウザ（自動化/レンダリング）
-    "chromium@latest",
+    "chromium@143.0.7499.146",
 
     // フォーマッタ／リンタ
     "prettier@3.6.2",
