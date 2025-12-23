@@ -7,7 +7,7 @@ USER ${DEVBOX_USER}:${DEVBOX_USER}
 
 COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.json devbox.json
 COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.lock devbox.lock
-RUN devbox install
+RUN DEVBOX_DEBUG=1 devbox install
 
 
 FROM debian:bookworm-slim AS runtime
