@@ -2,73 +2,73 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
   "packages": [
     // シェル
-    "zsh@5.9",
+    "zsh@5.9", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/zs/zsh/package.nix
 
     // 証明書・通信
-    "cacert@3.115",
-    "curl@8.17.0",
-    "wget@1.25.0",
+    "cacert@3.115", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ca/cacert/package.nix
+    "curl@8.17.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/cu/curlMinimal/package.nix
+    "wget@1.25.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/wg/wget/package.nix
 
     // 端末エディタ・閲覧・一覧表示
-    "nano@8.7",
-    "bat@0.26.1",
-    "eza@0.23.4",
-    "lsd@1.2.0",
-    "broot@1.54.0",
+    "nano@8.7", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/na/nano/package.nix
+    "bat@0.26.1", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ba/bat/package.nix
+    "eza@0.23.4", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ez/eza/package.nix
+    "lsd@1.2.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ls/lsd/package.nix
+    "broot@1.54.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/br/broot/package.nix
 
     // 圧縮・展開
-    "zip@3.0",
-    "unzip@6.0",
+    "zip@3.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/zi/zip/package.nix
+    "unzip@6.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/un/unzip/package.nix
 
     // 検索・絞り込み
-    "fd@10.3.0",
-    "ripgrep@15.1.0",
-    "fzf@0.67.0",
+    "fd@10.3.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/fd/fd/package.nix
+    "ripgrep@15.1.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ri/ripgrep/package.nix
+    "fzf@0.67.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/fz/fzf/package.nix
 
     // バージョン管理（Git）
-    "git@2.51.2",
-    "lazygit@0.57.0",
-    "delta@0.18.2",
+    "git@2.51.2", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/gi/git/package.nix
+    "lazygit@0.57.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/la/lazygit/package.nix
+    "delta@0.18.2", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/de/delta/package.nix
 
     // リポジトリ/コード統計・解析
-    "tokei@13.0.0",
-    "gitingest@0.3.1",
-    "repomix@1.9.2",
+    "tokei@13.0.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/to/tokei/package.nix
+    "gitingest@0.3.1", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/python-modules/gitingest/default.nix
+    "repomix@1.9.2", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/re/repomix/package.nix
 
     // 構造化データ処理（JSON/YAML/XML）
-    "jq@1.8.1",
-    "yq@3.4.3",
-    "xq@0.4.1",
+    "jq@1.8.1", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/jq/jq/package.nix
+    "yq@3.4.3", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/python-modules/yq/default.nix
+    "xq@0.4.1", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/xq/xq/package.nix
 
     // 図・ドキュメント生成
-    "mermaid-cli@11.12.0",
+    "mermaid-cli@11.12.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/me/mermaid-cli/package.nix
 
     // セキュリティ（秘匿情報検知）
-    "gitleaks@8.30.0",
+    "gitleaks@8.30.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/gi/gitleaks/package.nix
 
     // DB クライアント（SQL 実行・接続確認）
-    "usql@0.20.0",
+    "usql@0.20.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/us/usql/package.nix#L9
 
     // ブラウザ（自動化/レンダリング）
-    "chromium@143.0.7499.146",
+    "chromium@143.0.7499.146", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/google-chrome/package.nix
 
     // フォーマッタ／リンタ
-    "prettier@3.6.2",
-    "yamlfmt@0.20.0",
-    "shfmt@3.12.0",
-    "shellcheck@0.11.0",
-    "dockerfmt@0.3.9",
-    "hadolint@2.14.0",
-    "taplo@0.10.0",
+    "prettier@3.6.2", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/pr/prettier/package.nix
+    "yamlfmt@0.20.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ya/yamlfmt/package.nix
+    "shfmt@3.12.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sh/shfmt/package.nix
+    "shellcheck@0.11.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/shellcheck/default.nix
+    "dockerfmt@0.3.9", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/do/dockerfmt/package.nix
+    "hadolint@2.14.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/haskell-modules/hackage-packages.nix#L291958-L292032
+    "taplo@0.10.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ta/taplo/package.nix
 
     // タスクランナー
-    "go-task@3.45.5",
+    "go-task@3.45.5", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/go-task/package.nix
 
     // AI コーディング支援
-    "claude-code@2.0.74",
-    "codex@0.76.0",
+    "claude-code@2.0.74", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/cl/claude-code/package.nix
+    "codex@0.76.0", // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/co/codex/package.nix
 
     // 依存関係・更新管理
-    "renovate@42.57.1"
+    "renovate@42.57.1" // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/re/renovate/package.nix
   ]
 }
