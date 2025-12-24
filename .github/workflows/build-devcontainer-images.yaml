@@ -56,7 +56,7 @@ jobs:
 
           # 特定のイメージのみ
           FILES=$(echo "images/$TARGET/.devcontainer/Dockerfile" | jq -R -s -c 'split("\n") | map(select(length > 0))')
-          
+
           echo "devcontainers_files=$FILES" >> "$GITHUB_OUTPUT"
 
   build-devcontainer-images:
