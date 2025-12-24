@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "images/*/.devcontainer/Dockerfile"
+      - "images/*/devbox.json"
+      - "images/*/devbox.lock"
   workflow_dispatch:
     inputs:
       target:
@@ -36,9 +38,11 @@ jobs:
   detect-changes:
     runs-on: ubuntu-latest
     outputs:
-      changed_files: ${{ steps.filter.outputs.devcontainers_files || steps.all.outputs.devcontainers_files || '[]' }}
+      changed_files: ${{ steps.normalize.outputs.dockerfiles || steps.all.outputs.devcontainers_files || '[]' }}
     steps:
+      # リポジトリを取得して、差分判定やファイル読み取りを可能にする
       - uses: actions/checkout@v6
+      # push 時の変更ファイル一覧を、devcontainer 関連パスに絞って抽出する
       - uses: dorny/paths-filter@v3
         if: github.event_name == 'push'
         id: filter
@@ -47,6 +51,36 @@ jobs:
           filters: |
             devcontainers:
               - "images/*/.devcontainer/Dockerfile"
+              - "images/*/devbox.json"
+              - "images/*/devbox.lock"
+      # devbox.* の変更を対応する Dockerfile パスに正規化し、重複を除いて出力する
+      - name: Normalize changed files to Dockerfiles
+        if: github.event_name == 'push'
+        id: normalize
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          FILES='${{ steps.filter.outputs.devcontainers_files }}'
+          if [ -z "${FILES}" ] || [ "${FILES}" = "[]" ]; then
+            echo "dockerfiles=[]" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          DOCKERFILES="$(printf '%s' "${FILES}" | jq -c '
+            map(
+              if test("/\\.devcontainer/Dockerfile$") then
+                .
+              else
+                (split("/") | .[0] + "/" + .[1] + "/.devcontainer/Dockerfile")
+              end
+            )
+            | unique
+          ')"
+
+          echo "dockerfiles=${DOCKERFILES}" >> "$GITHUB_OUTPUT"
+
+      # workflow_dispatch 時は指定ターゲットの Dockerfile のみを出力する
       - name: Get all Dockerfiles
         if: github.event_name == 'workflow_dispatch'
         id: all
@@ -71,9 +105,11 @@ jobs:
       matrix:
         dockerfile: ${{ fromJson(needs.detect-changes.outputs.changed_files) }}
     steps:
+      # リポジトリを取得してビルド用コンテキストを揃える
       - uses: actions/checkout@v6
 
       # Push イベントの場合、PR情報を取得
+      # push に紐づくPR情報を取得してサマリー用のメタデータに使う
       - name: Find associated PR
         id: find-pr
         if: github.event_name == 'push'
@@ -93,6 +129,7 @@ jobs:
               core.setOutput('pr_author', prs[0].user.login);
             }
 
+      # Dockerfile パスからビルドコンテキストとイメージ名を導出する
       - name: Derive build context and image name
         id: prep
         run: |
@@ -102,6 +139,7 @@ jobs:
           echo "context=$CONTEXT" >> "$GITHUB_OUTPUT"
           echo "image=$IMAGE_NAME" >> "$GITHUB_OUTPUT"
 
+      # ビルド前に不要なプリインストールを削除しディスクを確保する
       - name: Free Disk Space
         run: |
           sudo rm -rf /usr/share/dotnet
@@ -118,12 +156,15 @@ jobs:
           sudo apt-get clean
           df -h
 
+      # マルチアーキテクチャ用のQEMUをセットアップする
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
+      # buildx を有効化しマルチプラットフォームビルドに備える
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      # GHCR へ認証して push 可能にする
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
@@ -131,6 +172,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # GHCR 既存タグから次の連番タグを算出する
       - name: Compute next numeric tag per image
         id: next
         shell: bash
@@ -152,6 +194,7 @@ jobs:
           echo "value=${NEXT}" >> "$GITHUB_OUTPUT"
 
       # ビルド前のサマリー（エラー時でも見える情報）
+      # 事前にビルド対象の情報をサマリーへ出力する
       - name: Create pre-build summary
         run: |
           # ビルド対象情報（リンク集も統合）
