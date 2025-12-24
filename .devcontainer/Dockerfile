@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN groupadd --gid $USER_GID $USERNAME
 RUN useradd --uid $USER_UID --gid $USER_GID -m -s /bin/bash $USERNAME
-RUN echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers
 
 RUN mkdir -p /nix && chown $USERNAME:$USERNAME /nix
 
