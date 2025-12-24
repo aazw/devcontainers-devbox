@@ -92,5 +92,7 @@ core.*
 tmp
 tmp/*
 
+# Nix
+
 # Devbox
 **/.devbox
