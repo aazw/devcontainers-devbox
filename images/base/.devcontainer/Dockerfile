@@ -22,7 +22,7 @@ COPY --from=builder /nix/store /nix/store
 COPY --from=builder /code/base/.devbox /code/base/.devbox
 
 RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd  --uid $USER_UID --gid $USER_GID -m -s /bin/bash $USERNAME
+    && useradd --uid $USER_UID --gid $USER_GID -m -s /bin/bash $USERNAME
 
 # CA は Nix 側のバンドルを優先して参照させる（apt-get 不要）
 ENV PATH="/code/base/.devbox/nix/profile/default/bin:${PATH}" \
