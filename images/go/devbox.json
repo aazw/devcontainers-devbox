@@ -1,14 +1,44 @@
 {
-  "$schema":  "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
-  "packages": ["go@latest"],
-  "shell": {
-    "init_hook": [
-      "echo 'Welcome to devbox!' > /dev/null"
-    ],
-    "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
-      ]
-    }
-  }
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    // https://github.com/golang/go
+    // https://www.nixhub.io/packages/go
+    "go@latest",
+
+    // ローカル開発用の自己署名証明書を生成
+    // https://github.com/FiloSottile/mkcert
+    // https://www.nixhub.io/packages/mkcert
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/mk/mkcert/package.nix
+    "mkcert@latest",
+
+    // Goのデバッガ
+    // https://github.com/go-delve/delve
+    // https://www.nixhub.io/packages/delve
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/de/delve/package.nix
+    "delve@latest",
+
+    // GoのLSPサーバー（エディタ補完/診断）
+    // https://github.com/golang/tools
+    // https://www.nixhub.io/packages/gopls
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/gopls/package.nix
+    "gopls@latest",
+
+    // Go向けツール群（imports/vet/staticcheck等）
+    // https://github.com/golang/tools
+    // https://www.nixhub.io/packages/go-tools
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/go-tools/package.nix
+    "go-tools@latest",
+
+    // 依存ライセンスの収集・出力
+    // https://github.com/google/go-licenses
+    // https://www.nixhub.io/packages/go-licenses
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/go-licenses/package.nix
+    "go-licenses@latest",
+
+    // Goの統合lint
+    // https://github.com/golangci/golangci-lint
+    // https://www.nixhub.io/packages/golangci-lint
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/golangci-lint/package.nix
+    "golangci-lint@latest"
+  ]
 }

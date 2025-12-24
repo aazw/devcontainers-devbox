@@ -18,4 +18,3 @@ COPY --from=builder /code/go/.devbox /code/go/.devbox
 USER vscode
 
 ENV PATH="/code/go/.devbox/nix/profile/default/bin:${PATH}"
-
