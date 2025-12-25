@@ -50,10 +50,10 @@
       }
     },
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
-      "last_modified": "2025-12-18T02:44:17Z",
-      "resolved": "github:NixOS/nixpkgs/def3da69945bbe338c373fddad5a1bb49cf199ce?lastModified=1766025857"
+      "last_modified": "2025-12-23T23:26:46Z",
+      "resolved": "github:NixOS/nixpkgs/8142186f001295e5a3239f485c8a49bf2de2695a?lastModified=1766532406&narHash=sha256-acLU%2Fag9VEoKkzOD202QASX25nG1eArXg5A0mHjKgxM%3D"
     },
-    "go-licenses@latest": {
+    "go-licenses@1.6.0": {
       "last_modified": "2025-11-23T21:50:36Z",
       "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#go-licenses",
       "source": "devbox-search",
@@ -98,6 +98,54 @@
             }
           ],
           "store_path": "/nix/store/571v9lh1ia197w28zrxihr9jfjf17l8m-go-licenses-1.6.0"
+        }
+      }
+    },
+    "go-migrate@4.19.1": {
+      "last_modified": "2025-12-04T04:58:45Z",
+      "resolved": "github:NixOS/nixpkgs/821f1a2ebab0f13d6d65170d6bd7d2b3a182efdb#go-migrate",
+      "source": "devbox-search",
+      "version": "4.19.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/3wkgn1bixbcp9jc8v3v2xpccbxdl82ds-go-migrate-4.19.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/3wkgn1bixbcp9jc8v3v2xpccbxdl82ds-go-migrate-4.19.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/dks8dj7cq3asy7hv8y6fdzjpz70spn08-go-migrate-4.19.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/dks8dj7cq3asy7hv8y6fdzjpz70spn08-go-migrate-4.19.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/vpsmhvwg2fzw4x2sp6y1pcd5m41frf2l-go-migrate-4.19.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/vpsmhvwg2fzw4x2sp6y1pcd5m41frf2l-go-migrate-4.19.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/dh6fd4wpdchpbv4zzf4ankmymnny13qg-go-migrate-4.19.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/dh6fd4wpdchpbv4zzf4ankmymnny13qg-go-migrate-4.19.1"
         }
       }
     },
@@ -149,7 +197,7 @@
         }
       }
     },
-    "go@latest": {
+    "go@1.25.4": {
       "last_modified": "2025-11-23T21:50:36Z",
       "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#go",
       "source": "devbox-search",

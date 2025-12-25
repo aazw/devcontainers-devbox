@@ -7,62 +7,114 @@
 
     // 使いやすいインタラクティブシェル
     // https://github.com/zsh-users/zsh
+    // https://search.nixos.org/packages?show=zsh&query=zsh
     // https://www.nixhub.io/packages/zsh
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/zs/zsh/package.nix
     "zsh@5.9",
+
+    // Bash補完スクリプト集
+    // https://github.com/scop/bash-completion
+    // https://search.nixos.org/packages?show=bash-completion&query=bash-completion
+    // https://www.nixhub.io/packages/bash-completion
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ba/bash-completion/package.nix
+    "bash-completion@2.17.0",
 
     // ============================================================================
     // 証明書・通信
     // ============================================================================
 
-    // ルートCA証明書バンドル（配布元はcurl.seだが、生成元のコードリポジトリを優先）
-    // https://github.com/bagder/ca-bundle
+    // ルートCA証明書バンドル（NSSのcertdataを元に生成）
+    // https://github.com/nss-dev/nss
+    // https://search.nixos.org/packages?show=cacert&query=cacert
     // https://www.nixhub.io/packages/cacert
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ca/cacert/package.nix
     "cacert@3.115",
 
     // HTTP/HTTPS転送ツール
     // https://github.com/curl/curl
+    // https://search.nixos.org/packages?show=curl&query=curl
     // https://www.nixhub.io/packages/curl
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/cu/curlMinimal/package.nix
     "curl@8.17.0",
 
     // ファイル取得ツール
-    // https://github.com/mirror/wget (mirror)
+    // https://git.savannah.gnu.org/git/wget.git
+    // https://search.nixos.org/packages?show=wget&query=wget
     // https://www.nixhub.io/packages/wget
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/wg/wget/package.nix
     "wget@1.25.0",
+
+    // ============================================================================
+    // ネットワーク診断（DNS）
+    // ============================================================================
+
+    // DNSツール群（dig/nslookup等）
+    // https://gitlab.isc.org/isc-projects/bind9
+    // https://search.nixos.org/packages?show=bind&query=bind
+    // https://www.nixhub.io/packages/bind
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/bi/bind/package.nix
+    "bind@9.20.16",
+
+    // ============================================================================
+    // ロケール（国際化）
+    // ============================================================================
+
+    // glibcのロケールデータ
+    // https://sourceware.org/git/?p=glibc.git
+    // https://search.nixos.org/packages?show=glibcLocales&query=glibcLocales
+    // https://www.nixhub.io/packages/glibcLocales
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/libraries/glibc/locales.nix
+    "glibcLocales@2.40-66",
 
     // ============================================================================
     // 端末エディタ・閲覧・一覧表示
     // ============================================================================
 
     // シンプルな端末エディタ
-    // https://github.com/madnight/nano (mirror)
+    // https://git.savannah.gnu.org/git/nano.git
+    // https://search.nixos.org/packages?show=nano&query=nano
     // https://www.nixhub.io/packages/nano
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/na/nano/package.nix
     "nano@8.7",
 
     // シンタックスハイライト付きcat
     // https://github.com/sharkdp/bat
+    // https://search.nixos.org/packages?show=bat&query=bat
     // https://www.nixhub.io/packages/bat
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ba/bat/package.nix
     "bat@0.26.1",
 
+    // ページャ（長い出力の閲覧）
+    // https://github.com/gwsw/less
+    // https://search.nixos.org/packages?show=less&query=less
+    // https://www.nixhub.io/packages/less
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/le/less/package.nix
+    "less@679",
+
     // ls代替（アイコン/色付き）
     // https://github.com/eza-community/eza
+    // https://search.nixos.org/packages?show=eza&query=eza
     // https://www.nixhub.io/packages/eza
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ez/eza/package.nix
     "eza@0.23.4",
 
     // ls代替（ツリー表示など）
     // https://github.com/lsd-rs/lsd
+    // https://search.nixos.org/packages?show=lsd&query=lsd
     // https://www.nixhub.io/packages/lsd
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ls/lsd/package.nix
     "lsd@1.2.0",
 
+    // ディレクトリツリー表示
+    // https://gitlab.com/OldManProgrammer/unix-tree
+    // https://search.nixos.org/packages?show=tree&query=tree
+    // https://www.nixhub.io/packages/tree
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tr/tree/package.nix
+    "tree@2.2.1",
+
     // 対話型ファイルブラウザ
     // https://github.com/Canop/broot
+    // https://search.nixos.org/packages?show=broot&query=broot
     // https://www.nixhub.io/packages/broot
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/br/broot/package.nix
     "broot@1.54.0",
@@ -73,12 +125,14 @@
 
     // ZIP圧縮ツール
     // https://sourceforge.net/projects/infozip/
+    // https://search.nixos.org/packages?show=zip&query=zip
     // https://www.nixhub.io/packages/zip
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/zi/zip/package.nix
     "zip@3.0",
 
     // ZIP展開ツール
     // https://sourceforge.net/projects/infozip/
+    // https://search.nixos.org/packages?show=unzip&query=unzip
     // https://www.nixhub.io/packages/unzip
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/un/unzip/package.nix
     "unzip@6.0",
@@ -89,18 +143,21 @@
 
     // 高速なファイル検索
     // https://github.com/sharkdp/fd
+    // https://search.nixos.org/packages?show=fd&query=fd
     // https://www.nixhub.io/packages/fd
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/fd/fd/package.nix
     "fd@10.3.0",
 
     // 高速な全文検索
     // https://github.com/BurntSushi/ripgrep
+    // https://search.nixos.org/packages?show=ripgrep&query=ripgrep
     // https://www.nixhub.io/packages/ripgrep
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ri/ripgrep/package.nix
     "ripgrep@15.1.0",
 
     // 対話型ファジーファインダ
     // https://github.com/junegunn/fzf
+    // https://search.nixos.org/packages?show=fzf&query=fzf
     // https://www.nixhub.io/packages/fzf
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/fz/fzf/package.nix
     "fzf@0.67.0",
@@ -111,18 +168,21 @@
 
     // 分散バージョン管理
     // https://github.com/git/git (mirror)
+    // https://search.nixos.org/packages?show=git&query=git
     // https://www.nixhub.io/packages/git
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/gi/git/package.nix
     "git@2.51.2",
 
     // TUIのGitクライアント
     // https://github.com/jesseduffield/lazygit
+    // https://search.nixos.org/packages?show=lazygit&query=lazygit
     // https://www.nixhub.io/packages/lazygit
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/la/lazygit/package.nix
     "lazygit@0.57.0",
 
     // Git差分の高機能表示
     // https://github.com/dandavison/delta
+    // https://search.nixos.org/packages?show=delta&query=delta
     // https://www.nixhub.io/packages/delta
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/de/delta/package.nix
     "delta@0.18.2",
@@ -133,18 +193,21 @@
 
     // 言語別のコード行数集計
     // https://github.com/XAMPPRocky/tokei
+    // https://search.nixos.org/packages?show=tokei&query=tokei
     // https://www.nixhub.io/packages/tokei
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/to/tokei/package.nix
     "tokei@13.0.0",
 
     // リポジトリ要約・解析
     // https://github.com/coderamp-labs/gitingest
+    // https://search.nixos.org/packages?show=gitingest&query=gitingest
     // https://www.nixhub.io/packages/gitingest
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/python-modules/gitingest/default.nix
     "gitingest@0.3.1",
 
     // リポジトリの情報抽出・整理
     // https://github.com/yamadashy/repomix
+    // https://search.nixos.org/packages?show=repomix&query=repomix
     // https://www.nixhub.io/packages/repomix
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/re/repomix/package.nix
     "repomix@1.9.2",
@@ -155,21 +218,24 @@
 
     // JSONクエリ/加工
     // https://github.com/jqlang/jq
+    // https://search.nixos.org/packages?show=jq&query=jq
     // https://www.nixhub.io/packages/jq
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/jq/jq/package.nix
     "jq@1.8.1",
 
     // YAMLクエリ/加工
     // https://github.com/mikefarah/yq
+    // https://search.nixos.org/packages?show=yq-go&query=yq-go
     // https://www.nixhub.io/packages/yq-go
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/yq/yq-go/package.nix
     "yq-go@4.50.1",
 
     // XML/JSON変換・加工
     // https://github.com/sibprogrammer/xq
-    // https://www.nixhub.io/packages/xq
-    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/xq/xq/package.nix
-    "xq@0.4.1",
+    // https://search.nixos.org/packages?show=xq-xml&query=xq-xml
+    // https://www.nixhub.io/packages/xq-xml
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/xq/xq-xml/package.nix
+    "xq-xml@1.3.0",
 
     // ============================================================================
     // 図・ドキュメント生成
@@ -177,6 +243,7 @@
 
     // Mermaid図のCLI生成
     // https://github.com/mermaid-js/mermaid-cli
+    // https://search.nixos.org/packages?show=mermaid-cli&query=mermaid-cli
     // https://www.nixhub.io/packages/mermaid-cli
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/me/mermaid-cli/package.nix
     "mermaid-cli@11.12.0",
@@ -187,6 +254,7 @@
 
     // シークレット検知
     // https://github.com/gitleaks/gitleaks
+    // https://search.nixos.org/packages?show=gitleaks&query=gitleaks
     // https://www.nixhub.io/packages/gitleaks
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/gi/gitleaks/package.nix
     "gitleaks@8.30.0",
@@ -197,6 +265,7 @@
 
     // DBクライアント（複数DB対応）
     // https://github.com/xo/usql
+    // https://search.nixos.org/packages?show=usql&query=usql
     // https://www.nixhub.io/packages/usql
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/us/usql/package.nix#L9
     "usql@0.20.0",
@@ -207,8 +276,9 @@
 
     // ヘッドレス対応ブラウザ
     // https://chromium.googlesource.com/chromium/src
+    // https://search.nixos.org/packages?show=chromium&query=chromium
     // https://www.nixhub.io/packages/chromium
-    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ch/chromium/package.nix
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/networking/browsers/chromium/default.nix
     "chromium@143.0.7499.146",
 
     // ============================================================================
@@ -217,45 +287,66 @@
 
     // コードフォーマッタ（JS/TS/HTML等）
     // https://github.com/prettier/prettier
+    // https://search.nixos.org/packages?show=prettier&query=prettier
     // https://www.nixhub.io/packages/prettier
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/pr/prettier/package.nix
     "prettier@3.6.2",
 
+    // SQLフォーマッタ
+    // https://github.com/sql-formatter-org/sql-formatter
+    // https://search.nixos.org/packages?show=sql-formatter&query=sql-formatter
+    // https://www.nixhub.io/packages/sql-formatter
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sq/sql-formatter/package.nix
+    "sql-formatter@15.6.11",
+
     // YAMLフォーマッタ
     // https://github.com/google/yamlfmt
+    // https://search.nixos.org/packages?show=yamlfmt&query=yamlfmt
     // https://www.nixhub.io/packages/yamlfmt
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ya/yamlfmt/package.nix
     "yamlfmt@0.20.0",
 
     // シェルスクリプトフォーマッタ
     // https://github.com/mvdan/sh
+    // https://search.nixos.org/packages?show=shfmt&query=shfmt
     // https://www.nixhub.io/packages/shfmt
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sh/shfmt/package.nix
     "shfmt@3.12.0",
 
     // シェルスクリプト静的解析
     // https://github.com/koalaman/shellcheck
+    // https://search.nixos.org/packages?show=shellcheck&query=shellcheck
     // https://www.nixhub.io/packages/shellcheck
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/shellcheck/default.nix
     "shellcheck@0.11.0",
 
     // Dockerfileフォーマッタ
     // https://github.com/reteps/dockerfmt
+    // https://search.nixos.org/packages?show=dockerfmt&query=dockerfmt
     // https://www.nixhub.io/packages/dockerfmt
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/do/dockerfmt/package.nix
     "dockerfmt@0.3.9",
 
     // Dockerfileリンタ
     // https://github.com/hadolint/hadolint
+    // https://search.nixos.org/packages?show=hadolint&query=hadolint
     // https://www.nixhub.io/packages/hadolint
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/haskell-modules/hackage-packages.nix#L291958-L292032
     "hadolint@2.14.0",
 
     // TOMLフォーマッタ/リンタ
     // https://github.com/tamasfe/taplo
+    // https://search.nixos.org/packages?show=taplo&query=taplo
     // https://www.nixhub.io/packages/taplo
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ta/taplo/package.nix
     "taplo@0.10.0",
+
+    // リポジトリ単位のフォーマット統制
+    // https://github.com/numtide/treefmt
+    // https://search.nixos.org/packages?show=treefmt&query=treefmt
+    // https://www.nixhub.io/packages/treefmt
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tr/treefmt/package.nix
+    "treefmt@2.4.0",
 
     // ============================================================================
     // タスクランナー
@@ -263,6 +354,7 @@
 
     // YAMLベースのタスクランナー
     // https://github.com/go-task/task
+    // https://search.nixos.org/packages?show=go-task&query=go-task
     // https://www.nixhub.io/packages/go-task
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/go-task/package.nix
     "go-task@3.45.5",
@@ -273,12 +365,14 @@
 
     // Claude Code CLI
     // https://github.com/anthropics/claude-code
+    // https://search.nixos.org/packages?show=claude-code&query=claude-code
     // https://www.nixhub.io/packages/claude-code
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/cl/claude-code/package.nix
     "claude-code@2.0.74",
 
     // OpenAI Codex CLI
     // https://github.com/openai/codex
+    // https://search.nixos.org/packages?show=codex&query=codex
     // https://www.nixhub.io/packages/codex
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/co/codex/package.nix
     "codex@0.76.0",
@@ -289,8 +383,12 @@
 
     // 依存関係アップデート自動化
     // https://github.com/renovatebot/renovate
+    // https://search.nixos.org/packages?show=renovate&query=renovate
     // https://www.nixhub.io/packages/renovate
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/re/renovate/package.nix
     "renovate@42.57.1"
-  ]
+  ],
+  "nixpkgs": {
+    "commit": "d51c554bb9341a10c19893371807431e84ddc96f"
+  }
 }

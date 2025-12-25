@@ -33,6 +33,10 @@ ENV PATH="/code/base/.devbox/nix/profile/default/bin:${PATH}" \
 USER $USERNAME
 ENV HOME=/home/$USERNAME
 
+# puppeteer-config.json with alias
+COPY ./puppeteer-config.json /home/vscode/puppeteer-config.json
+RUN echo "alias mmdc='mmdc --puppeteerConfigFile /home/vscode/puppeteer-config.json'" >>/home/vscode/.bashrc
+
 # コンテナイメージデフォルトのbashを利用
 WORKDIR /
 CMD ["bash"]
