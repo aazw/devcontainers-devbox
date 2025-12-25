@@ -27,7 +27,7 @@
     // https://github.com/golang/tools
     // https://www.nixhub.io/packages/go-tools
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/go-tools/package.nix
-    "go-tools@2020.2.4",
+    "go-tools@2025.1.1",
 
     // 依存ライセンスの収集・出力
     // https://github.com/google/go-licenses
@@ -39,6 +39,6 @@
     // https://github.com/golangci/golangci-lint
     // https://www.nixhub.io/packages/golangci-lint
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/golangci-lint/package.nix
-    "golangci-lint@1.64.8"
+    "golangci-lint@2.7.2"
   ]
 }
