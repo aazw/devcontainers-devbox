@@ -9,25 +9,25 @@
     // https://github.com/FiloSottile/mkcert
     // https://www.nixhub.io/packages/mkcert
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/mk/mkcert/package.nix
-    "mkcert@latest",
+    "mkcert@1.4.4",
 
     // Goのデバッガ
     // https://github.com/go-delve/delve
     // https://www.nixhub.io/packages/delve
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/de/delve/package.nix
-    "delve@latest",
+    "delve@1.25.2",
 
     // GoのLSPサーバー（エディタ補完/診断）
     // https://github.com/golang/tools
     // https://www.nixhub.io/packages/gopls
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/gopls/package.nix
-    "gopls@latest",
+    "gopls@0.21.0",
 
     // Go向けツール群（imports/vet/staticcheck等）
     // https://github.com/golang/tools
     // https://www.nixhub.io/packages/go-tools
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/go-tools/package.nix
-    "go-tools@latest",
+    "go-tools@2020.2.4",
 
     // 依存ライセンスの収集・出力
     // https://github.com/google/go-licenses
@@ -39,6 +39,6 @@
     // https://github.com/golangci/golangci-lint
     // https://www.nixhub.io/packages/golangci-lint
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/golangci-lint/package.nix
-    "golangci-lint@latest"
+    "golangci-lint@1.64.8"
   ]
 }
