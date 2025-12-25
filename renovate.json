@@ -9,6 +9,11 @@
   "ignorePaths": [],
   "packageRules": [
     {
+      "matchManagers": ["dockerfile"],
+      "matchPackageNames": ["*"],
+      "minimumReleaseAge": null
+    },
+    {
       "matchManagers": ["devbox"],
       "matchFileNames": ["images/**/devbox.json"],
       "groupName": "devbox ({{parentDir}})",
