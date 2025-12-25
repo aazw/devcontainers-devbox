@@ -37,6 +37,7 @@ permissions:
 jobs:
   detect-changes:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     outputs:
       changed_files: ${{ steps.normalize.outputs.dockerfiles || steps.all.outputs.devcontainers_files || '[]' }}
     steps:
@@ -97,6 +98,7 @@ jobs:
     needs: detect-changes
     if: needs.detect-changes.outputs.changed_files != '[]' && needs.detect-changes.outputs.changed_files != ''
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     concurrency:
       group: build-devcontainer-${{ matrix.dockerfile }}
       cancel-in-progress: false
