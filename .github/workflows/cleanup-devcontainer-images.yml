@@ -10,12 +10,9 @@ on:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 5 # タイムアウトを設定（デフォルトは360分）
     permissions:
       packages: write
-
-    # タイムアウトを設定（デフォルトは360分）
-    timeout-minutes: 30
 
     # 複数のパッケージを並列処理
     strategy:
