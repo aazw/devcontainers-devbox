@@ -88,6 +88,9 @@ core.*
 .claude/*
 !.claude/settings.json
 
+# Codex data
+.codex/*
+
 # Temporary directory
 tmp
 tmp/*
