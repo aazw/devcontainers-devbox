@@ -55,6 +55,13 @@
     // https://search.nixos.org/packages?show=go-migrate&query=go-migrate
     // https://www.nixhub.io/packages/go-migrate
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/go-migrate/package.nix
-    "go-migrate@4.19.1"
+    "go-migrate@4.19.1",
+
+    // SQLコードジェネレータ
+    // https://github.com/sqlc-dev/sqlc
+    // https://search.nixos.org/packages?show=sqlc&query=sqlc
+    // https://www.nixhub.io/packages/sqlc
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sq/sqlc/package.nix
+    "sqlc@1.30.0"
   ]
 }

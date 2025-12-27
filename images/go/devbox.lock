@@ -388,6 +388,54 @@
           "store_path": "/nix/store/gpw8mvmgwxaw9ppixvcvwqnhgnagkqy1-mkcert-1.4.4"
         }
       }
+    },
+    "sqlc@1.30.0": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#sqlc",
+      "source": "devbox-search",
+      "version": "1.30.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/yvjcj4hcg2kshv16dv8niplkr0hwvfmc-sqlc-1.30.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/yvjcj4hcg2kshv16dv8niplkr0hwvfmc-sqlc-1.30.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/y2bcgpg0fp1qh24p7q50w2y1yb013cs2-sqlc-1.30.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/y2bcgpg0fp1qh24p7q50w2y1yb013cs2-sqlc-1.30.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jnlpcv1xd92b5fnxh7yrywb0989ii67r-sqlc-1.30.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/jnlpcv1xd92b5fnxh7yrywb0989ii67r-sqlc-1.30.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/c5rz9zaxbzky25slvah9g24r8ckl47p4-sqlc-1.30.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/c5rz9zaxbzky25slvah9g24r8ckl47p4-sqlc-1.30.0"
+        }
+      }
     }
   }
 }
