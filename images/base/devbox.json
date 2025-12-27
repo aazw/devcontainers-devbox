@@ -299,6 +299,13 @@
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sq/sql-formatter/package.nix
     "sql-formatter@15.6.11",
 
+    // SQLフォーマッタ その2
+    // https://github.com/quarylabs/sqruff
+    // https://search.nixos.org/packages?show=sqruff&query=sqruff
+    // https://www.nixhub.io/packages/sqruff
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sq/sqruff/package.nix
+    "sqruff@0.29.3",
+
     // YAMLフォーマッタ
     // https://github.com/google/yamlfmt
     // https://search.nixos.org/packages?show=yamlfmt&query=yamlfmt

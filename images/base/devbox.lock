@@ -2013,6 +2013,54 @@
         }
       }
     },
+    "sqruff@0.29.3": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#sqruff",
+      "source": "devbox-search",
+      "version": "0.29.3",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/b7ajss7n9gkz6jmhvmjmj10by26lw8pb-sqruff-0.29.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/b7ajss7n9gkz6jmhvmjmj10by26lw8pb-sqruff-0.29.3"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/wp8hj6s1wwq91payfzsg4v4wjk47k7a0-sqruff-0.29.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/wp8hj6s1wwq91payfzsg4v4wjk47k7a0-sqruff-0.29.3"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1sr93d5a44vpjb4kn6mg6181pggab1ap-sqruff-0.29.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1sr93d5a44vpjb4kn6mg6181pggab1ap-sqruff-0.29.3"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/yyms2xms6frwhjkn27flv22rzx9n21zf-sqruff-0.29.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/yyms2xms6frwhjkn27flv22rzx9n21zf-sqruff-0.29.3"
+        }
+      }
+    },
     "taplo@0.10.0": {
       "last_modified": "2025-11-23T21:50:36Z",
       "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#taplo",
