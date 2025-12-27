@@ -281,6 +281,17 @@
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/networking/browsers/chromium/default.nix
     "chromium@143.0.7499.146",
 
+    // フォント
+    // mermaid-cliでsvg等出力時に文字が描画されない問題対応
+    // https://www.nixhub.io/packages/fontconfig
+    // https://www.nixhub.io/packages/noto-fonts
+    // https://www.nixhub.io/packages/noto-fonts-cjk-sans
+    // https://www.nixhub.io/packages/noto-fonts-color-emoji
+    "fontconfig@2.17.1",
+    "noto-fonts@2025.12.01",
+    "noto-fonts-cjk-sans@2.004",
+    "noto-fonts-color-emoji@2.051",
+
     // ============================================================================
     // フォーマッタ／リンタ
     // ============================================================================

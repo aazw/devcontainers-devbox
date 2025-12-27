@@ -30,6 +30,9 @@ ENV PATH="/code/base/.devbox/nix/profile/default/bin:${PATH}" \
     NIX_SSL_CERT_FILE="/code/base/.devbox/nix/profile/default/etc/ssl/certs/ca-bundle.crt" \
     GIT_SSL_CAINFO="/code/base/.devbox/nix/profile/default/etc/ssl/certs/ca-bundle.crt"
 
+# mermaid-cliでsvg等出力時に文字が描画されない問題対応
+ENV XDG_DATA_DIRS="/code/base/.devbox/nix/profile/default/share:${XDG_DATA_DIRS}"
+
 USER $USERNAME
 ENV HOME=/home/$USERNAME
 

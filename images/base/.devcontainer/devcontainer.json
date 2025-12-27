@@ -1,16 +1,30 @@
 {
-  "name": "vsc-devcontainers-base",
+  "name": "vsc-devcontainers-devbox-base",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
   },
   "customizations": {
     "vscode": {
-      "extensions": [],
+      "extensions": [
+        "emeraldwalk.runonsave",
+        "ms-azuretools.vscode-containers",
+        "ms-azuretools.vscode-docker"
+      ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
       }
     }
   },
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "TZ": "Asia/Tokyo"
+  },
+  "runArgs": [
+    "--name",
+    "vsc-devcontainers-devbox-base",
+    "--add-host",
+    "host.docker.internal:host-gateway"
+  ]
 }
