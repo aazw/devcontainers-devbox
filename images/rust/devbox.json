@@ -1,0 +1,55 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    // ============================================================================
+    // Rust コンパイラ
+    // ============================================================================
+
+    // Rust コンパイラ
+    // https://github.com/rust-lang/rust
+    // https://search.nixos.org/packages?show=rustc&query=rustc
+    // https://www.nixhub.io/packages/rustc
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/rust/rustc.nix
+    "rustc@1.91.1",
+
+    // ============================================================================
+    // パッケージ管理・ビルド
+    // ============================================================================
+
+    // Rust パッケージマネージャ/ビルドツール
+    // https://github.com/rust-lang/cargo
+    // https://search.nixos.org/packages?show=cargo&query=cargo
+    // https://www.nixhub.io/packages/cargo
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/rust/cargo.nix
+    "cargo@1.91.1",
+
+    // ============================================================================
+    // リンタ／フォーマッタ
+    // ============================================================================
+
+    // Rust コードフォーマッタ
+    // https://github.com/rust-lang/rustfmt
+    // https://search.nixos.org/packages?show=rustfmt&query=rustfmt
+    // https://www.nixhub.io/packages/rustfmt
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/rust/rustfmt.nix
+    "rustfmt@1.91.1",
+
+    // Rust リンタ
+    // https://github.com/rust-lang/rust-clippy
+    // https://search.nixos.org/packages?show=clippy&query=clippy
+    // https://www.nixhub.io/packages/clippy
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/rust/clippy.nix
+    "clippy@1.91.1",
+
+    // ============================================================================
+    // 開発ツール
+    // ============================================================================
+
+    // Rust 言語サーバ（LSP）
+    // https://github.com/rust-lang/rust-analyzer
+    // https://search.nixos.org/packages?show=rust-analyzer&query=rust-analyzer
+    // https://www.nixhub.io/packages/rust-analyzer
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ru/rust-analyzer/package.nix
+    "rust-analyzer@2025-12-15"
+  ]
+}
