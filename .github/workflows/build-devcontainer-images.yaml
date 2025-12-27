@@ -16,10 +16,10 @@ on:
         options:
           - base
           - go
+          - python
           - rust
           - java
           - swift
-          - pythonuv
           # 他のイメージ名を随時追加
         default: "base"
 

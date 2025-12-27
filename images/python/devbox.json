@@ -1,0 +1,58 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    // ============================================================================
+    // Python ランタイム
+    // ============================================================================
+
+    // Python インタプリタ
+    // https://github.com/python/cpython
+    // https://search.nixos.org/packages?show=python&query=python
+    // https://www.nixhub.io/packages/python
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/interpreters/python/cpython/default.nix
+    "python@3.13.0",
+
+    // ============================================================================
+    // パッケージ管理
+    // ============================================================================
+
+    // Python パッケージインストーラ
+    // https://github.com/pypa/pip
+    // https://search.nixos.org/packages?show=python313Packages.pip&query=pip
+    // https://www.nixhub.io/packages/python313Packages.pip
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/python-modules/pip/default.nix
+    "python313Packages.pip@25.0.1",
+
+    // Python CLI アプリケーションインストーラ
+    // https://github.com/pypa/pipx
+    // https://search.nixos.org/packages?show=python313Packages.pipx&query=pipx
+    // https://www.nixhub.io/packages/python313Packages.pipx
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/python-modules/pipx/default.nix
+    "python313Packages.pipx@1.8.0",
+
+    // Python パッケージビルドツール
+    // https://github.com/pypa/wheel
+    // https://search.nixos.org/packages?show=python313Packages.wheel&query=wheel
+    // https://www.nixhub.io/packages/python313Packages.wheel
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/python-modules/wheel/default.nix
+    "python313Packages.wheel@0.46.1",
+
+    // 高速な Python パッケージマネージャ
+    // https://github.com/astral-sh/uv
+    // https://search.nixos.org/packages?show=uv&query=uv
+    // https://www.nixhub.io/packages/uv
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/uv/uv/package.nix
+    "uv@0.9.18",
+
+    // ============================================================================
+    // リンタ／フォーマッタ
+    // ============================================================================
+
+    // 高速な Python リンタ/フォーマッタ
+    // https://github.com/astral-sh/ruff
+    // https://search.nixos.org/packages?show=ruff&query=ruff
+    // https://www.nixhub.io/packages/ruff
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ru/ruff/package.nix
+    "ruff@0.14.9"
+  ]
+}
