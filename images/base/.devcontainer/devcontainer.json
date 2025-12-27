@@ -7,7 +7,9 @@
   "customizations": {
     "vscode": {
       "extensions": [],
-      "settings": {}
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
     }
   },
   "remoteUser": "vscode"
