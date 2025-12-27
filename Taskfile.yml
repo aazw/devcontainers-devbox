@@ -1,0 +1,18 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars: {}
+
+tasks:
+  list:
+    dir: "{{ .TASKFILE_DIR }}"
+    cmds:
+      - task --list-all
+    silent: true
+
+  remove_system_files:
+    dir: "{{ .TASKFILE_DIR }}"
+    cmds:
+      - find . -name ".DS_Store" -delete -print
+    silent: false
