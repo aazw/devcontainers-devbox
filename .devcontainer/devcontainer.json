@@ -1,5 +1,5 @@
 {
-  "name": "vsc-devcontainers-devbox",
+  "name": "vsc-devcontainers-devbox-devcontainer",
   "build": {
     "dockerfile": "Dockerfile",
     "context": ".."
@@ -43,7 +43,7 @@
   },
   "runArgs": [
     "--name",
-    "vsc-devcontainers-devbox",
+    "vsc-devcontainers-devbox-devcontainer",
     "--add-host",
     "host.docker.internal:host-gateway"
   ]
