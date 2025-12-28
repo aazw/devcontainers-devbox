@@ -198,10 +198,10 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "<table>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Image Name</td><td><code>${{ steps.prep.outputs.image }}</code></td></tr>" >> $GITHUB_STEP_SUMMARY
-          echo "<tr><td>Dockerfile</td><td><a href=\"${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/${{ matrix.dockerfile }}\"><code>${{ matrix.dockerfile }}</code></a></td></tr>" >> $GITHUB_STEP_SUMMARY
+          echo "<tr><td>Dockerfile</td><td><a href=\"${{ github.server_url }}/aazw/devcontainers-devbox/blob/${{ github.sha }}/${{ matrix.dockerfile }}\"><code>${{ matrix.dockerfile }}</code></a></td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Context</td><td><code>${{ steps.prep.outputs.context }}</code></td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Next Tag</td><td><code>${{ steps.next.outputs.value }}</code></td></tr>" >> $GITHUB_STEP_SUMMARY
-          echo "<tr><td>Repository</td><td><a href=\"https://github.com/${{ github.repository }}\">${{ github.repository }}</a></td></tr>" >> $GITHUB_STEP_SUMMARY
+          echo "<tr><td>Repository</td><td><a href=\"https://github.com/aazw/devcontainers-devbox\">aazw/devcontainers-devbox</a></td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "</table>" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
@@ -211,8 +211,8 @@ jobs:
           echo "<table>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Event Type</td><td><code>${{ github.event_name }}</code></td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Triggered by</td><td>@${{ github.actor }}</td></tr>" >> $GITHUB_STEP_SUMMARY
-          echo "<tr><td>Branch</td><td><a href=\"https://github.com/${{ github.repository }}/tree/${{ github.ref_name }}\"><code>${{ github.ref_name }}</code></a></td></tr>" >> $GITHUB_STEP_SUMMARY
-          echo "<tr><td>Commit</td><td><a href=\"https://github.com/${{ github.repository }}/commit/${{ github.sha }}\"><code>${GITHUB_SHA::7}</code></a></td></tr>" >> $GITHUB_STEP_SUMMARY
+          echo "<tr><td>Branch</td><td><a href=\"https://github.com/aazw/devcontainers-devbox/tree/${{ github.ref_name }}\"><code>${{ github.ref_name }}</code></a></td></tr>" >> $GITHUB_STEP_SUMMARY
+          echo "<tr><td>Commit</td><td><a href=\"https://github.com/aazw/devcontainers-devbox/commit/${{ github.sha }}\"><code>${GITHUB_SHA::7}</code></a></td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Started at</td><td>$(date -u '+%Y-%m-%d %H:%M:%S UTC')</td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "</table>" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -222,7 +222,7 @@ jobs:
             echo "## Associated Pull Request" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "<table>" >> $GITHUB_STEP_SUMMARY
-            echo "<tr><td>PR Number</td><td><a href=\"https://github.com/${{ github.repository }}/pull/${{ steps.find-pr.outputs.pr_number }}\">#${{ steps.find-pr.outputs.pr_number }}</a></td></tr>" >> $GITHUB_STEP_SUMMARY
+            echo "<tr><td>PR Number</td><td><a href=\"https://github.com/aazw/devcontainers-devbox/pull/${{ steps.find-pr.outputs.pr_number }}\">#${{ steps.find-pr.outputs.pr_number }}</a></td></tr>" >> $GITHUB_STEP_SUMMARY
             echo "<tr><td>Title</td><td>${{ steps.find-pr.outputs.pr_title }}</td></tr>" >> $GITHUB_STEP_SUMMARY
             echo "<tr><td>Author</td><td>@${{ steps.find-pr.outputs.pr_author }}</td></tr>" >> $GITHUB_STEP_SUMMARY
             echo "</table>" >> $GITHUB_STEP_SUMMARY
