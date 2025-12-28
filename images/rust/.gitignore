@@ -1,0 +1,17 @@
+.devbox
+
+test/*
+!test/*.mmd
+!test/*.rs
+
+# rust object file
+*.o
+
+# rust exec file
+main
+bin
+bin/*
+
+# dump files
+core
+core.*

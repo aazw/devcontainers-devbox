@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.devbox": true
+  },
+  "files.associations": {
+    "devbox.json": "jsonc"
+  }
+}
+

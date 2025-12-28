@@ -2,6 +2,34 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
   "packages": [
     // ============================================================================
+    // ビルドツールチェーン
+    // ============================================================================
+
+    // C/C++/Objective-C コンパイラ（LLVMベース）
+    // Rust の一部クレートで C コードのコンパイルに必要
+    // https://clang.llvm.org/
+    // https://search.nixos.org/packages?show=clang&query=clang
+    // https://www.nixhub.io/packages/clang
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/llvm/common/clang/default.nix
+    "clang@21.1.2",
+
+    // LLVM リンカ（高速リンク）
+    // Rust のリンク時間を大幅に短縮
+    // https://lld.llvm.org/
+    // https://search.nixos.org/packages?show=lld&query=lld
+    // https://www.nixhub.io/packages/lld
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/llvm/common/lld/default.nix
+    "lld@21.1.2",
+
+    // GNU バイナリユーティリティ（ar, nm, objdump など）
+    // ネイティブライブラリの操作やデバッグに使用
+    // https://www.gnu.org/software/binutils/
+    // https://search.nixos.org/packages?show=binutils&query=binutils
+    // https://www.nixhub.io/packages/binutils
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/misc/binutils/default.nix
+    "binutils@2.44",
+
+    // ============================================================================
     // Rust コンパイラ
     // ============================================================================
 
