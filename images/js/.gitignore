@@ -1,0 +1,8 @@
+.devbox
+
+test/*
+!test/*.mmd
+!test/*.js
+!test/*.jsx
+!test/*.ts
+!test/*.tsx

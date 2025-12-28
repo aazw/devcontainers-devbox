@@ -1,0 +1,35 @@
+{
+  "name": "vsc-devcontainers-devbox-js",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "emeraldwalk.runonsave",
+        "ms-azuretools.vscode-containers",
+        "ms-azuretools.vscode-docker",
+        "tamasfe.even-better-toml",
+        "oven.bun-vscode", // bun公式提供
+        "dbaeumer.vscode-eslint", // microsoft提供
+        "bradlc.vscode-tailwindcss" // tailwindcss公式提供
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "TZ": "Asia/Tokyo"
+  },
+  "runArgs": [
+    "--name",
+    "vsc-devcontainers-devbox-js",
+    "--add-host",
+    "host.docker.internal:host-gateway"
+  ],
+  "postAttachCommand": "bun --version"
+}
