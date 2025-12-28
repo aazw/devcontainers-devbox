@@ -1,0 +1,66 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    // ============================================================================
+    // Swift コンパイラ
+    // ============================================================================
+    //
+    // 【課題】
+    // Swift パッケージは Nixpkgs の最新リビジョンで aarch64-linux 向けビルドが
+    // 失敗している（2025年11月以降）。
+    // 原因: libdispatch のコードが clang 21.x の厳格な警告設定（-Werror -Wsign-conversion）
+    //       でコンパイルエラーになる。
+    //
+    // Hydra（NixOS公式CI）でのビルド状況:
+    //   https://hydra.nixos.org/job/nixpkgs/trunk/swift.aarch64-linux
+    //   - 2025-11-24: Dependency failed (swift-wrapper-5.10.1)
+    //   - 2025-11-14: Dependency failed (swift-wrapper-5.10.1)
+    //   - 2025-10-22: Succeeded (swift-wrapper-5.10.1) ← このリビジョンを使用
+    //   - 2025-10-12: Succeeded (swift-wrapper-5.10.1)
+    //
+    // 【対応】
+    // Hydra でビルド成功している nixpkgs リビジョン（2025-10-22）を明示的に指定。
+    // これにより cache.nixos.org からビルド済みバイナリを取得可能。
+    //
+    // 注意: "swift@5.10.1" + "nixpkgs.commit" の組み合わせは動作しない。
+    //       Devbox のバージョン解決は nixhub.io のレジストリを参照するため、
+    //       nixpkgs.commit の設定は無視される。
+    //       そのため、flake 参照形式で直接リビジョンを指定する必要がある。
+    //
+    // 【今後】
+    // Nixpkgs の upstream で修正されたら、通常の "swift@バージョン" 形式に戻すこと。
+    //
+    // 【既知の警告】
+    // "glibc not found for 'aarch64-unknown-linux-gnu'; C stdlib may be unavailable"
+    // という警告が表示されるが、コンパイル・実行には影響しない。
+    // これは Nixpkgs の Swift パッケージの既知の問題。
+    // 参考: https://github.com/NixOS/nixpkgs/issues/311565
+    //
+    // ============================================================================
+
+    // Swift コンパイラ (5.10.1)
+    // Appleが開発した汎用プログラミング言語
+    // https://github.com/apple/swift
+    // https://search.nixos.org/packages?show=swift&query=swift
+    // https://www.nixhub.io/packages/swift
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/swift/default.nix
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swift",
+
+    // Swift Package Manager (5.10.1)
+    // Swift のパッケージマネージャ（swift-build, swift-package, swift-run, swift-test）
+    // https://github.com/apple/swift-package-manager
+    // https://search.nixos.org/packages?show=swiftpm&query=swiftpm
+    // https://www.nixhub.io/packages/swiftpm
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/swift/swiftpm/default.nix
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftpm",
+
+    // ============================================================================
+    // Swift ランタイムライブラリ
+    // ============================================================================
+
+    // Swift Dispatch ライブラリ (libdispatch)
+    // 非同期処理のためのランタイムライブラリ
+    // コンパイルしたバイナリの実行時に libdispatch.so が必要
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swift-corelibs-libdispatch"
+  ]
+}

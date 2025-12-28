@@ -1,0 +1,33 @@
+{
+  "name": "vsc-devcontainers-devbox-swift",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "emeraldwalk.runonsave",
+        "ms-azuretools.vscode-containers",
+        "ms-azuretools.vscode-docker",
+        "tamasfe.even-better-toml",
+        "swiftlang.swift-vscode"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "TZ": "Asia/Tokyo"
+  },
+  "runArgs": [
+    "--name",
+    "vsc-devcontainers-devbox-swift",
+    "--add-host",
+    "host.docker.internal:host-gateway"
+  ],
+  "postAttachCommand": "swift --version && swift package --version"
+}

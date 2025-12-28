@@ -1,0 +1,10 @@
+.devbox
+
+test/*
+!test/*.mmd
+!test/*.swift
+
+# swift exec file
+bin
+bin/*
+main
