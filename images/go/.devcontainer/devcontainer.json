@@ -1,16 +1,32 @@
 {
-  "name": "vsc-devcontainers-go",
+  "name": "vsc-devcontainers-devbox-go",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
   },
   "customizations": {
     "vscode": {
-      "extensions": [],
+      "extensions": [
+        "emeraldwalk.runonsave",
+        "ms-azuretools.vscode-containers",
+        "ms-azuretools.vscode-docker",
+        "golang.go"
+      ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
       }
     }
   },
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "TZ": "Asia/Tokyo"
+  },
+  "runArgs": [
+    "--name",
+    "vsc-devcontainers-devbox-go",
+    "--add-host",
+    "host.docker.internal:host-gateway"
+  ],
+  "postAttachCommand": "go version"
 }
