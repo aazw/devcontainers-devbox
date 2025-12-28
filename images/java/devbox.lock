@@ -1,0 +1,33 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "jdk@25.0.0": {
+      "last_modified": "2025-10-22T20:59:19Z",
+      "resolved": "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#jdk25",
+      "source": "devbox-search",
+      "version": "25.0.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/3l55i019dc9ydjv4nishhbjp6fq224vk-zulu-ca-jdk-25.0.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/3l55i019dc9ydjv4nishhbjp6fq224vk-zulu-ca-jdk-25.0.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5dljvgfvb3did4279ffkc89fr1i8rzha-zulu-ca-jdk-25.0.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/5dljvgfvb3did4279ffkc89fr1i8rzha-zulu-ca-jdk-25.0.0"
+        }
+      }
+    }
+  }
+}

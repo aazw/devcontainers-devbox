@@ -1,0 +1,5 @@
+.devbox
+
+test/*
+!test/*.mmd
+!test/*.java

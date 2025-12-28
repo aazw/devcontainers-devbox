@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    // ============================================================================
+    // Java 開発環境
+    // ============================================================================
+
+    // Java Development Kit（OpenJDK）
+    // https://openjdk.org/
+    // https://search.nixos.org/packages?show=jdk&query=jdk
+    // https://www.nixhub.io/packages/jdk
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/openjdk/default.nix
+    "jdk@25.0.0"
+  ]
+}
