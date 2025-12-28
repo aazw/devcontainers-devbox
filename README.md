@@ -16,14 +16,55 @@ See also: https://github.com/aazw/devcontainers (previous version)
 
 | Docker Hub | Source | Includes |
 |------------|--------|----------|
-| [devcontainers-devbox-base](https://hub.docker.com/r/aazw/devcontainers-devbox-base)     | [images/base](./images/base/)     | Base image |
+| [aazw/devcontainers-devbox-base](https://hub.docker.com/r/aazw/devcontainers-devbox-base)     | [images/base](./images/base/)     | Base image |
 | | | |
-| [devcontainers-devbox-go](https://hub.docker.com/r/aazw/devcontainers-devbox-go)         | [images/go](./images/go/)         | Base + Go |
-| [devcontainers-devbox-python](https://hub.docker.com/r/aazw/devcontainers-devbox-python) | [images/python](./images/python/) | Base + Python |
-| [devcontainers-devbox-rust](https://hub.docker.com/r/aazw/devcontainers-devbox-rust)     | [images/rust](./images/rust/)     | Base + Rust |
-| [devcontainers-devbox-java](https://hub.docker.com/r/aazw/devcontainers-devbox-java)     | [images/java](./images/java/)     | Base + Java |
-| [devcontainers-devbox-swift](https://hub.docker.com/r/aazw/devcontainers-devbox-swift)   | [images/swift](./images/swift/)   | Base + Swift |
-| [devcontainers-devbox-js](https://hub.docker.com/r/aazw/devcontainers-devbox-js)         | [images/js](./images/js/)         | Base + JavaScript |
+| [aazw/devcontainers-devbox-go](https://hub.docker.com/r/aazw/devcontainers-devbox-go)         | [images/go](./images/go/)         | Base + Go |
+| [aazw/devcontainers-devbox-python](https://hub.docker.com/r/aazw/devcontainers-devbox-python) | [images/python](./images/python/) | Base + Python |
+| [aazw/devcontainers-devbox-rust](https://hub.docker.com/r/aazw/devcontainers-devbox-rust)     | [images/rust](./images/rust/)     | Base + Rust |
+| [aazw/devcontainers-devbox-java](https://hub.docker.com/r/aazw/devcontainers-devbox-java)     | [images/java](./images/java/)     | Base + Java |
+| [aazw/devcontainers-devbox-swift](https://hub.docker.com/r/aazw/devcontainers-devbox-swift)   | [images/swift](./images/swift/)   | Base + Swift |
+| [aazw/devcontainers-devbox-js](https://hub.docker.com/r/aazw/devcontainers-devbox-js)         | [images/js](./images/js/)         | Base + JavaScript |
+
+
+## How to use
+
+### Shell
+
+```bash
+# base
+docker pull aazw/devcontainers-devbox-base:latest
+
+# go
+docker pull aazw/devcontainers-devbox-go:latest
+
+# python
+docker pull aazw/devcontainers-devbox-python:latest
+
+# rust
+docker pull aazw/devcontainers-devbox-rust:latest
+
+# java
+docker pull aazw/devcontainers-devbox-java:latest
+
+# swift
+docker pull aazw/devcontainers-devbox-swift:latest
+
+# js
+docker pull aazw/devcontainers-devbox-js:latest
+```
+
+### DevContainer
+
+```json
+// .devcontainer/devcontainer.json
+{
+    ...
+
+    "image": "aazw/devcontainers-devbox-base:latest",
+
+    ...
+}
+```
 
 
 ## References
