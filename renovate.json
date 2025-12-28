@@ -8,11 +8,25 @@
   "minimumReleaseAge": "7 days",
   "ignorePaths": [],
   "packageRules": [
+    // Dockerfileにおけるベースイメージの更新において、最低経過時間を無効化
     {
       "matchManagers": ["dockerfile"],
       "matchPackageNames": ["*"],
       "minimumReleaseAge": null
     },
+    // Dockerfileの更新で、どのDockerfileかわかるようlabelにファイル名を付与
+    {
+      "matchManagers": ["dockerfile"],
+      "matchFileNames": ["images/**/.devcontainer/Dockerfile"],
+      "labels": ["{{packageFile}}"]
+    },
+    // devbox.jsonの更新で、どのdevbox.jsonかわかるようlabelにファイル名を付与
+    {
+      "matchManagers": ["devbox"],
+      "matchFileNames": ["images/**/devbox.json"],
+      "labels": ["{{packageFile}}"]
+    },
+    // devboxでの更新をまとめる
     {
       "matchManagers": ["devbox"],
       "matchFileNames": ["images/**/devbox.json"],
