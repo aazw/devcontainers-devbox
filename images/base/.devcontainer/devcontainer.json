@@ -9,7 +9,8 @@
       "extensions": [
         "emeraldwalk.runonsave",
         "ms-azuretools.vscode-containers",
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+        "tamasfe.even-better-toml"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
