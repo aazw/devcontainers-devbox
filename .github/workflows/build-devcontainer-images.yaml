@@ -32,7 +32,6 @@ run-name: |
 
 permissions:
   contents: read
-  packages: write
 
 jobs:
   detect-changes:
@@ -166,32 +165,27 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      # GHCR へ認証して push 可能にする
-      - name: Login to GitHub Container Registry
+      # Docker Hub へ認証して push 可能にする
+      - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # GHCR 既存タグから次の連番タグを算出する
+      # Docker Hub 既存タグから次の連番タグを算出する
       - name: Compute next numeric tag per image
         id: next
         shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           IMAGE_NAME="${{ steps.prep.outputs.image }}"
-          PKG="devcontainers-devbox/${IMAGE_NAME}"
-          PKG_ENC="${PKG//\//%2F}"
-          OWNER="${{ github.repository_owner }}"
+          REPO="aazw/devcontainers-devbox-${IMAGE_NAME}"
 
-          # 最新100件を取得（デフォルトで新しい順）
-          VERS="$(gh api "/users/${OWNER}/packages/container/${PKG_ENC}/versions?per_page=100" || echo '[]')"
+          # Docker Hub API からタグ一覧を取得（最大100件）
+          TAGS="$(curl -s "https://hub.docker.com/v2/repositories/${REPO}/tags?page_size=100" || echo '{"results":[]}')"
 
           # 既存の数値タグの最大値+1を計算
-          NEXT="$(printf '%s' "${VERS}" | jq -r '[.[].metadata.container.tags[]? | select(test("^[0-9]+$")) | tonumber] | (max? // 0) + 1')"
+          NEXT="$(printf '%s' "${TAGS}" | jq -r '[.results[]?.name | select(test("^[0-9]+$")) | tonumber] | (max? // 0) + 1')"
 
           echo "value=${NEXT}" >> "$GITHUB_OUTPUT"
 
@@ -255,9 +249,9 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/aazw/devcontainers-devbox/${{ steps.prep.outputs.image }}:${{ github.sha }}
-            ghcr.io/aazw/devcontainers-devbox/${{ steps.prep.outputs.image }}:${{ steps.next.outputs.value }}
-            ghcr.io/aazw/devcontainers-devbox/${{ steps.prep.outputs.image }}:latest
+            aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:${{ github.sha }}
+            aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:${{ steps.next.outputs.value }}
+            aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
           pull: true
@@ -270,7 +264,7 @@ jobs:
           echo "## Build Successful" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "<table>" >> $GITHUB_STEP_SUMMARY
-          echo "<tr><td>Image Name</td><td><code>ghcr.io/aazw/devcontainers-devbox/${{ steps.prep.outputs.image }}</code></td></tr>" >> $GITHUB_STEP_SUMMARY
+          echo "<tr><td>Image Name</td><td><code>aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}</code></td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Digest</td><td><code>${{ steps.docker_build.outputs.digest }}</code></td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Platforms</td><td><code>linux/amd64, linux/arm64</code></td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Build Completed</td><td>$(date -u '+%Y-%m-%d %H:%M:%S UTC')</td></tr>" >> $GITHUB_STEP_SUMMARY
@@ -279,15 +273,15 @@ jobs:
 
           echo "### Published Tags" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- \`ghcr.io/aazw/-devbox/${{ steps.prep.outputs.image }}:latest\`" >> $GITHUB_STEP_SUMMARY
-          echo "- \`ghcr.io/aazw/-devbox/${{ steps.prep.outputs.image }}:${{ steps.next.outputs.value }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- \`ghcr.io/aazw/-devbox/${{ steps.prep.outputs.image }}:${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:latest\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:${{ steps.next.outputs.value }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- \`aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           echo "### Pull Command" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo '```bash' >> $GITHUB_STEP_SUMMARY
-          echo "docker pull ghcr.io/aazw/devcontainers-devbox/${{ steps.prep.outputs.image }}:latest" >> $GITHUB_STEP_SUMMARY
+          echo "docker pull aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:latest" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
