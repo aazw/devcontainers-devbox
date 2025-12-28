@@ -97,7 +97,7 @@ jobs:
     needs: detect-changes
     if: needs.detect-changes.outputs.changed_files != '[]' && needs.detect-changes.outputs.changed_files != ''
     runs-on: ubuntu-latest
-    timeout-minutes: 360
+    timeout-minutes: 60 # 成功するときはbaseでも40分くらいで成功する
     concurrency:
       group: build-devcontainer-${{ matrix.dockerfile }}
       cancel-in-progress: false
