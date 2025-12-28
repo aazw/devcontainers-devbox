@@ -20,6 +20,7 @@ on:
           - rust
           - java
           - swift
+          - js
           # 他のイメージ名を随時追加
         default: "base"
 
