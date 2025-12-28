@@ -10,7 +10,7 @@ COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.lock devbox.lock
 RUN devbox install
 
 
-FROM ghcr.io/aazw/devcontainers-devbox/base:9 AS runtime
+FROM aazw/devcontainers-devbox-base:1 AS runtime
 
 USER root
 COPY --from=builder /nix/store /nix/store
