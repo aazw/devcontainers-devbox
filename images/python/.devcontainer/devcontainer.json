@@ -1,16 +1,37 @@
 {
-  "name": "vsc-devcontainers-python",
+  "name": "vsc-devcontainers-devbox-python",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
   },
   "customizations": {
     "vscode": {
-      "extensions": [],
+      "extensions": [
+        "emeraldwalk.runonsave",
+        "ms-azuretools.vscode-containers",
+        "ms-azuretools.vscode-docker",
+        "tamasfe.even-better-toml",
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        "charliermarsh.ruff"
+      ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
       }
     }
   },
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "TZ": "Asia/Tokyo",
+    "UV_PROJECT_ENVIRONMENT": "${containerWorkspaceFolder}/.venv"
+  },
+  "runArgs": [
+    "--name",
+    "vsc-devcontainers-devbox-python",
+    "--add-host",
+    "host.docker.internal:host-gateway"
+  ],
+  "postAttachCommand": "python -V"
 }
