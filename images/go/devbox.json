@@ -20,7 +20,7 @@
     // https://search.nixos.org/packages?show=delve&query=delve
     // https://www.nixhub.io/packages/delve
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/de/delve/package.nix
-    "delve@1.25.2",
+    "delve@1.26.0",
 
     // GoのLSPサーバー（エディタ補完/診断）
     // https://github.com/golang/tools
