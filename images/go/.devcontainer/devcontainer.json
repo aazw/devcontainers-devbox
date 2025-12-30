@@ -4,6 +4,13 @@
     "dockerfile": "./Dockerfile",
     "context": ".."
   },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest",
+      "enableNonRootDocker": "true",
+      "moby": "true"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -18,10 +25,12 @@
       }
     }
   },
+  "containerUser": "root", // コンテナ起動時・初期化処理のユーザ. docker psできるようにするために必要
   "remoteUser": "vscode",
   "remoteEnv": {
     "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
-    "TZ": "Asia/Tokyo"
+    "TZ": "Asia/Tokyo",
+    "TASK_X_ENV_PRECEDENCE": "1"
   },
   "runArgs": [
     "--name",
