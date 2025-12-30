@@ -1,4 +1,22 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
-  "packages": ["nodejs@25.2.1"]
+  "packages": [
+    // ============================================================================
+    // Devcontainer 固有パッケージ
+    // ============================================================================
+    // このファイルはdevcontainer環境でのみ必要な追加パッケージを定義します。
+    // ベースパッケージは images/base/devbox.json で管理されています。
+    // ============================================================================
+
+    // ============================================================================
+    // JavaScript ランタイム
+    // ============================================================================
+
+    // サーバーサイドJavaScriptランタイム
+    // https://github.com/nodejs/node
+    // https://search.nixos.org/packages?show=nodejs&query=nodejs
+    // https://www.nixhub.io/packages/nodejs
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/web/nodejs/default.nix
+    "nodejs@25.2.1"
+  ]
 }
