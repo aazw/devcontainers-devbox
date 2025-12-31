@@ -1,10 +1,19 @@
 {
+  // VSCodeのエクスプローラーが重くなる対策 その1
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "**/.devbox": true
   },
+  // VSCodeのエクスプローラーが重くなる対策 その2
+  "files.watcherExclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.devbox": true
+  },
+  // その他設定
   "files.associations": {
     "devbox.json": "jsonc"
   },
