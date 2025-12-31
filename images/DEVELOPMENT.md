@@ -45,33 +45,21 @@ cd images/new-language
 }
 ```
 
-### 1.3 Dockerfile の編集
+### 1.3 devbox.lock の生成
 
-`.devcontainer/Dockerfile` を編集し、コピー先パスを変更します：
-
-```dockerfile
-FROM jetpackio/devbox:latest AS builder
-
-WORKDIR /code/<image-name>
-# ... 以下同様
-```
-
-### 1.4 devcontainer.json の編集
-
-`.devcontainer/devcontainer.json` で必要な拡張機能を追加します。
-
-### 1.5 テストの作成
-
-`test/` ディレクトリに言語別のテストファイルを作成し、`test.sh` を更新します。
-
-## 2. devbox.json の検証
-
-### 2.1 ローカルでの検証（推奨）
-
-Docker を使って `devbox install` を実行し、パッケージが正しくインストールされるか確認します：
+`devbox.json` を編集したら、`devbox install` を実行して `devbox.lock` を生成・更新します。
+このコマンドは devbox 環境が必要なため、Docker コンテナ内で実行します。
 
 ```bash
 # ローカル環境から実行
+docker run -it --rm \
+  -v $(pwd):/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+
+# 例: 新規作成した ruby イメージの devbox.lock を生成
+cd images/ruby
 docker run -it --rm \
   -v $(pwd):/tmp/app \
   -w /tmp/app \
@@ -84,25 +72,49 @@ DevContainer 内から実行する場合：
 ```bash
 # 構文
 docker run -it --rm \
-  -v ${LOCAL_WORKSPACE_FOLDER}/<image-path>:/tmp/app \
+  -v ${LOCAL_WORKSPACE_FOLDER}/images/<image-path>:/tmp/app \
   -w /tmp/app \
   jetpackio/devbox:latest \
   devbox install
 
-# 例: base イメージの検証
-docker run -it --rm \
-  -v ${LOCAL_WORKSPACE_FOLDER}/images/base:/tmp/app \
-  -w /tmp/app \
-  jetpackio/devbox:latest \
-  devbox install
-
-# 例: go イメージの検証
+# 例: go イメージの devbox.lock を更新
 docker run -it --rm \
   -v ${LOCAL_WORKSPACE_FOLDER}/images/go:/tmp/app \
   -w /tmp/app \
   jetpackio/devbox:latest \
   devbox install
 ```
+
+成功すると `devbox.lock` が生成・更新され、依存関係が固定されます。
+エラーが出た場合は `devbox.json` のパッケージ名やバージョンを確認してください。
+
+### 1.4 Dockerfile の編集
+
+`.devcontainer/Dockerfile` を編集し、コピー先パスを変更します：
+
+```dockerfile
+FROM jetpackio/devbox:latest AS builder
+
+WORKDIR /code/<image-name>
+# ... 以下同様
+```
+
+### 1.5 devcontainer.json の編集
+
+`.devcontainer/devcontainer.json` で必要な拡張機能を追加します。
+
+### 1.6 テストの作成
+
+`test/` ディレクトリに言語別のテストファイルを作成し、`test.sh` を更新します。
+
+## 2. devbox.json の検証
+
+既存イメージの `devbox.json` を変更した場合や、新規作成後に検証する方法です。
+
+### 2.1 devbox install による検証（推奨）
+
+[1.3 devbox.lock の生成](#13-devboxlock-の生成) と同じコマンドで検証できます。
+`devbox install` が成功すれば、パッケージ定義は正しいと判断できます。
 
 ### 2.2 JSON 構文チェック
 
