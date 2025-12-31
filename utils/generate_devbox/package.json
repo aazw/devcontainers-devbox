@@ -1,0 +1,9 @@
+{
+  "name": "devbox-merger",
+  "version": "1.0.0",
+  "description": "Merge devbox.json files",
+  "private": true,
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
+  }
+}
