@@ -413,99 +413,99 @@
         }
       }
     },
-    "claude-code@2.0.74": {
-      "last_modified": "2025-12-21T10:48:17Z",
-      "resolved": "github:NixOS/nixpkgs/306ea70f9eb0fb4e040f8540e2deab32ed7e2055#claude-code",
+    "claude-code@2.0.75": {
+      "last_modified": "2025-12-22T13:40:18Z",
+      "resolved": "github:NixOS/nixpkgs/3a7affa77a5a539afa1c7859e2c31abdb1aeadf3#claude-code",
       "source": "devbox-search",
-      "version": "2.0.74",
+      "version": "2.0.75",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/6mj4j3n9ccqpfzqsyc4agjfjcf20a4ss-claude-code-2.0.74",
+              "path": "/nix/store/bbz8nfwykr84q0dp73z3b7zcnf6l6wcb-claude-code-2.0.75",
               "default": true
             }
           ],
-          "store_path": "/nix/store/6mj4j3n9ccqpfzqsyc4agjfjcf20a4ss-claude-code-2.0.74"
+          "store_path": "/nix/store/bbz8nfwykr84q0dp73z3b7zcnf6l6wcb-claude-code-2.0.75"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/l53ljyp8c4rbql771zl67197bpjdavm9-claude-code-2.0.74",
+              "path": "/nix/store/fczxsivpmnzihka1zgkd99w8m0pwzc5d-claude-code-2.0.75",
               "default": true
             }
           ],
-          "store_path": "/nix/store/l53ljyp8c4rbql771zl67197bpjdavm9-claude-code-2.0.74"
+          "store_path": "/nix/store/fczxsivpmnzihka1zgkd99w8m0pwzc5d-claude-code-2.0.75"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/h2n2v1mramg9bw49fv5sl44a5zab9xis-claude-code-2.0.74",
+              "path": "/nix/store/f8lgrmlk34qcz04f8vlci5n6d49pd639-claude-code-2.0.75",
               "default": true
             }
           ],
-          "store_path": "/nix/store/h2n2v1mramg9bw49fv5sl44a5zab9xis-claude-code-2.0.74"
+          "store_path": "/nix/store/f8lgrmlk34qcz04f8vlci5n6d49pd639-claude-code-2.0.75"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/nb9by8i3klzxfljcjp46j3k9rs78in3z-claude-code-2.0.74",
+              "path": "/nix/store/vk1xa48bqldqda9322vfkd536cz870mv-claude-code-2.0.75",
               "default": true
             }
           ],
-          "store_path": "/nix/store/nb9by8i3klzxfljcjp46j3k9rs78in3z-claude-code-2.0.74"
+          "store_path": "/nix/store/vk1xa48bqldqda9322vfkd536cz870mv-claude-code-2.0.75"
         }
       }
     },
-    "codex@0.76.0": {
-      "last_modified": "2025-12-21T10:48:17Z",
-      "resolved": "github:NixOS/nixpkgs/306ea70f9eb0fb4e040f8540e2deab32ed7e2055#codex",
+    "codex@0.77.0": {
+      "last_modified": "2025-12-22T13:40:18Z",
+      "resolved": "github:NixOS/nixpkgs/3a7affa77a5a539afa1c7859e2c31abdb1aeadf3#codex",
       "source": "devbox-search",
-      "version": "0.76.0",
+      "version": "0.77.0",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/g8f4fvccmpwid0rhzh1cy7b48fh7iwzn-codex-0.76.0",
+              "path": "/nix/store/vpw1ghm8qp9wx0rzw0w8xbk38vgp4jfr-codex-0.77.0",
               "default": true
             }
           ],
-          "store_path": "/nix/store/g8f4fvccmpwid0rhzh1cy7b48fh7iwzn-codex-0.76.0"
+          "store_path": "/nix/store/vpw1ghm8qp9wx0rzw0w8xbk38vgp4jfr-codex-0.77.0"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/c0f84v5x9556xanmkm7qj6rkpnz9f2y1-codex-0.76.0",
+              "path": "/nix/store/8kzr46p1ww1r7kbksd0sn7zgp6kqd8ik-codex-0.77.0",
               "default": true
             }
           ],
-          "store_path": "/nix/store/c0f84v5x9556xanmkm7qj6rkpnz9f2y1-codex-0.76.0"
+          "store_path": "/nix/store/8kzr46p1ww1r7kbksd0sn7zgp6kqd8ik-codex-0.77.0"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/3ajjc4cbwp4ff8f2pdjc45inahxzsalz-codex-0.76.0",
+              "path": "/nix/store/abyp747wmwjwqjs76ziylfdgg0xl3s6q-codex-0.77.0",
               "default": true
             }
           ],
-          "store_path": "/nix/store/3ajjc4cbwp4ff8f2pdjc45inahxzsalz-codex-0.76.0"
+          "store_path": "/nix/store/abyp747wmwjwqjs76ziylfdgg0xl3s6q-codex-0.77.0"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/da7mbd9rdwblgcrrydj245kzsqbdsy63-codex-0.76.0",
+              "path": "/nix/store/bl27ri5ag18iyb34mas64ly4xc7db7ic-codex-0.77.0",
               "default": true
             }
           ],
-          "store_path": "/nix/store/da7mbd9rdwblgcrrydj245kzsqbdsy63-codex-0.76.0"
+          "store_path": "/nix/store/bl27ri5ag18iyb34mas64ly4xc7db7ic-codex-0.77.0"
         }
       }
     },
@@ -842,6 +842,102 @@
             }
           ],
           "store_path": "/nix/store/027m34av4nx0246ia2qdbfygzy9dbikw-fd-10.3.0"
+        }
+      }
+    },
+    "fontconfig@2.17.1": {
+      "last_modified": "2025-12-29T08:23:14Z",
+      "resolved": "github:NixOS/nixpkgs/0744ef1b047f07d31d9962d757ffe38ec14a4d41#fontconfig",
+      "source": "devbox-search",
+      "version": "2.17.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/wis22gg7kbzjcp0js0f3b1lcvqq0ci2h-fontconfig-2.17.1-bin",
+              "default": true
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/mcxli9wc64k3iscvnxjk8ix1yk5ff3pq-fontconfig-2.17.1"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/k6004sjvnzrm7k0qw60lfvyb9rywb2q8-fontconfig-2.17.1-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/ibxx1pr2ydflf057py41q25qvb48jcan-fontconfig-2.17.1-lib"
+            }
+          ],
+          "store_path": "/nix/store/wis22gg7kbzjcp0js0f3b1lcvqq0ci2h-fontconfig-2.17.1-bin"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/yyf9vfz3idj8b9pdlhr52bb42693b9ra-fontconfig-2.17.1-bin",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/0pygp9jmcn5jd0j9jfi3lbcl39f0jcrl-fontconfig-2.17.1-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/a5bwqrnnn86siynb6nc7qwbhliwvqpzx-fontconfig-2.17.1-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/q1lbl8rgwndj8706khv46cgdx4xv56kv-fontconfig-2.17.1"
+            }
+          ],
+          "store_path": "/nix/store/yyf9vfz3idj8b9pdlhr52bb42693b9ra-fontconfig-2.17.1-bin"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/076wqwf0zx2nlvjl5c1d6mr6d1vqzfl9-fontconfig-2.17.1-bin",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/hd4rqm2j7wwz18f5fqc2yippa2q97c3y-fontconfig-2.17.1-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/l7zmcjpgg6yi8vqqf21m6zfmaa1j90yg-fontconfig-2.17.1-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/7slw9cjx35pdm2crvw5lzbnkrxgk6qwp-fontconfig-2.17.1"
+            }
+          ],
+          "store_path": "/nix/store/076wqwf0zx2nlvjl5c1d6mr6d1vqzfl9-fontconfig-2.17.1-bin"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/sl7wgh3hb00gsicw2w0jfd3vxnsd448s-fontconfig-2.17.1-bin",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/m4yklwaw26d8hhyl82fl6jmx1waqrakg-fontconfig-2.17.1-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/5l5wsn4qxkw90h6sxxz43gbnar7w5x8s-fontconfig-2.17.1-lib"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/mynw03snjj3k1wlsz5v94a10x7l2w5kp-fontconfig-2.17.1"
+            }
+          ],
+          "store_path": "/nix/store/sl7wgh3hb00gsicw2w0jfd3vxnsd448s-fontconfig-2.17.1-bin"
         }
       }
     },
@@ -1621,6 +1717,166 @@
         }
       }
     },
+    "noto-fonts-cjk-sans@2.004": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#noto-fonts-cjk-sans",
+      "source": "devbox-search",
+      "version": "2.004",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/rz65av7ibn5wib0dw2mh7j1rdd7pcqrw-noto-fonts-cjk-sans-2.004",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/rz65av7ibn5wib0dw2mh7j1rdd7pcqrw-noto-fonts-cjk-sans-2.004"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/11dya4whk877ykh1nfcrg8dhyaa9wjw5-noto-fonts-cjk-sans-2.004",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/11dya4whk877ykh1nfcrg8dhyaa9wjw5-noto-fonts-cjk-sans-2.004"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/69bvxrdbnhqp0h2f95smad6bym3ifflw-noto-fonts-cjk-sans-2.004",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/69bvxrdbnhqp0h2f95smad6bym3ifflw-noto-fonts-cjk-sans-2.004"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/m18d4ilkzahh8bbcx794kqn568asflq4-noto-fonts-cjk-sans-2.004",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/m18d4ilkzahh8bbcx794kqn568asflq4-noto-fonts-cjk-sans-2.004"
+        }
+      }
+    },
+    "noto-fonts-color-emoji@2.051": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#noto-fonts-color-emoji",
+      "source": "devbox-search",
+      "version": "2.051",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9f8m1wnnddsbh37wd6q1b95zgn5wzldm-noto-fonts-color-emoji-2.051",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/9f8m1wnnddsbh37wd6q1b95zgn5wzldm-noto-fonts-color-emoji-2.051"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ihq85kzpx0j7bhcysk7q6i13zcp5msc3-noto-fonts-color-emoji-2.051",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ihq85kzpx0j7bhcysk7q6i13zcp5msc3-noto-fonts-color-emoji-2.051"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/m9g18hih8mwhr5is77fs5ig3j7y4byvs-noto-fonts-color-emoji-2.051",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/m9g18hih8mwhr5is77fs5ig3j7y4byvs-noto-fonts-color-emoji-2.051"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/p1lpix5c5qlh8h72cf7nabh4vn8yl9s2-noto-fonts-color-emoji-2.051",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/p1lpix5c5qlh8h72cf7nabh4vn8yl9s2-noto-fonts-color-emoji-2.051"
+        }
+      }
+    },
+    "noto-fonts@2025.12.01": {
+      "last_modified": "2025-12-05T15:03:55Z",
+      "resolved": "github:NixOS/nixpkgs/a672be65651c80d3f592a89b3945466584a22069#noto-fonts",
+      "source": "devbox-search",
+      "version": "2025.12.01",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/faazsn2rqaxrwppk6a2mx5rlqcvwrknl-noto-fonts-2025.12.01",
+              "default": true
+            },
+            {
+              "name": "megamerge",
+              "path": "/nix/store/4g17f6fvd0m52hk45k5ld6p8chd1g5qn-noto-fonts-2025.12.01-megamerge"
+            }
+          ],
+          "store_path": "/nix/store/faazsn2rqaxrwppk6a2mx5rlqcvwrknl-noto-fonts-2025.12.01"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2j1ckxx07gx64wkvzf9bl0h3svlg98qp-noto-fonts-2025.12.01",
+              "default": true
+            },
+            {
+              "name": "megamerge",
+              "path": "/nix/store/4nfndmh85s0azyb7x0qkqp4ldhqbxdsq-noto-fonts-2025.12.01-megamerge"
+            }
+          ],
+          "store_path": "/nix/store/2j1ckxx07gx64wkvzf9bl0h3svlg98qp-noto-fonts-2025.12.01"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/bzi404333bkk7aqg7vnpll6d7jhbncgm-noto-fonts-2025.12.01",
+              "default": true
+            },
+            {
+              "name": "megamerge",
+              "path": "/nix/store/ahbyffch6bqcr0gs5hc036smx3v7s4nv-noto-fonts-2025.12.01-megamerge"
+            }
+          ],
+          "store_path": "/nix/store/bzi404333bkk7aqg7vnpll6d7jhbncgm-noto-fonts-2025.12.01"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/7aza7maknkk1c47b32374558m77n9ibn-noto-fonts-2025.12.01",
+              "default": true
+            },
+            {
+              "name": "megamerge",
+              "path": "/nix/store/la01lfw3zwp18xwwfzm26pkhjyq0yhf2-noto-fonts-2025.12.01-megamerge"
+            }
+          ],
+          "store_path": "/nix/store/7aza7maknkk1c47b32374558m77n9ibn-noto-fonts-2025.12.01"
+        }
+      }
+    },
     "prettier@3.6.2": {
       "last_modified": "2025-11-29T19:37:08Z",
       "resolved": "github:NixOS/nixpkgs/a09378c0108815dbf3961a0e085936f4146ec415#prettier",
@@ -1965,51 +2221,51 @@
         }
       }
     },
-    "sql-formatter@15.6.11": {
-      "last_modified": "2025-12-15T04:22:15Z",
-      "resolved": "github:NixOS/nixpkgs/09b8fda8959d761445f12b55f380d90375a1d6bb#sql-formatter",
+    "sql-formatter@15.6.12": {
+      "last_modified": "2025-12-22T13:40:18Z",
+      "resolved": "github:NixOS/nixpkgs/3a7affa77a5a539afa1c7859e2c31abdb1aeadf3#sql-formatter",
       "source": "devbox-search",
-      "version": "15.6.11",
+      "version": "15.6.12",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/iwlv0f78w7plv9br5481f9jmap88rgqd-sql-formatter-15.6.11",
+              "path": "/nix/store/cxvc1673krq6pf6xigvf5akyba76j775-sql-formatter-15.6.12",
               "default": true
             }
           ],
-          "store_path": "/nix/store/iwlv0f78w7plv9br5481f9jmap88rgqd-sql-formatter-15.6.11"
+          "store_path": "/nix/store/cxvc1673krq6pf6xigvf5akyba76j775-sql-formatter-15.6.12"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/qmj2kdj4ic42klda6z03r3chmgrs2li1-sql-formatter-15.6.11",
+              "path": "/nix/store/rr0s1vm2sphc191pc8yvh053r3f3wd8h-sql-formatter-15.6.12",
               "default": true
             }
           ],
-          "store_path": "/nix/store/qmj2kdj4ic42klda6z03r3chmgrs2li1-sql-formatter-15.6.11"
+          "store_path": "/nix/store/rr0s1vm2sphc191pc8yvh053r3f3wd8h-sql-formatter-15.6.12"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/bh76r85yypx9138fly4mb6n161rldhrw-sql-formatter-15.6.11",
+              "path": "/nix/store/bxdad5ggxzk542vc5jr8v208j9xqrf5r-sql-formatter-15.6.12",
               "default": true
             }
           ],
-          "store_path": "/nix/store/bh76r85yypx9138fly4mb6n161rldhrw-sql-formatter-15.6.11"
+          "store_path": "/nix/store/bxdad5ggxzk542vc5jr8v208j9xqrf5r-sql-formatter-15.6.12"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/2na9cfmss224y95svfdhby4w3splz7g6-sql-formatter-15.6.11",
+              "path": "/nix/store/iycr2wv1alyafj7r2hisrhilfdcn680d-sql-formatter-15.6.12",
               "default": true
             }
           ],
-          "store_path": "/nix/store/2na9cfmss224y95svfdhby4w3splz7g6-sql-formatter-15.6.11"
+          "store_path": "/nix/store/iycr2wv1alyafj7r2hisrhilfdcn680d-sql-formatter-15.6.12"
         }
       }
     },
