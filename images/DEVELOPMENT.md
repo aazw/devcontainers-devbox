@@ -1,0 +1,207 @@
+# Image Development Guide
+
+このドキュメントでは、`images/` ディレクトリ内の各イメージの作成・検証・マージ方法を説明します。
+
+## ディレクトリ構造
+
+各イメージは以下の構造を持ちます：
+
+```
+images/<image-name>/
+├── .devcontainer/
+│   ├── Dockerfile           # マルチステージビルド
+│   └── devcontainer.json    # VS Code DevContainer設定
+├── devbox.json              # パッケージ定義（メイン設定）
+├── devbox.lock              # ロックファイル（依存関係の固定）
+├── puppeteer-config.json    # mermaid-cli用設定（baseのみ）
+├── test/
+│   ├── mermaid_001.mmd      # mermaid-cliテスト用
+│   └── main.<ext>           # 言語別テストファイル
+└── test.sh                  # テストスクリプト
+```
+
+## 1. 新規イメージの作成
+
+### 1.1 ディレクトリの準備
+
+既存のイメージをベースにコピーします：
+
+```bash
+# 例: pythonイメージをベースに新しいイメージを作成
+cp -r images/python images/new-language
+cd images/new-language
+```
+
+### 1.2 devbox.json の編集
+
+`devbox.json` にパッケージを追加します。利用可能なパッケージは [Nixhub](https://www.nixhub.io/) で検索できます。
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+  "packages": [
+    "your-package@version"
+  ]
+}
+```
+
+### 1.3 Dockerfile の編集
+
+`.devcontainer/Dockerfile` を編集し、コピー先パスを変更します：
+
+```dockerfile
+FROM jetpackio/devbox:latest AS builder
+
+WORKDIR /code/<image-name>
+# ... 以下同様
+```
+
+### 1.4 devcontainer.json の編集
+
+`.devcontainer/devcontainer.json` で必要な拡張機能を追加します。
+
+### 1.5 テストの作成
+
+`test/` ディレクトリに言語別のテストファイルを作成し、`test.sh` を更新します。
+
+## 2. devbox.json の検証
+
+### 2.1 ローカルでの検証（推奨）
+
+Docker を使って `devbox install` を実行し、パッケージが正しくインストールされるか確認します：
+
+```bash
+# ローカル環境から実行
+docker run -it --rm \
+  -v $(pwd):/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+```
+
+DevContainer 内から実行する場合：
+
+```bash
+# 構文
+docker run -it --rm \
+  -v ${LOCAL_WORKSPACE_FOLDER}/<image-path>:/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+
+# 例: base イメージの検証
+docker run -it --rm \
+  -v ${LOCAL_WORKSPACE_FOLDER}/images/base:/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+
+# 例: go イメージの検証
+docker run -it --rm \
+  -v ${LOCAL_WORKSPACE_FOLDER}/images/go:/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+```
+
+### 2.2 JSON 構文チェック
+
+```bash
+# 構文
+jq empty images/<image-name>/devbox.json
+
+# 例: go イメージの構文チェック
+jq empty images/go/devbox.json
+
+# 例: python イメージの構文チェック
+jq empty images/python/devbox.json
+```
+
+※ JSONC形式のコメントがある場合は警告が出ますが、devbox は JSONC をサポートしているため問題ありません。
+
+### 2.3 Docker イメージのビルド
+
+フルビルドで検証します：
+
+```bash
+# 構文
+cd images/<image-name>
+docker build -f .devcontainer/Dockerfile -t test-image .
+
+# 例: go イメージのビルド
+cd images/go
+docker build -f .devcontainer/Dockerfile -t test-go .
+
+# 例: python イメージのビルド
+cd images/python
+docker build -f .devcontainer/Dockerfile -t test-python .
+```
+
+## 3. 複数イメージのマージ
+
+`utils/generate_devbox/` スクリプトを使用して、複数の `devbox.json` をマージできます。
+
+### 使用方法
+
+```bash
+# 例: go と js をマージして go-js を生成
+utils/generate_devbox/generate_devbox.sh \
+  images/go/devbox.json \
+  images/js/devbox.json \
+  > images/go-js/devbox.json
+```
+
+### 仕組み
+
+- 各 `devbox.json` から `packages` 配列を抽出
+- 順序を保持しながらマージ
+- 重複パッケージは最初の出現を優先
+- 出力先のファイルヘッダーにソースファイルを記載
+
+### マージ後の確認
+
+```bash
+# マージ結果を確認
+cat images/go-js/devbox.json
+
+# 検証
+docker run -it --rm \
+  -v $(pwd)/images/go-js:/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+```
+
+## 4. テストの実行
+
+各イメージには `test.sh` が含まれています。DevContainer 内で実行します：
+
+```bash
+# 構文
+cd images/<image-name>
+./test.sh
+
+# 例: go イメージのテスト
+cd images/go
+./test.sh
+
+# 例: python イメージのテスト
+cd images/python
+./test.sh
+```
+
+テスト内容：
+- mermaid-cli による SVG 生成
+- 言語固有のコード実行（例: `go run`, `python`, `bun` など）
+
+## 5. CI/CD
+
+GitHub Actions（`.github/workflows/build-devcontainer-images.yaml`）により、以下のタイミングで自動ビルドされます：
+
+- `images/*/devbox.json` の変更時
+- `images/*/.devcontainer/Dockerfile` の変更時
+
+ビルドされたイメージは Docker Hub にプッシュされます：
+- `aazw/devcontainers-devbox-<image-name>:latest`
+- `aazw/devcontainers-devbox-<image-name>:<numeric-tag>`
+- `aazw/devcontainers-devbox-<image-name>:<commit-sha>`
