@@ -10,14 +10,14 @@ PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 OUTPUT_FILE="${SCRIPT_DIR}/devbox.json"
 
 echo "Merging devbox.json files..."
-echo "  - ${PROJECT_ROOT}/images/go/devbox.json"
-echo "  - ${PROJECT_ROOT}/images/js/devbox.json"
+echo "  - images/go/devbox.json"
+echo "  - images/js/devbox.json"
 echo "  -> ${OUTPUT_FILE}"
 
-# 汎用スクリプトを呼び出してマージ
+# 汎用スクリプトを呼び出してマージ（相対パスで渡す）
 "${PROJECT_ROOT}/utils/generate_devbox/generate_devbox.sh" \
-  "${PROJECT_ROOT}/images/go/devbox.json" \
-  "${PROJECT_ROOT}/images/js/devbox.json" \
+  "images/go/devbox.json" \
+  "images/js/devbox.json" \
   > "${OUTPUT_FILE}"
 
 echo "Successfully merged devbox.json files to ${OUTPUT_FILE}"

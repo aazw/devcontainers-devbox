@@ -100,9 +100,6 @@ tmp/*
 # Devbox
 **/.devbox
 
-# Generated devbox.json files
-images/go-js/devbox.json
-
 # Node.js
 node_modules/
 package-lock.json
