@@ -2,9 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
   "packages": [
     // ============================================================================
-    // Go Development Tools
+    // Packages from /home/user/devcontainers-devbox/images/go/devbox.json
     // ============================================================================
-
     // Go本体
     // https://github.com/golang/go
     // https://search.nixos.org/packages?show=go&query=go
@@ -69,9 +68,8 @@
     "sqlc@1.30.0",
 
     // ============================================================================
-    // JavaScript/TypeScript Development Tools
+    // Packages from /home/user/devcontainers-devbox/images/js/devbox.json
     // ============================================================================
-
     // ============================================================================
     // JavaScript/TypeScript ランタイム
     // ============================================================================

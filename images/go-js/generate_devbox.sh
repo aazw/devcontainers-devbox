@@ -4,23 +4,29 @@ set -euo pipefail
 
 # このスクリプトのディレクトリを取得
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
 
-cd "${SCRIPT_DIR}"
+# 出力ファイル
+OUTPUT_FILE="${SCRIPT_DIR}/devbox.json"
 
-# 依存関係をインストール（まだインストールされていない場合）
-if [ ! -d "node_modules" ]; then
-  echo "Installing dependencies..."
-  npm install --silent
-fi
+echo "Merging devbox.json files..."
+echo "  - ${PROJECT_ROOT}/images/go/devbox.json"
+echo "  - ${PROJECT_ROOT}/images/js/devbox.json"
+echo "  -> ${OUTPUT_FILE}"
 
-# Node.jsスクリプトを実行してdevbox.jsonをマージ
-node merge_devbox.js
+# 汎用スクリプトを呼び出してマージ
+"${PROJECT_ROOT}/utils/generate_devbox/generate_devbox.sh" \
+  "${PROJECT_ROOT}/images/go/devbox.json" \
+  "${PROJECT_ROOT}/images/js/devbox.json" \
+  > "${OUTPUT_FILE}"
+
+echo "Successfully merged devbox.json files to ${OUTPUT_FILE}"
 
 # jqでバリデーション（存在する場合）
 if command -v jq &> /dev/null; then
   echo ""
   echo "Validating with jq..."
-  if jq empty devbox.json 2>/dev/null; then
+  if jq empty "${OUTPUT_FILE}" 2>/dev/null; then
     echo "✓ devbox.json is valid JSON"
   else
     echo "⚠ Warning: devbox.json may have syntax issues (but JSONC comments are expected)"
@@ -28,4 +34,4 @@ if command -v jq &> /dev/null; then
 fi
 
 echo ""
-echo "Done! Generated: ${SCRIPT_DIR}/devbox.json"
+echo "Done! Generated: ${OUTPUT_FILE}"
