@@ -30,7 +30,8 @@
   "remoteEnv": {
     "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
     "TZ": "Asia/Tokyo",
-    "TASK_X_ENV_PRECEDENCE": "1"
+    "TASK_X_ENV_PRECEDENCE": "1",
+    "CGO_ENABLED": "0"
   },
   "runArgs": [
     "--name",
