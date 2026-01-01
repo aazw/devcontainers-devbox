@@ -1,0 +1,46 @@
+{
+  "name": "vsc-devcontainers-devbox-python-js",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest",
+      "enableNonRootDocker": "true",
+      "moby": "true"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "emeraldwalk.runonsave",
+        "ms-azuretools.vscode-containers",
+        "ms-azuretools.vscode-docker",
+        "tamasfe.even-better-toml",
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        "charliermarsh.ruff"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "containerUser": "root", // コンテナ起動時・初期化処理のユーザ. docker psできるようにするために必要
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "TZ": "Asia/Tokyo",
+    "TASK_X_ENV_PRECEDENCE": "1",
+    "UV_PROJECT_ENVIRONMENT": "${containerWorkspaceFolder}/.venv"
+  },
+  "runArgs": [
+    "--name",
+    "vsc-devcontainers-devbox-python-js",
+    "--add-host",
+    "host.docker.internal:host-gateway"
+  ],
+  "postAttachCommand": "python -V"
+}
