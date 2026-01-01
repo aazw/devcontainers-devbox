@@ -308,7 +308,7 @@
     // https://search.nixos.org/packages?show=sql-formatter&query=sql-formatter
     // https://www.nixhub.io/packages/sql-formatter
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sq/sql-formatter/package.nix
-    "sql-formatter@15.6.11",
+    "sql-formatter@15.6.12",
 
     // SQLフォーマッタ その2
     // https://github.com/quarylabs/sqruff
@@ -386,14 +386,14 @@
     // https://search.nixos.org/packages?show=claude-code&query=claude-code
     // https://www.nixhub.io/packages/claude-code
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/cl/claude-code/package.nix
-    "claude-code@2.0.74",
+    "claude-code@2.0.75",
 
     // OpenAI Codex CLI
     // https://github.com/openai/codex
     // https://search.nixos.org/packages?show=codex&query=codex
     // https://www.nixhub.io/packages/codex
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/co/codex/package.nix
-    "codex@0.76.0",
+    "codex@0.77.0",
 
     // ============================================================================
     // 依存関係・更新管理
