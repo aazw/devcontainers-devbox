@@ -45,7 +45,7 @@ cd images/new-language
 }
 ```
 
-### 1.3 devbox.lock の生成
+### 1.3 devbox.lock の生成・更新
 
 `devbox.json` を編集したら、`devbox install` を実行して `devbox.lock` を生成・更新します。
 このコマンドは devbox 環境が必要なため、Docker コンテナ内で実行します。
@@ -53,15 +53,35 @@ cd images/new-language
 ```bash
 # ローカル環境から実行
 docker run -it --rm \
-  -v $(pwd):/tmp/app \
+  -v $(pwd)/<image-path>:/tmp/app \
   -w /tmp/app \
   jetpackio/devbox:latest \
   devbox install
 
-# 例: 新規作成した ruby イメージの devbox.lock を生成
-cd images/ruby
+# 例: 新規作成した devcontainer イメージの devbox.lock を生成・更新
 docker run -it --rm \
-  -v $(pwd):/tmp/app \
+  -v $(pwd)/.devcontainer:/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+
+# 例: 新規作成した base イメージの devbox.lock を生成・更新
+docker run -it --rm \
+  -v $(pwd)/images/base:/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+
+# 例: 新規作成した go イメージの devbox.lock を生成・更新
+docker run -it --rm \
+  -v $(pwd)/images/go:/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+
+# 例: 新規作成した ruby イメージの devbox.lock を生成・更新
+docker run -it --rm \
+  -v $(pwd)/images/ruby:/tmp/app \
   -w /tmp/app \
   jetpackio/devbox:latest \
   devbox install
@@ -72,14 +92,35 @@ DevContainer 内から実行する場合：
 ```bash
 # 構文
 docker run -it --rm \
-  -v ${LOCAL_WORKSPACE_FOLDER}/images/<image-path>:/tmp/app \
+  -v ${LOCAL_WORKSPACE_FOLDER}/<image-path>:/tmp/app \
   -w /tmp/app \
   jetpackio/devbox:latest \
   devbox install
 
-# 例: go イメージの devbox.lock を更新
+# 例: .devcontainer イメージの devbox.lock を生成・更新
+docker run -it --rm \
+  -v ${LOCAL_WORKSPACE_FOLDER}/.devcontainer:/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+
+# 例: base イメージの devbox.lock を生成・更新
+docker run -it --rm \
+  -v ${LOCAL_WORKSPACE_FOLDER}/images/base:/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+
+# 例: go イメージの devbox.lock を生成・更新
 docker run -it --rm \
   -v ${LOCAL_WORKSPACE_FOLDER}/images/go:/tmp/app \
+  -w /tmp/app \
+  jetpackio/devbox:latest \
+  devbox install
+
+# 例: python イメージの devbox.lock を生成・更新
+docker run -it --rm \
+  -v ${LOCAL_WORKSPACE_FOLDER}/images/python:/tmp/app \
   -w /tmp/app \
   jetpackio/devbox:latest \
   devbox install
