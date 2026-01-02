@@ -1,0 +1,177 @@
+name: Merge devbox files
+
+on:
+  push:
+    branches: [main]
+    paths:
+      # オリジナルのdevbox.jsonのみを監視（generate_devbox.shがないディレクトリ）
+      - "images/base/devbox.json"
+      - "images/go/devbox.json"
+      - "images/python/devbox.json"
+      - "images/rust/devbox.json"
+      - "images/java/devbox.json"
+      - "images/swift/devbox.json"
+      - "images/js/devbox.json"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge-devbox:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Detect changed original devbox.json files
+        id: detect
+        run: |
+          # 直前のコミットで変更されたdevbox.jsonファイルを取得
+          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD | grep 'devbox.json$' || true)
+
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No devbox.json files changed"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "Changed devbox.json files:"
+          echo "$CHANGED_FILES"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+          # 変更されたファイルを保存
+          echo "$CHANGED_FILES" > /tmp/changed_files.txt
+
+      - name: Find dependent generated devbox.json
+        if: steps.detect.outputs.changed == 'true'
+        id: deps
+        run: |
+          # generate_devbox.sh を持つディレクトリを探す
+          GENERATED_DIRS=$(find images -name "generate_devbox.sh" -exec dirname {} \;)
+
+          if [ -z "$GENERATED_DIRS" ]; then
+            echo "No generated devbox.json directories found"
+            echo "has_deps=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "Found generated directories:"
+          echo "$GENERATED_DIRS"
+
+          # 変更されたファイルに依存する生成ディレクトリを見つける
+          DIRS_TO_UPDATE=""
+
+          for GEN_DIR in $GENERATED_DIRS; do
+            SCRIPT="${GEN_DIR}/generate_devbox.sh"
+
+            # スクリプトから依存するdevbox.jsonを抽出
+            # パターン: "images/xxx/devbox.json" を探す
+            DEPS=$(grep -oE 'images/[^/]+/devbox\.json' "$SCRIPT" || true)
+
+            if [ -z "$DEPS" ]; then
+              continue
+            fi
+
+            echo "Checking $GEN_DIR dependencies: $DEPS"
+
+            # 依存ファイルが変更されているかチェック
+            for DEP in $DEPS; do
+              if grep -qF "$DEP" /tmp/changed_files.txt; then
+                echo "  -> $GEN_DIR depends on changed file: $DEP"
+                DIRS_TO_UPDATE="$DIRS_TO_UPDATE $GEN_DIR"
+                break
+              fi
+            done
+          done
+
+          if [ -z "$DIRS_TO_UPDATE" ]; then
+            echo "No generated devbox.json needs to be updated"
+            echo "has_deps=false" >> "$GITHUB_OUTPUT"
+          else
+            # 重複を削除
+            DIRS_TO_UPDATE=$(echo "$DIRS_TO_UPDATE" | tr ' ' '\n' | sort -u | tr '\n' ' ')
+            echo "Directories to update:$DIRS_TO_UPDATE"
+            echo "has_deps=true" >> "$GITHUB_OUTPUT"
+            echo "dirs=$DIRS_TO_UPDATE" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Regenerate devbox.json files
+        if: steps.deps.outputs.has_deps == 'true'
+        id: regenerate
+        run: |
+          UPDATED_FILES=""
+
+          for DIR in ${{ steps.deps.outputs.dirs }}; do
+            echo "Regenerating devbox.json in $DIR"
+            SCRIPT="${DIR}/generate_devbox.sh"
+
+            if [ -x "$SCRIPT" ]; then
+              bash "$SCRIPT"
+            else
+              chmod +x "$SCRIPT"
+              bash "$SCRIPT"
+            fi
+
+            # 変更があるかチェック
+            if git diff --quiet "${DIR}/devbox.json" 2>/dev/null; then
+              echo "No changes in ${DIR}/devbox.json"
+            else
+              echo "Updated ${DIR}/devbox.json"
+              UPDATED_FILES="$UPDATED_FILES ${DIR}/devbox.json"
+            fi
+          done
+
+          if [ -z "$UPDATED_FILES" ]; then
+            echo "No devbox.json files were updated"
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Updated files:$UPDATED_FILES"
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+            echo "files=$UPDATED_FILES" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create Pull Request
+        if: steps.regenerate.outputs.updated == 'true'
+        run: |
+          # ブランチ名を生成
+          BRANCH_NAME="auto/merge-devbox-$(date +%Y%m%d-%H%M%S)"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # 新しいブランチを作成
+          git checkout -b "$BRANCH_NAME"
+
+          # 変更をコミット
+          git add ${{ steps.regenerate.outputs.files }}
+          git commit -m "chore: regenerate merged devbox.json files
+
+          Updated:
+          ${{ steps.regenerate.outputs.files }}
+
+          🤖 Generated with GitHub Actions"
+
+          # プッシュ
+          git push origin "$BRANCH_NAME"
+
+          # PRを作成
+          gh pr create \
+            --title "chore: regenerate merged devbox.json files" \
+            --body "$(cat <<'EOF'
+          ## Summary
+
+          This PR was automatically generated to update merged devbox.json files.
+
+          ### Updated files
+          ${{ steps.regenerate.outputs.files }}
+
+          ### Triggered by
+          Commit: ${{ github.sha }}
+
+          🤖 Generated with GitHub Actions
+          EOF
+          )"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
