@@ -21,8 +21,20 @@ jobs:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Create dummy devbox.json for installation
+        run: |
+          mkdir -p /tmp/devbox-dummy
+          cat > /tmp/devbox-dummy/devbox.json << 'EOF'
+          {
+            "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
+            "packages": []
+          }
+          EOF
+
       - name: Install devbox
         uses: jetify-com/devbox-install-action@v0.14.0
+        with:
+          project-path: /tmp/devbox-dummy
 
       - name: Detect changed devbox.json files
         id: detect
@@ -55,20 +67,24 @@ jobs:
 
           for DIR in $(echo "$DIRS" | jq -r '.[]'); do
             echo "Updating devbox.lock in $DIR"
-            cd "$DIR"
 
             # devbox.lock を更新
-            devbox install
+            devbox install --config "$DIR"
 
-            # 変更があるかチェック
-            if git diff --quiet devbox.lock 2>/dev/null; then
-              echo "No changes in $DIR/devbox.lock"
+            # devbox.lock が新規作成または変更されたかチェック
+            if git ls-files --error-unmatch "$DIR/devbox.lock" > /dev/null 2>&1; then
+              # 既存ファイル: 変更があるかチェック
+              if git diff --quiet "$DIR/devbox.lock"; then
+                echo "No changes in $DIR/devbox.lock"
+              else
+                echo "Updated $DIR/devbox.lock"
+                UPDATED_FILES="$UPDATED_FILES $DIR/devbox.lock"
+              fi
             else
-              echo "Updated $DIR/devbox.lock"
+              # 新規ファイル
+              echo "Created $DIR/devbox.lock"
               UPDATED_FILES="$UPDATED_FILES $DIR/devbox.lock"
             fi
-
-            cd - > /dev/null
           done
 
           if [ -z "$UPDATED_FILES" ]; then
