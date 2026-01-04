@@ -413,51 +413,51 @@
         }
       }
     },
-    "claude-code@2.0.75": {
-      "last_modified": "2025-12-22T13:40:18Z",
-      "resolved": "github:NixOS/nixpkgs/3a7affa77a5a539afa1c7859e2c31abdb1aeadf3#claude-code",
+    "claude-code@2.0.76": {
+      "last_modified": "2025-12-27T03:48:10Z",
+      "resolved": "github:NixOS/nixpkgs/4eec65df50d796a8fd9c146a09b5007916ce376b#claude-code",
       "source": "devbox-search",
-      "version": "2.0.75",
+      "version": "2.0.76",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/bbz8nfwykr84q0dp73z3b7zcnf6l6wcb-claude-code-2.0.75",
+              "path": "/nix/store/x9y8cms1gm1sk9vjcqgf40yk9y13qa77-claude-code-2.0.76",
               "default": true
             }
           ],
-          "store_path": "/nix/store/bbz8nfwykr84q0dp73z3b7zcnf6l6wcb-claude-code-2.0.75"
+          "store_path": "/nix/store/x9y8cms1gm1sk9vjcqgf40yk9y13qa77-claude-code-2.0.76"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/fczxsivpmnzihka1zgkd99w8m0pwzc5d-claude-code-2.0.75",
+              "path": "/nix/store/1g9prcgxkbi9aw76ym1ygwmv7bldifz4-claude-code-2.0.76",
               "default": true
             }
           ],
-          "store_path": "/nix/store/fczxsivpmnzihka1zgkd99w8m0pwzc5d-claude-code-2.0.75"
+          "store_path": "/nix/store/1g9prcgxkbi9aw76ym1ygwmv7bldifz4-claude-code-2.0.76"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/f8lgrmlk34qcz04f8vlci5n6d49pd639-claude-code-2.0.75",
+              "path": "/nix/store/0vqxdvk72pimgpzqlp95dgla3idld3ks-claude-code-2.0.76",
               "default": true
             }
           ],
-          "store_path": "/nix/store/f8lgrmlk34qcz04f8vlci5n6d49pd639-claude-code-2.0.75"
+          "store_path": "/nix/store/0vqxdvk72pimgpzqlp95dgla3idld3ks-claude-code-2.0.76"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/vk1xa48bqldqda9322vfkd536cz870mv-claude-code-2.0.75",
+              "path": "/nix/store/vmmvfrvjnhyip979rfbr3h21sickgh3a-claude-code-2.0.76",
               "default": true
             }
           ],
-          "store_path": "/nix/store/vk1xa48bqldqda9322vfkd536cz870mv-claude-code-2.0.75"
+          "store_path": "/nix/store/vmmvfrvjnhyip979rfbr3h21sickgh3a-claude-code-2.0.76"
         }
       }
     },
