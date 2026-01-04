@@ -5,6 +5,7 @@ on:
     paths:
       - "images/*/devbox.json"
       - ".devcontainer/devbox.json"
+  workflow_dispatch:
 
 permissions:
   contents: write
