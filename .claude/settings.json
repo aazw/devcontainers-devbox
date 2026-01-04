@@ -1,55 +1,18 @@
 {
-  // 会話履歴のクリーンアップ期間（日数）
-  // 現在: 30日経過した履歴を自動削除
   "cleanupPeriodDays": 30,
-
-  // Claude Codeに渡す環境変数
-  // 現在: 設定なし
   "env": {},
-
-  // コミットやPRに自動追加される帰属表示
   "attribution": {
-    // gitコミットメッセージに追加されるテキスト
-    // 現在: Claudeとの共同著者表示を追加
     "commit": "Generated with Claude Code\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
-
-    // PRの説明に追加されるテキスト
-    // 現在: Claude Code生成を明記
     "pr": "Generated with Claude Code"
   },
-
-  // ツール実行の許可/拒否設定
   "permissions": {
-    // 自動許可するコマンドパターン
-    // 現在: 設定なし（都度確認）
     "allow": [],
-
-    // 常に拒否するコマンドパターン
-    // 現在: 設定なし
     "deny": [],
-
-    // アクセスを許可する追加ディレクトリ
-    // 現在: 設定なし（作業ディレクトリのみ）
     "additionalDirectories": []
   },
-
-  // プロジェクトの.mcp.jsonで定義された全MCPサーバーを有効化するか
-  // 現在: 無効（個別に有効化が必要）
   "enableAllProjectMcpServers": false,
-
-  // 有効化されたMCPサーバー（.mcp.json定義のもの）
-  // 現在: なし
   "enabledMcpjsonServers": [],
-
-  // 無効化されたMCPサーバー（.mcp.json定義のもの）
-  // 現在: なし
   "disabledMcpjsonServers": [],
-
-  // ライフサイクルイベントで実行するフック（シェルコマンド）
-  // 現在: 設定なし
   "hooks": {},
-
-  // 有効化されたプラグイン
-  // 現在: なし
   "enabledPlugins": {}
 }
