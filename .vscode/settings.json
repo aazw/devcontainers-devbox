@@ -1,28 +1,56 @@
 {
   // VSCodeのエクスプローラーが重くなる対策 その1
   "files.exclude": {
-    "**/.git": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
+    // git
+    "**/.git": true,
+    // devbox
     "**/.devbox": true
   },
   // VSCodeのエクスプローラーが重くなる対策 その2
   "files.watcherExclude": {
-    "**/.git": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
+    // git
+    "**/.git": true,
+    // devbox
     "**/.devbox": true
   },
-  // その他設定
+  // VSCodeのエクスプローラーが重くなる対策 その3
+  "search.exclude": {
+    // git
+    "**/.git/**": true,
+    // devbox
+    "**/.devbox/**": true,
+    // claude
+    "**/.claude/debug/**": true,
+    "**/.claude/file-history/**": true,
+    "**/.claude/ide/**": true,
+    "**/.claude/plans/**": true,
+    "**/.claude/plugins/**": true,
+    "**/.claude/projects/**": true,
+    "**/.claude/session-env/**": true,
+    "**/.claude/shell-snapshots/**": true,
+    "**/.claude/statsig/**": true,
+    "**/.claude/todos/**": true,
+    // codex
+    "**/.codex/*/**": true
+  },
+  // 拡張子との関連付け
   "files.associations": {
     "devbox.json": "jsonc"
   },
-  "[jsonc]": {},
+  // 折り返し無効化
   "editor.wordWrap": "off",
+  // Markdown設定
   "[markdown]": {
+    // Markdownの折り返し無効化
     "editor.wordWrap": "off"
   },
+  // VSCodeによる保存時のフォーマット無効化
   "editor.formatOnSave": false,
+  // runonsaveの設定
   "emeraldwalk.runonsave": {
     "commands": [
       {
