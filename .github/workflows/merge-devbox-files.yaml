@@ -12,6 +12,7 @@ on:
       - "images/java/devbox.json"
       - "images/swift/devbox.json"
       - "images/js/devbox.json"
+  workflow_dispatch:
 
 permissions:
   contents: write
