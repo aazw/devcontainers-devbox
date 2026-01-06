@@ -1,5 +1,5 @@
 {
-  "name": "vsc-devcontainers-devbox-swift",
+  "name": "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-swift-${devcontainerId}",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
@@ -34,7 +34,7 @@
   },
   "runArgs": [
     "--name",
-    "vsc-devcontainers-devbox-swift",
+    "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-swift-${devcontainerId}",
     "--add-host",
     "host.docker.internal:host-gateway"
   ],

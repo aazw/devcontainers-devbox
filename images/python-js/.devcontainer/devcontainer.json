@@ -1,5 +1,5 @@
 {
-  "name": "vsc-devcontainers-devbox-python-js",
+  "name": "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-python-js-${devcontainerId}",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
@@ -38,7 +38,7 @@
   },
   "runArgs": [
     "--name",
-    "vsc-devcontainers-devbox-python-js",
+    "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-python-js-${devcontainerId}",
     "--add-host",
     "host.docker.internal:host-gateway"
   ],

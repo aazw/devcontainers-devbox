@@ -1,5 +1,5 @@
 {
-  "name": "vsc-devcontainers-devbox-devcontainer",
+  "name": "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-devcontainer-${devcontainerId}",
   "build": {
     "dockerfile": "Dockerfile",
     "context": ".."
@@ -27,6 +27,8 @@
       }
     }
   },
+  // "workspaceMount": "source=${localWorkspaceFolder}/..,target=/workspaces,type=bind,consistency=cached",
+  // "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "mounts": [
     {
       "source": "${localWorkspaceFolder}/.claude",
@@ -43,7 +45,7 @@
   },
   "runArgs": [
     "--name",
-    "vsc-devcontainers-devbox-devcontainer",
+    "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-devcontainer-${devcontainerId}",
     "--add-host",
     "host.docker.internal:host-gateway"
   ]

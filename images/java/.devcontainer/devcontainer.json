@@ -1,5 +1,5 @@
 {
-  "name": "vsc-devcontainers-devbox-java",
+  "name": "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-java-${devcontainerId}",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
@@ -34,7 +34,7 @@
   },
   "runArgs": [
     "--name",
-    "vsc-devcontainers-devbox-java",
+    "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-java-${devcontainerId}",
     "--add-host",
     "host.docker.internal:host-gateway"
   ],

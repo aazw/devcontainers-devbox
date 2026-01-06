@@ -1,5 +1,5 @@
 {
-  "name": "vsc-devcontainers-devbox-rust",
+  "name": "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-rust-${devcontainerId}",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
@@ -34,7 +34,7 @@
   },
   "runArgs": [
     "--name",
-    "vsc-devcontainers-devbox-rust",
+    "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-rust-${devcontainerId}",
     "--add-host",
     "host.docker.internal:host-gateway"
   ],

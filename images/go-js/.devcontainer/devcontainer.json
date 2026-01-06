@@ -1,5 +1,5 @@
 {
-  "name": "vsc-devcontainers-devbox-go-js",
+  "name": "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-go-js-${devcontainerId}",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
@@ -35,7 +35,7 @@
   },
   "runArgs": [
     "--name",
-    "vsc-devcontainers-devbox-go-js",
+    "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-go-js-${devcontainerId}",
     "--add-host",
     "host.docker.internal:host-gateway"
   ],
