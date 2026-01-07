@@ -1,7 +1,7 @@
 [formatter.prettier]
 command = "prettier"
 options = ["-w"]
-includes = ["*.json", "*.yaml", "*.yml", ".prettierignore"]
+includes = ["*.json", "*.yaml", "*.yml"]
 
 [formatter.dockerfmt]
 command = "dockerfmt"

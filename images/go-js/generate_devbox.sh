@@ -16,21 +16,21 @@ echo "  -> ${OUTPUT_FILE}"
 
 # 汎用スクリプトを呼び出してマージ（相対パスで渡す）
 "${PROJECT_ROOT}/utils/generate_devbox/generate_devbox.sh" \
-  "images/go/devbox.json" \
-  "images/js/devbox.json" \
-  > "${OUTPUT_FILE}"
+	"images/go/devbox.json" \
+	"images/js/devbox.json" \
+	>"${OUTPUT_FILE}"
 
 echo "Successfully merged devbox.json files to ${OUTPUT_FILE}"
 
 # jqでバリデーション（存在する場合）
-if command -v jq &> /dev/null; then
-  echo ""
-  echo "Validating with jq..."
-  if jq empty "${OUTPUT_FILE}" 2>/dev/null; then
-    echo "✓ devbox.json is valid JSON"
-  else
-    echo "⚠ Warning: devbox.json may have syntax issues (but JSONC comments are expected)"
-  fi
+if command -v jq &>/dev/null; then
+	echo ""
+	echo "Validating with jq..."
+	if jq empty "${OUTPUT_FILE}" 2>/dev/null; then
+		echo "✓ devbox.json is valid JSON"
+	else
+		echo "⚠ Warning: devbox.json may have syntax issues (but JSONC comments are expected)"
+	fi
 fi
 
 echo ""
