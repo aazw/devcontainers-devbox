@@ -20,6 +20,8 @@ tasks:
   init:
     dir: "{{ .TASKFILE_DIR }}"
     cmds:
+      # キャッシュクリア (skillsの読み込み時にcacheが悪さすることが多い)
+      - rm -rf ./.claude/plugins/cache/*
       # npm
       - cd utils/generate_devbox && npm install
     silent: false
