@@ -25,12 +25,11 @@ on:
         default: "base"
 
 run-name: |
-  ${{ 
+  ${{
     github.event_name == 'push' && format('{0}', github.event.head_commit.message) ||
     github.event_name == 'workflow_dispatch' && format('Manual run by @{0}', github.actor) ||
     format('{0} by @{1}', github.event_name, github.actor)
   }}
-
 permissions:
   contents: read
 
@@ -148,14 +147,17 @@ jobs:
           sudo rm -rf /usr/local/lib/android
           sudo rm -rf /opt/ghc
           sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo rm -rf /opt/hostedtoolcache/*   # 追加（効果大）
           sudo rm -rf /usr/local/share/boost
           sudo rm -rf /usr/local/graalvm
           sudo rm -rf /usr/local/.ghcup
           sudo rm -rf /usr/local/share/powershell
           sudo rm -rf /usr/local/share/chromium
           sudo rm -rf /usr/local/lib/node_modules
+          rm -rf /home/runner/.cache || true   # 追加
           sudo docker system prune -af --volumes
           sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*     # 追加
           df -h
 
       # マルチアーキテクチャ用のQEMUをセットアップする
@@ -165,6 +167,17 @@ jobs:
       # buildx を有効化しマルチプラットフォームビルドに備える
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+        with:
+          buildkitd-flags: |
+            --oci-worker-gc
+            --oci-worker-gc-keepstorage=12GB
+
+      - name: Prune buildx cache
+        run: |
+          docker buildx prune -af || true
+          docker builder prune -af || true
+          docker system df -v || true
+          df -h
 
       # Docker Hub へ認証して push 可能にする
       - name: Login to Docker Hub
@@ -254,10 +267,17 @@ jobs:
             aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:${{ steps.next.outputs.value }}
             aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:latest
           cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-to: type=gha,mode=min
           pull: true
           provenance: false
           sbom: false
+
+      - name: Post-build prune
+        if: always()
+        run: |
+          docker buildx prune -af || true
+          docker system prune -af --volumes || true
+          df -h
 
       # ビルド後のサマリー（成功時のみ表示）
       - name: Add build results to summary
