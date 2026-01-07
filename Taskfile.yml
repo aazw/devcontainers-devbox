@@ -16,3 +16,16 @@ tasks:
     cmds:
       - find . -name ".DS_Store" -delete -print
     silent: false
+
+  init:
+    dir: "{{ .TASKFILE_DIR }}"
+    cmds:
+      # npm
+      - cd utils/generate_devbox && npm install
+    silent: false
+
+  fmt:
+    dir: "{{ .TASKFILE_DIR }}"
+    cmds:
+      - treefmt
+    silent: false

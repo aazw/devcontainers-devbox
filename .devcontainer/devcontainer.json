@@ -48,5 +48,6 @@
     "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-devcontainer-${devcontainerId}",
     "--add-host",
     "host.docker.internal:host-gateway"
-  ]
+  ],
+  "postAttachCommand": "task init"
 }
