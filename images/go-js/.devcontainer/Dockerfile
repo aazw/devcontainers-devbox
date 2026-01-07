@@ -1,4 +1,4 @@
-FROM jetpackio/devbox:latest AS builder
+FROM jetpackio/devbox:0.16.0 AS builder
 
 WORKDIR /code/go-js
 USER root:root

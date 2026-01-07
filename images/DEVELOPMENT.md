@@ -55,35 +55,35 @@ cd images/new-language
 docker run -it --rm \
   -v $(pwd)/<image-path>:/tmp/app \
   -w /tmp/app \
-  jetpackio/devbox:latest \
+  jetpackio/devbox:0.16.0 \
   devbox install
 
 # 例: 新規作成した devcontainer イメージの devbox.lock を生成・更新
 docker run -it --rm \
   -v $(pwd)/.devcontainer:/tmp/app \
   -w /tmp/app \
-  jetpackio/devbox:latest \
+  jetpackio/devbox:0.16.0 \
   devbox install
 
 # 例: 新規作成した base イメージの devbox.lock を生成・更新
 docker run -it --rm \
   -v $(pwd)/images/base:/tmp/app \
   -w /tmp/app \
-  jetpackio/devbox:latest \
+  jetpackio/devbox:0.16.0 \
   devbox install
 
 # 例: 新規作成した go イメージの devbox.lock を生成・更新
 docker run -it --rm \
   -v $(pwd)/images/go:/tmp/app \
   -w /tmp/app \
-  jetpackio/devbox:latest \
+  jetpackio/devbox:0.16.0 \
   devbox install
 
 # 例: 新規作成した ruby イメージの devbox.lock を生成・更新
 docker run -it --rm \
   -v $(pwd)/images/ruby:/tmp/app \
   -w /tmp/app \
-  jetpackio/devbox:latest \
+  jetpackio/devbox:0.16.0 \
   devbox install
 ```
 
@@ -94,35 +94,35 @@ DevContainer 内から実行する場合：
 docker run -it --rm \
   -v ${LOCAL_WORKSPACE_FOLDER}/<image-path>:/tmp/app \
   -w /tmp/app \
-  jetpackio/devbox:latest \
+  jetpackio/devbox:0.16.0 \
   devbox install
 
 # 例: .devcontainer イメージの devbox.lock を生成・更新
 docker run -it --rm \
   -v ${LOCAL_WORKSPACE_FOLDER}/.devcontainer:/tmp/app \
   -w /tmp/app \
-  jetpackio/devbox:latest \
+  jetpackio/devbox:0.16.0 \
   devbox install
 
 # 例: base イメージの devbox.lock を生成・更新
 docker run -it --rm \
   -v ${LOCAL_WORKSPACE_FOLDER}/images/base:/tmp/app \
   -w /tmp/app \
-  jetpackio/devbox:latest \
+  jetpackio/devbox:0.16.0 \
   devbox install
 
 # 例: go イメージの devbox.lock を生成・更新
 docker run -it --rm \
   -v ${LOCAL_WORKSPACE_FOLDER}/images/go:/tmp/app \
   -w /tmp/app \
-  jetpackio/devbox:latest \
+  jetpackio/devbox:0.16.0 \
   devbox install
 
 # 例: python イメージの devbox.lock を生成・更新
 docker run -it --rm \
   -v ${LOCAL_WORKSPACE_FOLDER}/images/python:/tmp/app \
   -w /tmp/app \
-  jetpackio/devbox:latest \
+  jetpackio/devbox:0.16.0 \
   devbox install
 ```
 
@@ -134,7 +134,7 @@ docker run -it --rm \
 `.devcontainer/Dockerfile` を編集し、コピー先パスを変更します：
 
 ```dockerfile
-FROM jetpackio/devbox:latest AS builder
+FROM jetpackio/devbox:0.16.0 AS builder
 
 WORKDIR /code/<image-name>
 # ... 以下同様
@@ -221,7 +221,7 @@ cat images/go-js/devbox.json
 docker run -it --rm \
   -v $(pwd)/images/go-js:/tmp/app \
   -w /tmp/app \
-  jetpackio/devbox:latest \
+  jetpackio/devbox:0.16.0 \
   devbox install
 ```
 

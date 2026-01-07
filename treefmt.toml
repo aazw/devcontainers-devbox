@@ -6,7 +6,7 @@ includes = ["*.json"]
 [formatter.yaml]
 command = "yamlfmt"
 options = []
-includes = ["*.yaml", "*.yml"]
+includes = ["*.yaml", "*.yml", ".yamlfmt"]
 
 [formatter.dockerfmt]
 command = "dockerfmt"

@@ -39,7 +39,9 @@
   },
   // 拡張子との関連付け
   "files.associations": {
-    "devbox.json": "jsonc"
+    "devbox.json": "jsonc",
+    "devbox.lock": "jsonc",
+    ".yamlfmt": "yaml"
   },
   // 折り返し無効化
   "editor.wordWrap": "off",
