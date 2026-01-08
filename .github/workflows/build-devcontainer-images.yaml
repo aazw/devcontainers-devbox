@@ -30,6 +30,7 @@ run-name: |
     github.event_name == 'workflow_dispatch' && format('Manual run by @{0}', github.actor) ||
     format('{0} by @{1}', github.event_name, github.actor)
   }}
+
 permissions:
   contents: read
 
@@ -93,13 +94,143 @@ jobs:
 
           echo "devcontainers_files=$FILES" >> "$GITHUB_OUTPUT"
 
+  # platform ごとに push-by-digest でビルドし、digest を artifact に保存する
   build-devcontainer-images:
     needs: detect-changes
     if: needs.detect-changes.outputs.changed_files != '[]' && needs.detect-changes.outputs.changed_files != ''
     runs-on: ubuntu-latest
     timeout-minutes: 60 # 成功するときはbaseでも40分くらいで成功する
     concurrency:
-      group: build-devcontainer-${{ matrix.dockerfile }}
+      group: build-devcontainer-${{ matrix.dockerfile }}-${{ matrix.platform }}
+      cancel-in-progress: false
+    strategy:
+      fail-fast: false
+      matrix:
+        dockerfile: ${{ fromJson(needs.detect-changes.outputs.changed_files) }}
+        platform: [linux/amd64, linux/arm64]
+    steps:
+      # リポジトリを取得してビルド用コンテキストを揃える
+      - uses: actions/checkout@v6
+
+      # Dockerfile パスからビルドコンテキストとイメージ名を導出する
+      - name: Derive build context and image name
+        id: prep
+        run: |
+          DOCKERFILE='${{ matrix.dockerfile }}' # e.g. images/base/.devcontainer/Dockerfile
+          CONTEXT="$(dirname $(dirname "$DOCKERFILE"))" # => images/base/
+          IMAGE_NAME="$(basename "$(dirname "$(dirname "$DOCKERFILE")")")" # => base
+          echo "context=$CONTEXT" >> "$GITHUB_OUTPUT"
+          echo "image=$IMAGE_NAME" >> "$GITHUB_OUTPUT"
+
+      # platform の識別子（artifact 名に使う）
+      - name: Compute platform pair
+        id: platform
+        shell: bash
+        run: |
+          set -euo pipefail
+          PLATFORM='${{ matrix.platform }}'
+          echo "pair=${PLATFORM//\//-}" >> "$GITHUB_OUTPUT"
+
+      # ビルド前に不要なプリインストールを削除しディスクを確保する
+      - name: Free Disk Space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo rm -rf /opt/hostedtoolcache/*   # 追加（効果大）
+          sudo rm -rf /usr/local/share/boost
+          sudo rm -rf /usr/local/graalvm
+          sudo rm -rf /usr/local/.ghcup
+          sudo rm -rf /usr/local/share/powershell
+          sudo rm -rf /usr/local/share/chromium
+          sudo rm -rf /usr/local/lib/node_modules
+          rm -rf /home/runner/.cache || true   # 追加
+          sudo docker system prune -af --volumes || true
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*     # 追加
+          df -h
+
+      # マルチアーキテクチャ用のQEMUをセットアップする
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      # buildx を有効化しビルドに備える
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          buildkitd-flags: |
+            --oci-worker-gc
+            --oci-worker-gc-keepstorage=12GB
+
+      - name: Prune buildx cache
+        run: |
+          docker buildx prune -af || true
+          docker builder prune -af || true
+          docker system df -v || true
+          df -h
+
+      # Docker Hub へ認証して push 可能にする
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: aazw
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # 重要：platform ごとに digest で push（タグは作らない。manifest は後段 job で作成）
+      - name: Build & push by digest (${{ matrix.platform }}) - ${{ steps.prep.outputs.image }}
+        id: docker_build
+        uses: docker/build-push-action@v6
+        with:
+          context: ${{ steps.prep.outputs.context }}
+          file: ${{ matrix.dockerfile }}
+          push: true
+          platforms: ${{ matrix.platform }}
+          # リポジトリ名のみ（最終タグは publish-manifest で付与）
+          tags: aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}
+          outputs: type=image,push-by-digest=true,name-canonical=true,push=true
+          cache-from: type=gha
+          cache-to: type=gha,mode=min
+          pull: true
+          provenance: false
+          sbom: false
+
+      # digest を artifact 化（後段の manifest 作成で利用）
+      - name: Export digest to artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "${{ runner.temp }}/digests"
+          digest='${{ steps.docker_build.outputs.digest }}'
+          if [ -z "${digest}" ]; then
+            echo "digest is empty"
+            exit 1
+          fi
+          touch "${{ runner.temp }}/digests/${digest#sha256:}"
+
+      - name: Upload digest artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: digests-${{ steps.prep.outputs.image }}-${{ steps.platform.outputs.pair }}
+          path: ${{ runner.temp }}/digests/*
+          if-no-files-found: error
+          retention-days: 1
+
+      - name: Post-build prune
+        if: always()
+        run: |
+          docker buildx prune -af || true
+          docker system prune -af --volumes || true
+          df -h
+
+  # digest を束ねて、latest / sha / 連番 に multi-arch manifest を作成（余計なタグは作らない）
+  publish-manifest:
+    needs: [detect-changes, build-devcontainer-images]
+    if: needs.detect-changes.outputs.changed_files != '[]' && needs.detect-changes.outputs.changed_files != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: publish-devcontainer-${{ matrix.dockerfile }}
       cancel-in-progress: false
     strategy:
       fail-fast: false
@@ -140,44 +271,9 @@ jobs:
           echo "context=$CONTEXT" >> "$GITHUB_OUTPUT"
           echo "image=$IMAGE_NAME" >> "$GITHUB_OUTPUT"
 
-      # ビルド前に不要なプリインストールを削除しディスクを確保する
-      - name: Free Disk Space
-        run: |
-          sudo rm -rf /usr/share/dotnet
-          sudo rm -rf /usr/local/lib/android
-          sudo rm -rf /opt/ghc
-          sudo rm -rf /opt/hostedtoolcache/CodeQL
-          sudo rm -rf /opt/hostedtoolcache/*   # 追加（効果大）
-          sudo rm -rf /usr/local/share/boost
-          sudo rm -rf /usr/local/graalvm
-          sudo rm -rf /usr/local/.ghcup
-          sudo rm -rf /usr/local/share/powershell
-          sudo rm -rf /usr/local/share/chromium
-          sudo rm -rf /usr/local/lib/node_modules
-          rm -rf /home/runner/.cache || true   # 追加
-          sudo docker system prune -af --volumes
-          sudo apt-get clean
-          sudo rm -rf /var/lib/apt/lists/*     # 追加
-          df -h
-
-      # マルチアーキテクチャ用のQEMUをセットアップする
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-
-      # buildx を有効化しマルチプラットフォームビルドに備える
+      # buildx（imagetools 用）
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-        with:
-          buildkitd-flags: |
-            --oci-worker-gc
-            --oci-worker-gc-keepstorage=12GB
-
-      - name: Prune buildx cache
-        run: |
-          docker buildx prune -af || true
-          docker builder prune -af || true
-          docker system df -v || true
-          df -h
 
       # Docker Hub へ認証して push 可能にする
       - name: Login to Docker Hub
@@ -254,30 +350,48 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: Build & push ${{ steps.prep.outputs.image }}
-        id: docker_build
-        uses: docker/build-push-action@v6
+      # digest を集約して manifest 作成に使う
+      - name: Download digests
+        uses: actions/download-artifact@v4
         with:
-          context: ${{ steps.prep.outputs.context }}
-          file: ${{ matrix.dockerfile }}
-          push: true
-          platforms: linux/amd64,linux/arm64
-          tags: |
-            aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:${{ github.sha }}
-            aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:${{ steps.next.outputs.value }}
-            aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=min
-          pull: true
-          provenance: false
-          sbom: false
+          path: ${{ runner.temp }}/digests
+          pattern: digests-${{ steps.prep.outputs.image }}-*
+          merge-multiple: true
 
-      - name: Post-build prune
-        if: always()
+      # multi-arch manifest を作成して、本来のタグ（latest / sha / 連番）を付与する
+      - name: Create multi-arch manifests (no extra tags)
+        id: manifest
+        shell: bash
+        working-directory: ${{ runner.temp }}/digests
         run: |
-          docker buildx prune -af || true
-          docker system prune -af --volumes || true
-          df -h
+          set -euo pipefail
+
+          IMAGE="aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}"
+          SHA="${{ github.sha }}"
+          NEXT="${{ steps.next.outputs.value }}"
+
+          shopt -s nullglob
+          FILES=(*)
+          if [ ${#FILES[@]} -lt 2 ]; then
+            echo "Expected digests for >=2 platforms, got ${#FILES[@]}"
+            ls -la
+            exit 1
+          fi
+
+          REFS=()
+          for f in "${FILES[@]}"; do
+            REFS+=("${IMAGE}@sha256:${f}")
+          done
+
+          docker buildx imagetools create \
+            -t "${IMAGE}:latest" \
+            -t "${IMAGE}:${SHA}" \
+            -t "${IMAGE}:${NEXT}" \
+            "${REFS[@]}"
+
+          # latest の manifest digest をサマリー用に取得
+          MANIFEST_DIGEST="$(docker buildx imagetools inspect "${IMAGE}:latest" | awk '/Digest:/{print $2; exit}')"
+          echo "digest=${MANIFEST_DIGEST}" >> "$GITHUB_OUTPUT"
 
       # ビルド後のサマリー（成功時のみ表示）
       - name: Add build results to summary
@@ -286,7 +400,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "<table>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Image Name</td><td><code>aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}</code></td></tr>" >> $GITHUB_STEP_SUMMARY
-          echo "<tr><td>Digest</td><td><code>${{ steps.docker_build.outputs.digest }}</code></td></tr>" >> $GITHUB_STEP_SUMMARY
+          echo "<tr><td>Manifest Digest (latest)</td><td><code>${{ steps.manifest.outputs.digest }}</code></td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Platforms</td><td><code>linux/amd64, linux/arm64</code></td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "<tr><td>Build Completed</td><td>$(date -u '+%Y-%m-%d %H:%M:%S UTC')</td></tr>" >> $GITHUB_STEP_SUMMARY
           echo "</table>" >> $GITHUB_STEP_SUMMARY
@@ -305,6 +419,13 @@ jobs:
           echo "docker pull aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:latest" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+
+      - name: Post-publish prune
+        if: always()
+        run: |
+          docker buildx prune -af || true
+          docker system prune -af --volumes || true
+          df -h
 
       # ビルド失敗時のサマリー
       - name: Add failure summary
