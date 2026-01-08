@@ -109,30 +109,6 @@ jobs:
       # リポジトリを取得してビルド用コンテキストを揃える
       - uses: actions/checkout@v6
 
-      - name: Move Docker data-root to /mnt
-        shell: bash
-        run: |
-          set -euo pipefail
-          sudo mkdir -p /mnt/docker
-          # /mnt の権限が厳しい環境があるため必要に応じて
-          sudo chown root:root /mnt
-          sudo chown -R root:root /mnt/docker
-
-          sudo systemctl stop docker
-
-          # 既存があれば退避（初回は空のことが多い）
-          if [ -d /var/lib/docker ] && [ "$(ls -A /var/lib/docker 2>/dev/null | wc -l)" -gt 0 ]; then
-            sudo rsync -aHAXx /var/lib/docker/ /mnt/docker/
-          fi
-
-          echo '{ "data-root": "/mnt/docker" }' | sudo tee /etc/docker/daemon.json >/dev/null
-
-          sudo systemctl start docker
-
-          docker info | sed -n 's/^ Docker Root Dir: //p'
-          df -h
-          df -i
-
       # Push イベントの場合、PR情報を取得
       # push に紐づくPR情報を取得してサマリー用のメタデータに使う
       - name: Find associated PR
