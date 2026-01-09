@@ -222,7 +222,7 @@ jobs:
   # digest を束ねて、latest / sha / 連番 に multi-arch manifest を作成（余計なタグは作らない）
   publish-manifest:
     needs: [detect-changes, build-devcontainer-images]
-    if: needs.detect-changes.outputs.changed_files != '[]' && needs.detect-changes.outputs.changed_files != ''
+    if: needs.build-devcontainer-images.result == 'success' && needs.detect-changes.outputs.changed_files != '[]' && needs.detect-changes.outputs.changed_files != ''
     runs-on: ubuntu-latest
     timeout-minutes: 30
     concurrency:
