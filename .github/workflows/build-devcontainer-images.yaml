@@ -190,6 +190,9 @@ jobs:
           pull: true
           provenance: false
           sbom: false
+          labels: |
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
 
       # digest を artifact 化（後段の manifest 作成で利用）
       - name: Export digest to artifact
