@@ -21,6 +21,7 @@
         "images/**/.devcontainer/Dockerfile",
         "images/**/devbox.json"
       ],
+      "excludePackageNames": ["python"],
 
       // packageFileDir から images/<dir> の <dir> 部分を抽出
       "groupName": "images ({{{replace '^images/([^/]+).*' '$1' packageFileDir}}})",
@@ -30,10 +31,16 @@
       "addLabels": ["{{{replace '^images/([^/]+).*' '$1' packageFileDir}}}"]
     },
     // python だけは専用グループにして別PR化
+    // "python313Packages.pip@25.0.1", などで指定されている以上、python3.13用だと思われる
+    // python313Packages.xxxに対して、python314Packages.xxxがないから、pythonだけはPRを延期するために切り離している
     {
       "matchManagers": ["devbox"],
+      "matchFileNames": ["images/**/devbox.json"],
       "matchPackageNames": ["python"],
-      "groupName": "python (devbox)"
+
+      "groupName": "images ({{{replace '^images/([^/]+).*' '$1' packageFileDir}}}) - python",
+      "groupSlug": "images-{{{replace '^images/([^/]+).*' '$1' packageFileDir}}}-python",
+      "addLabels": ["{{{replace '^images/([^/]+).*' '$1' packageFileDir}}}"]
     }
   ]
 }
