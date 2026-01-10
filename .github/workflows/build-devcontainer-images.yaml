@@ -369,7 +369,6 @@ jobs:
           set -euo pipefail
 
           IMAGE="aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}"
-          SHA="${{ github.sha }}"
           NEXT="${{ steps.next.outputs.value }}"
 
           shopt -s nullglob
@@ -387,7 +386,6 @@ jobs:
 
           docker buildx imagetools create \
             -t "${IMAGE}:latest" \
-            -t "${IMAGE}:${SHA}" \
             -t "${IMAGE}:${NEXT}" \
             "${REFS[@]}"
 
@@ -437,7 +435,6 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- \`aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:latest\`" >> $GITHUB_STEP_SUMMARY
           echo "- \`aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:${{ steps.next.outputs.value }}\`" >> $GITHUB_STEP_SUMMARY
-          echo "- \`aazw/devcontainers-devbox-${{ steps.prep.outputs.image }}:${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
           echo "### Pull Command" >> $GITHUB_STEP_SUMMARY
