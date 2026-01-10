@@ -6,7 +6,7 @@
     // https://search.nixos.org/packages?show=go&query=go
     // https://www.nixhub.io/packages/go
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/go/1.25.nix
-    "go@1.25.4",
+    "go@1.25.5",
 
     // ローカル開発用の自己署名証明書を生成
     // https://github.com/FiloSottile/mkcert
