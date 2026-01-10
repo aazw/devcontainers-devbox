@@ -211,7 +211,7 @@ jobs:
           touch "${{ runner.temp }}/digests/${digest#sha256:}"
 
       - name: Upload digest artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: digests-${{ steps.prep.outputs.image }}-${{ steps.platform.outputs.pair }}
           path: ${{ runner.temp }}/digests/*
@@ -354,7 +354,7 @@ jobs:
 
       # digest を集約して manifest 作成に使う
       - name: Download digests
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           path: ${{ runner.temp }}/digests
           pattern: digests-${{ steps.prep.outputs.image }}-*
