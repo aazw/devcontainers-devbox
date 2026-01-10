@@ -31,7 +31,7 @@
   // "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "mounts": [
     {
-      "source": "${localWorkspaceFolder}/.claude",
+      "source": "${localWorkspaceFolder}/.claude-home-cache",
       "target": "/home/vscode/.claude",
       "type": "bind"
     }
