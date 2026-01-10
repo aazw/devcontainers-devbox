@@ -2365,51 +2365,51 @@
         }
       }
     },
-    "tokei@13.0.0": {
-      "last_modified": "2025-11-26T06:22:50Z",
-      "resolved": "github:NixOS/nixpkgs/bb813de6d2241bcb1b5af2d3059f560c66329967#tokei",
+    "tokei@14.0.0": {
+      "last_modified": "2025-12-31T19:51:29Z",
+      "resolved": "github:NixOS/nixpkgs/fe575ad78fa6df638340aa673ea84709c5bd5da0#tokei",
       "source": "devbox-search",
-      "version": "13.0.0",
+      "version": "14.0.0",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/d40w5vspiqwbk19lkm4dvnc7xrhja4b5-tokei-13.0.0",
+              "path": "/nix/store/683hsxnv0xpyrz0rzlwmxd0imry0cp1v-tokei-14.0.0",
               "default": true
             }
           ],
-          "store_path": "/nix/store/d40w5vspiqwbk19lkm4dvnc7xrhja4b5-tokei-13.0.0"
+          "store_path": "/nix/store/683hsxnv0xpyrz0rzlwmxd0imry0cp1v-tokei-14.0.0"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/rbifd1c4rsx0d055ngh92802nrvyfhas-tokei-13.0.0",
+              "path": "/nix/store/yqbiza6laq6gy25q507i30gqzirjfrab-tokei-14.0.0",
               "default": true
             }
           ],
-          "store_path": "/nix/store/rbifd1c4rsx0d055ngh92802nrvyfhas-tokei-13.0.0"
+          "store_path": "/nix/store/yqbiza6laq6gy25q507i30gqzirjfrab-tokei-14.0.0"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/dqwg9kqw7lkgaks429hci4maiw5ifqpx-tokei-13.0.0",
+              "path": "/nix/store/l6h00ghkw56qz7786qjgvzxkx8gzd5ap-tokei-14.0.0",
               "default": true
             }
           ],
-          "store_path": "/nix/store/dqwg9kqw7lkgaks429hci4maiw5ifqpx-tokei-13.0.0"
+          "store_path": "/nix/store/l6h00ghkw56qz7786qjgvzxkx8gzd5ap-tokei-14.0.0"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/wgdrvwj5lqicc7fci669p26l3z18m049-tokei-13.0.0",
+              "path": "/nix/store/nya6y1kv2ikd7xv20dbj9y0sga9hh8k3-tokei-14.0.0",
               "default": true
             }
           ],
-          "store_path": "/nix/store/wgdrvwj5lqicc7fci669p26l3z18m049-tokei-13.0.0"
+          "store_path": "/nix/store/nya6y1kv2ikd7xv20dbj9y0sga9hh8k3-tokei-14.0.0"
         }
       }
     },
