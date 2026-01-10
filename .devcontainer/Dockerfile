@@ -113,6 +113,12 @@ RUN devbox install
 # devbox installで追加されたパッケージのパスを追加
 ENV PATH="/tmp/devbox-base/.devbox/nix/profile/default/bin:${PATH}"
 
+ENV XDG_DATA_DIRS="/tmp/devbox-base/.devbox/nix/profile/default/share:${XDG_DATA_DIRS}"
+
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+ENV LOCALE_ARCHIVE="/tmp/devbox-base/.devbox/nix/profile/default/lib/locale/locale-archive"
+
 # -----------------------------------------------------------------------------
 # Devcontainer固有の追加Devbox環境のセットアップ
 # -----------------------------------------------------------------------------
