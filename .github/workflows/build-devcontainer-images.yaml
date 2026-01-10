@@ -395,6 +395,11 @@ jobs:
           MANIFEST_DIGEST="$(docker buildx imagetools inspect "${IMAGE}:latest" | awk '/Digest:/{print $2; exit}')"
           echo "digest=${MANIFEST_DIGEST}" >> "$GITHUB_OUTPUT"
 
+      - name: Configure git identity for tagging
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Tag current commit for image build
         if: success()
         shell: bash
