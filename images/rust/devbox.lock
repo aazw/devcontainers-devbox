@@ -1,6 +1,90 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "binutils@2.44": {
+      "last_modified": "2025-12-31T03:27:36Z",
+      "resolved": "github:NixOS/nixpkgs/f665af0cdb70ed27e1bd8f9fdfecaf451260fc55#binutils",
+      "source": "devbox-search",
+      "version": "2.44",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9ghqwj1xb5pvjs17c8cwnfs20a31y98p-binutils-wrapper-2.44",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/dam5ykcbhm9sn3x3wifnlsp83rj9j0l5-binutils-wrapper-2.44-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/z30vrx7krj2ca573njnhy2406909vdz3-binutils-wrapper-2.44-info"
+            }
+          ],
+          "store_path": "/nix/store/9ghqwj1xb5pvjs17c8cwnfs20a31y98p-binutils-wrapper-2.44"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2lhdrjxy65h7fl184q4751lgqzhqrsa2-binutils-wrapper-2.44",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/f6qb3075zpdgiww4sz3hpvvqzs4ywk9i-binutils-wrapper-2.44-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/rak1fvvxjsz81181krvbvymgff7nax6q-binutils-wrapper-2.44-info"
+            }
+          ],
+          "store_path": "/nix/store/2lhdrjxy65h7fl184q4751lgqzhqrsa2-binutils-wrapper-2.44"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/10sxj3c0hsh1xh4abnaybxvz8zhpgjig-binutils-wrapper-2.44",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/nvqam3h1fphgf2zhwc1l891vca0xs6sl-binutils-wrapper-2.44-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/2jwv06a2k813salmjsbnfn9b3i0ya7q7-binutils-wrapper-2.44-info"
+            }
+          ],
+          "store_path": "/nix/store/10sxj3c0hsh1xh4abnaybxvz8zhpgjig-binutils-wrapper-2.44"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/dwiyp91lmxq864plaas14jm14m87sg3f-binutils-wrapper-2.44",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/fd98hmsdhwb19s9q61r86dxvdf9bn05g-binutils-wrapper-2.44-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/k481dd1fsw53vmf4sf6mnnd2vni5a545-binutils-wrapper-2.44-info"
+            }
+          ],
+          "store_path": "/nix/store/dwiyp91lmxq864plaas14jm14m87sg3f-binutils-wrapper-2.44"
+        }
+      }
+    },
     "cargo@1.91.1": {
       "last_modified": "2025-11-23T21:50:36Z",
       "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#cargo",
@@ -46,6 +130,54 @@
             }
           ],
           "store_path": "/nix/store/742kq790y4nd92s4l4arg7ij8h7is5ar-cargo-1.91.1"
+        }
+      }
+    },
+    "clang@21.1.7": {
+      "last_modified": "2025-12-31T03:27:36Z",
+      "resolved": "github:NixOS/nixpkgs/f665af0cdb70ed27e1bd8f9fdfecaf451260fc55#clang",
+      "source": "devbox-search",
+      "version": "21.1.7",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8yy15sk3826gb00zp44xxrm8by9i3ia0-clang-wrapper-21.1.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/8yy15sk3826gb00zp44xxrm8by9i3ia0-clang-wrapper-21.1.7"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/67bh1hcbybzj6jj0qxnrsyvl81rjwmhi-clang-wrapper-21.1.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/67bh1hcbybzj6jj0qxnrsyvl81rjwmhi-clang-wrapper-21.1.7"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2di6h0ns24lld4knilkxxrgpnk18jyy8-clang-wrapper-21.1.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/2di6h0ns24lld4knilkxxrgpnk18jyy8-clang-wrapper-21.1.7"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/351bpjcf2l1n4vm06nwpq3cdhl6vbhx1-clang-wrapper-21.1.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/351bpjcf2l1n4vm06nwpq3cdhl6vbhx1-clang-wrapper-21.1.7"
         }
       }
     },
@@ -108,6 +240,86 @@
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
       "last_modified": "2025-12-26T11:10:58Z",
       "resolved": "github:NixOS/nixpkgs/c633f572eded8c4f3c75b8010129854ed404a6ce?lastModified=1766747458&narHash=sha256-m63jjuo%2Fygo8ztkCziYh5OOIbTSXUDkKbqw3Vuqu4a4%3D"
+    },
+    "lld@21.1.7": {
+      "last_modified": "2025-12-31T03:27:36Z",
+      "resolved": "github:NixOS/nixpkgs/f665af0cdb70ed27e1bd8f9fdfecaf451260fc55#lld",
+      "source": "devbox-search",
+      "version": "21.1.7",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9z7g2s4k4j941blxdvpvfq83krg2rlla-lld-21.1.7",
+              "default": true
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/wbq0582lg6wz0hla0v1y4rljjmgmnz2i-lld-21.1.7-lib"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/1qiyhmy1dd7ac91f4bx4p9h80r264did-lld-21.1.7-dev"
+            }
+          ],
+          "store_path": "/nix/store/9z7g2s4k4j941blxdvpvfq83krg2rlla-lld-21.1.7"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/vzpddic50rxd4wjzs558ljv4px7hksrm-lld-21.1.7",
+              "default": true
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/r9qfdqd4y2zqda11myk7xgfmanq2hg8m-lld-21.1.7-lib"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/y9kp15nms4fqnwsycpydc68v2l4fv4ms-lld-21.1.7-dev"
+            }
+          ],
+          "store_path": "/nix/store/vzpddic50rxd4wjzs558ljv4px7hksrm-lld-21.1.7"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zr7aj2bj7wglib13wfy824gwxxgccwds-lld-21.1.7",
+              "default": true
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/xsci46nbzxc1crif6gs1qgllcszbayk7-lld-21.1.7-lib"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/p1507gc6sd29k68sh8sspa1f54ycyx69-lld-21.1.7-dev"
+            }
+          ],
+          "store_path": "/nix/store/zr7aj2bj7wglib13wfy824gwxxgccwds-lld-21.1.7"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/05834hnaxkshf0rf4vrgrvn6mrb381pf-lld-21.1.7",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/cx951n7wdrdvsihj4s8k64b78c1mvib7-lld-21.1.7-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/5gfz7kh0hhal4zxbgfxaslbv6b77cn7y-lld-21.1.7-lib"
+            }
+          ],
+          "store_path": "/nix/store/05834hnaxkshf0rf4vrgrvn6mrb381pf-lld-21.1.7"
+        }
+      }
     },
     "rust-analyzer@2025-12-15": {
       "last_modified": "2025-12-18T02:44:17Z",
