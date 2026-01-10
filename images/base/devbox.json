@@ -196,7 +196,7 @@
     // https://search.nixos.org/packages?show=tokei&query=tokei
     // https://www.nixhub.io/packages/tokei
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/to/tokei/package.nix
-    "tokei@13.0.0",
+    "tokei@14.0.0",
 
     // リポジトリ要約・解析
     // https://github.com/coderamp-labs/gitingest
