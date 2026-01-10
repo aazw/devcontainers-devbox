@@ -1,0 +1,43 @@
+{
+  "name": "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-bi-${devcontainerId}",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest",
+      "enableNonRootDocker": "true",
+      "moby": "true"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "emeraldwalk.runonsave",
+        "ms-azuretools.vscode-containers",
+        "ms-azuretools.vscode-docker",
+        "tamasfe.even-better-toml",
+        "golang.go"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "containerUser": "root", // コンテナ起動時・初期化処理のユーザ. docker psできるようにするために必要
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "TZ": "Asia/Tokyo",
+    "TASK_X_ENV_PRECEDENCE": "1",
+    "CGO_ENABLED": "0"
+  },
+  "runArgs": [
+    "--name",
+    "vsc-devcontainers-devbox-${localWorkspaceFolderBasename}-bi-${devcontainerId}",
+    "--add-host",
+    "host.docker.internal:host-gateway"
+  ],
+  "postAttachCommand": "go version"
+}

@@ -14,13 +14,19 @@ on:
         required: true
         type: choice
         options:
+          # base
           - base
+          # single-lang image
           - go
           - python
           - rust
           - java
           - swift
           - js
+          - bi
+          # multi-lang image
+          - go-js
+          - python-js
           # 他のイメージ名を随時追加
         default: "base"
 

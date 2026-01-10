@@ -1,0 +1,325 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "duckdb@1.4.3": {
+      "last_modified": "2026-01-02T14:39:32Z",
+      "resolved": "github:NixOS/nixpkgs/16c7794d0a28b5a37904d55bcca36003b9109aaa#duckdb",
+      "source": "devbox-search",
+      "version": "1.4.3",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6xk7kii6v48b2n1045vhy63frr8bhmlc-duckdb-1.4.3",
+              "default": true
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/kk5f06bw7cx88f68xlj5ljglfdjf97j3-duckdb-1.4.3-lib"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/9kqcky8w74s82063j1izi593az22vxvf-duckdb-1.4.3-dev"
+            }
+          ],
+          "store_path": "/nix/store/6xk7kii6v48b2n1045vhy63frr8bhmlc-duckdb-1.4.3"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/4xab9sl421hn4rapajlxlcraajnjvjp1-duckdb-1.4.3",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/3v8bdhz01br132y76zawgnw37af63bb1-duckdb-1.4.3-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/qa6pr7qryjxk5cklpn0vzfsx2rizxq29-duckdb-1.4.3-lib"
+            }
+          ],
+          "store_path": "/nix/store/4xab9sl421hn4rapajlxlcraajnjvjp1-duckdb-1.4.3"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/538w79rn9adzff0045m96yc1mxw9wvjy-duckdb-1.4.3",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/n9dmqbsj3gk9scws4q622gs26ldg2i3z-duckdb-1.4.3-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/z4a8fxk9kcish54j0kdn8rxbx7yhi2pp-duckdb-1.4.3-lib"
+            }
+          ],
+          "store_path": "/nix/store/538w79rn9adzff0045m96yc1mxw9wvjy-duckdb-1.4.3"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/h877n4xpa1wjjlf9sgy17mp91vq48xxg-duckdb-1.4.3",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/6ama5di05mv2mcyzk2kwshw3d73wbxx3-duckdb-1.4.3-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/rpnjk1fwhfv392babs865h0w8pfrbiyh-duckdb-1.4.3-lib"
+            }
+          ],
+          "store_path": "/nix/store/h877n4xpa1wjjlf9sgy17mp91vq48xxg-duckdb-1.4.3"
+        }
+      }
+    },
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2026-01-09T13:41:53Z",
+      "resolved": "github:NixOS/nixpkgs/5f02c91314c8ba4afe83b256b023756412218535?lastModified=1767966113&narHash=sha256-mSTsvXa4WveSRJexsmCbm9dY17B1fKp7NLpJxllpQw4%3D"
+    },
+    "pgcli@4.3.0": {
+      "last_modified": "2025-12-31T03:27:36Z",
+      "resolved": "github:NixOS/nixpkgs/f665af0cdb70ed27e1bd8f9fdfecaf451260fc55#pgcli",
+      "source": "devbox-search",
+      "version": "4.3.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zmhadkhx78flzyfcpllaiz06y0pq4053-python3.13-pgcli-4.3.0",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/f5bjqgr80zqxj9f2yiyddki0jw9f83ri-python3.13-pgcli-4.3.0-dist"
+            }
+          ],
+          "store_path": "/nix/store/zmhadkhx78flzyfcpllaiz06y0pq4053-python3.13-pgcli-4.3.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8sig82ck6mcnmsd6l9d2aizjwpzzvdmg-python3.13-pgcli-4.3.0",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/q7803zsmjsq3z6p4qv4lwz3yr80c19m1-python3.13-pgcli-4.3.0-dist"
+            }
+          ],
+          "store_path": "/nix/store/8sig82ck6mcnmsd6l9d2aizjwpzzvdmg-python3.13-pgcli-4.3.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/v0zjqd8nm5yvdg1qk078drp6v31hq4h3-python3.13-pgcli-4.3.0",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/1lkcs1947jfrf3z38iavrxjnsfy3hwcp-python3.13-pgcli-4.3.0-dist"
+            }
+          ],
+          "store_path": "/nix/store/v0zjqd8nm5yvdg1qk078drp6v31hq4h3-python3.13-pgcli-4.3.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/lzxkyfsa5h7mz4lgb24bs14d3f1fcnf0-python3.13-pgcli-4.3.0",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/6pn3nay4mfb5bb9m56gmbxci79s3682z-python3.13-pgcli-4.3.0-dist"
+            }
+          ],
+          "store_path": "/nix/store/lzxkyfsa5h7mz4lgb24bs14d3f1fcnf0-python3.13-pgcli-4.3.0"
+        }
+      }
+    },
+    "sqlite@3.51.1": {
+      "last_modified": "2026-01-02T14:39:32Z",
+      "resolved": "github:NixOS/nixpkgs/16c7794d0a28b5a37904d55bcca36003b9109aaa#sqlite",
+      "source": "devbox-search",
+      "version": "3.51.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/a186f18sdws3qklx5va41s7ifw7bsb00-sqlite-3.51.1-bin",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/gkzxfzbwrhhg2ravkl9dkjdsg513a8mk-sqlite-3.51.1-man",
+              "default": true
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/6yawzw96lhv44d6rfkk8l5k22srfc81q-sqlite-3.51.1"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/x41hb0yp57sld90svdj6avg6wkpjh49w-sqlite-3.51.1-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/y9v5vg60im2d4pg26d21f89lkfsnkbwc-sqlite-3.51.1-doc"
+            }
+          ],
+          "store_path": "/nix/store/a186f18sdws3qklx5va41s7ifw7bsb00-sqlite-3.51.1-bin"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/9prciviq1v39c1xfg7zz1dnh3gf54071-sqlite-3.51.1-bin",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/v0i0f74zf9ap6lm6gyi500hx04pg4lkv-sqlite-3.51.1-man",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/kkq2w59ryaiwjfc1ffrd3pf7s5pkfbm9-sqlite-3.51.1-doc"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/kg79jrqc5cpf4y8xdq4skxfhwnwkv4nq-sqlite-3.51.1"
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/hjycafslwds8364ykxrcn98fm34pznq0-sqlite-3.51.1-debug"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/ayxchn2mch6cx8kjapnffsp0rpg63z8i-sqlite-3.51.1-dev"
+            }
+          ],
+          "store_path": "/nix/store/9prciviq1v39c1xfg7zz1dnh3gf54071-sqlite-3.51.1-bin"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/yiflnvqlacl3m8dwk32v2jkcvk880db9-sqlite-3.51.1-bin",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/3ds853wgkqb16ak9bw5dz2dh3529i7j4-sqlite-3.51.1-man",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/7mkpb5j5am0kb1x4bslpr4wkfnpa2ifa-sqlite-3.51.1-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/yxpcziz52mnywkp0bdv8hfll6zp0hjxz-sqlite-3.51.1-doc"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/3s77d97c92iwc8vka16ax5fdw0hq82bk-sqlite-3.51.1"
+            }
+          ],
+          "store_path": "/nix/store/yiflnvqlacl3m8dwk32v2jkcvk880db9-sqlite-3.51.1-bin"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/lbm0vi6xqrmvin5a9cj7v69qc5ayg5q0-sqlite-3.51.1-bin",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/943jfmi9yq1yva0c1d50p9pzmssg47c6-sqlite-3.51.1-man",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/az4zy215sxq147n227i99fgggzj9cqpy-sqlite-3.51.1-debug"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/byl3w16n1zd8rnx040afcyy8zhn996w1-sqlite-3.51.1-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/ki6c1dpgsijg715nkgciyg3zsksixyq4-sqlite-3.51.1-doc"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/f6zwd0xdld51287as0sv79kbaf2pcayh-sqlite-3.51.1"
+            }
+          ],
+          "store_path": "/nix/store/lbm0vi6xqrmvin5a9cj7v69qc5ayg5q0-sqlite-3.51.1-bin"
+        }
+      }
+    },
+    "usql@0.20.0": {
+      "last_modified": "2025-12-31T03:27:36Z",
+      "resolved": "github:NixOS/nixpkgs/f665af0cdb70ed27e1bd8f9fdfecaf451260fc55#usql",
+      "source": "devbox-search",
+      "version": "0.20.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/3mmh1c2rs2faq3fjdqbf9s7153qgr47f-usql-0.20.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/3mmh1c2rs2faq3fjdqbf9s7153qgr47f-usql-0.20.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/g9r5051a7wklan49h7xs5vch1pzc0sa9-usql-0.20.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/g9r5051a7wklan49h7xs5vch1pzc0sa9-usql-0.20.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/yrv3yd4zsk193k8f8knjifmwvip41cl6-usql-0.20.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/yrv3yd4zsk193k8f8knjifmwvip41cl6-usql-0.20.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/pf6ij1ya2kfrm41m3q5z9fdik737bljq-usql-0.20.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/pf6ij1ya2kfrm41m3q5z9fdik737bljq-usql-0.20.0"
+        }
+      }
+    }
+  }
+}
