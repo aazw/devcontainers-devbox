@@ -28,6 +28,12 @@
 
       // 既存の labels: ["Renovate"] は維持しつつ、<dir> ラベルを追加
       "addLabels": ["{{{replace '^images/([^/]+).*' '$1' packageFileDir}}}"]
+    },
+    // python だけは専用グループにして別PR化
+    {
+      "matchManagers": ["devbox"],
+      "matchPackageNames": ["python"],
+      "groupName": "python (devbox)"
     }
   ]
 }
