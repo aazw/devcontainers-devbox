@@ -22,6 +22,8 @@ tasks:
   init:
     dir: "{{ .TASKFILE_DIR }}"
     cmds:
+      # remove system files
+      - task remove_system_files
       # キャッシュクリア (skillsの読み込み時にcacheが悪さすることが多い)
       - rm -rf ./.claude-home-cache/plugins/cache/*
       # npm
