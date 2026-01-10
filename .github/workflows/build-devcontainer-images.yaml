@@ -32,7 +32,7 @@ run-name: |
   }}
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   detect-changes:
@@ -193,6 +193,9 @@ jobs:
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            com.github.aazw.devcontainers.image=${{ steps.prep.outputs.image }}
+            com.github.aazw.devcontainers.path=${{ steps.prep.outputs.context }}
+            com.github.aazw.devcontainers.dockerfile=${{ matrix.dockerfile }}
 
       # digest を artifact 化（後段の manifest 作成で利用）
       - name: Export digest to artifact
@@ -391,6 +394,26 @@ jobs:
           # latest の manifest digest をサマリー用に取得
           MANIFEST_DIGEST="$(docker buildx imagetools inspect "${IMAGE}:latest" | awk '/Digest:/{print $2; exit}')"
           echo "digest=${MANIFEST_DIGEST}" >> "$GITHUB_OUTPUT"
+
+      - name: Tag current commit for image build
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --tags
+
+          IMAGE="${{ steps.prep.outputs.image }}"
+          N="${{ steps.next.outputs.value }}"
+          TAG="devcontainers/images/${IMAGE}-${N}"
+
+          # 既に存在するなら何もしない（fail にしたい場合は exit 1 に変更）
+          if git rev-parse -q --verify "refs/tags/${TAG}" >/dev/null; then
+            echo "Tag already exists: ${TAG}"
+            exit 0
+          fi
+
+          git tag -a "${TAG}" -m "devcontainer image ${IMAGE}:${N}"
+          git push origin "${TAG}"
 
       # ビルド後のサマリー（成功時のみ表示）
       - name: Add build results to summary
