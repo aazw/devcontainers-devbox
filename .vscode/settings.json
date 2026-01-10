@@ -15,7 +15,9 @@
     // git
     "**/.git": true,
     // devbox
-    "**/.devbox": true
+    "**/.devbox": true,
+    // claude home
+    "**/.claude-home-cache": true
   },
   // VSCodeのエクスプローラーが重くなる対策 その3
   "search.exclude": {
@@ -24,18 +26,11 @@
     // devbox
     "**/.devbox/**": true,
     // claude
-    "**/.claude/debug/**": true,
-    "**/.claude/file-history/**": true,
-    "**/.claude/ide/**": true,
-    "**/.claude/plans/**": true,
-    "**/.claude/plugins/**": true,
-    "**/.claude/projects/**": true,
-    "**/.claude/session-env/**": true,
-    "**/.claude/shell-snapshots/**": true,
-    "**/.claude/statsig/**": true,
-    "**/.claude/todos/**": true,
+    "**/.claude-home-cache/**": true,
     // codex
-    "**/.codex/*/**": true
+    "**/.codex/**": true,
+    // node
+    "**/node_modules/**": true
   },
   // 拡張子との関連付け
   "files.associations": {
