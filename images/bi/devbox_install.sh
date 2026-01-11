@@ -3,9 +3,9 @@
 set -eu
 
 if command -v grealpath >/dev/null 2>&1; then
-  REALPATH_CMD=grealpath
+	REALPATH_CMD=grealpath
 else
-  REALPATH_CMD=realpath
+	REALPATH_CMD=realpath
 fi
 
 # go to project root

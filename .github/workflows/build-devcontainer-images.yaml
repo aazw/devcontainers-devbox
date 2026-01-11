@@ -460,7 +460,7 @@ jobs:
       # ビルド失敗時のサマリー
       - name: Add failure summary
         if: failure()
-        run: |
+        run: |-
           echo "## Build Failed" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Image:** \`${{ steps.prep.outputs.image }}\`" >> $GITHUB_STEP_SUMMARY
