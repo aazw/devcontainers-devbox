@@ -2,6 +2,17 @@
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.16.0/.schema/devbox.schema.json",
   "packages": [
     // ============================================================================
+    // システムライブラリ
+    // ============================================================================
+
+    // GNU C ライブラリ (glibc)
+    // Linux システムの基本的な C ライブラリ
+    // Swift コンパイラが生成するバイナリの実行に必要
+    // https://www.gnu.org/software/libc/
+    // https://search.nixos.org/packages?show=glibc&query=glibc
+    "glibc@2.40-66",
+
+    // ============================================================================
     // Swift コンパイラ
     // ============================================================================
     //
@@ -55,12 +66,72 @@
     "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftpm",
 
     // ============================================================================
+    // Swift コンパイラ内部コンポーネント
+    // ============================================================================
+    //
+    // 通常は swift パッケージに含まれるが、特殊なビルド構成や
+    // デバッグ目的で個別に必要になる場合がある。
+    //
+    // ============================================================================
+
+    // Swift Driver
+    // コンパイラのフロントエンド。ソースファイルの解析とコンパイルジョブの管理を行う
+    // swift/swiftc コマンドの実体
+    // https://github.com/apple/swift-driver
+    // https://search.nixos.org/packages?show=swiftPackages.swift-driver
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swift-driver",
+
+    // Swift Compiler (unwrapped)
+    // Nix ラッパースクリプトを含まない素のSwiftコンパイラ
+    // 低レベルのデバッグやカスタムビルド構成で使用
+    // https://search.nixos.org/packages?show=swiftPackages.swift-unwrapped
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swift-unwrapped",
+
+    // Swift Compiler (without swift-driver)
+    // 新しい swift-driver を使用しない従来のコンパイラ構成
+    // 互換性テストや特定の環境で必要になる場合がある
+    // https://search.nixos.org/packages?show=swiftPackages.swiftNoSwiftDriver
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swiftNoSwiftDriver",
+
+    // ============================================================================
     // Swift ランタイムライブラリ
     // ============================================================================
 
     // Swift Dispatch ライブラリ (libdispatch)
     // 非同期処理のためのランタイムライブラリ
     // コンパイルしたバイナリの実行時に libdispatch.so が必要
-    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swift-corelibs-libdispatch"
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swift-corelibs-libdispatch",
+
+    // Swift Foundation ライブラリ
+    // 基本的なデータ型（String, Date, Data, URL など）とユーティリティを提供
+    // macOS の Foundation.framework の Linux/クロスプラットフォーム実装
+    // https://github.com/apple/swift-corelibs-foundation
+    // https://search.nixos.org/packages?show=swiftPackages.Foundation
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.Foundation",
+
+    // ============================================================================
+    // Swift 開発ツール
+    // ============================================================================
+
+    // Swift Format
+    // Swift コードの自動フォーマッター・リンター
+    // swift-format format / swift-format lint コマンドを提供
+    // https://github.com/apple/swift-format
+    // https://search.nixos.org/packages?show=swift-format
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swift-format",
+
+    // XCTest フレームワーク
+    // Swift/Objective-C 向けの単体テストフレームワーク
+    // swift test コマンドで使用される
+    // https://github.com/apple/swift-corelibs-xctest
+    // https://search.nixos.org/packages?show=swiftPackages.XCTest
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.XCTest",
+
+    // Swift-DocC
+    // Swift コードからドキュメントを生成するツール
+    // DocC 形式のドキュメンテーションコメントを解析し、静的サイトを生成
+    // https://github.com/apple/swift-docc
+    // https://search.nixos.org/packages?show=swiftPackages.swift-docc
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swift-docc"
   ]
 }

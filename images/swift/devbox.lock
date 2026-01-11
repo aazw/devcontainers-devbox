@@ -9,6 +9,34 @@
       "last_modified": "1970-01-01T00:00:00Z",
       "resolved": "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swift-corelibs-libdispatch"
     },
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swift-format": {
+      "last_modified": "1970-01-01T00:00:00Z",
+      "resolved": "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swift-format"
+    },
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.Foundation": {
+      "last_modified": "1970-01-01T00:00:00Z",
+      "resolved": "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.Foundation"
+    },
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.XCTest": {
+      "last_modified": "1970-01-01T00:00:00Z",
+      "resolved": "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.XCTest"
+    },
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swift-docc": {
+      "last_modified": "1970-01-01T00:00:00Z",
+      "resolved": "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swift-docc"
+    },
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swift-driver": {
+      "last_modified": "1970-01-01T00:00:00Z",
+      "resolved": "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swift-driver"
+    },
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swift-unwrapped": {
+      "last_modified": "1970-01-01T00:00:00Z",
+      "resolved": "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swift-unwrapped"
+    },
+    "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swiftNoSwiftDriver": {
+      "last_modified": "1970-01-01T00:00:00Z",
+      "resolved": "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftPackages.swiftNoSwiftDriver"
+    },
     "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftpm": {
       "last_modified": "1970-01-01T00:00:00Z",
       "resolved": "github:NixOS/nixpkgs/01b6809f7f9d1183a2b3e081f0a1e6f8f415cb09#swiftpm"
@@ -16,6 +44,76 @@
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
       "last_modified": "2025-12-26T11:10:58Z",
       "resolved": "github:NixOS/nixpkgs/c633f572eded8c4f3c75b8010129854ed404a6ce?lastModified=1766747458&narHash=sha256-m63jjuo%2Fygo8ztkCziYh5OOIbTSXUDkKbqw3Vuqu4a4%3D"
+    },
+    "glibc@2.40-66": {
+      "last_modified": "2026-01-02T14:39:32Z",
+      "resolved": "github:NixOS/nixpkgs/16c7794d0a28b5a37904d55bcca36003b9109aaa#glibc",
+      "source": "devbox-search",
+      "version": "2.40-66",
+      "systems": {
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/wjxpaix0cdpww0bldvzsq2d1bjc6g62b-glibc-2.40-66",
+              "default": true
+            },
+            {
+              "name": "bin",
+              "path": "/nix/store/js3xsm649ghc28r1hvrmrwjjghgrs8s5-glibc-2.40-66-bin",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/fkq4mg9klqxj2x1cb1s28maxv99brkv7-glibc-2.40-66-debug"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/w5qwv2s934nra3g415gf9n313ml78yhy-glibc-2.40-66-dev"
+            },
+            {
+              "name": "getent",
+              "path": "/nix/store/fspp2b3vscnwb4l92zc4wz46d4815vsy-glibc-2.40-66-getent"
+            },
+            {
+              "name": "static",
+              "path": "/nix/store/qg5wz150jyifvsyf199zmik4zm2ggipy-glibc-2.40-66-static"
+            }
+          ],
+          "store_path": "/nix/store/wjxpaix0cdpww0bldvzsq2d1bjc6g62b-glibc-2.40-66"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66",
+              "default": true
+            },
+            {
+              "name": "bin",
+              "path": "/nix/store/7ri1mm5y99nkr7657r77wycrvhg7z9x0-glibc-2.40-66-bin",
+              "default": true
+            },
+            {
+              "name": "static",
+              "path": "/nix/store/arklqbazvq9n3ya56sfsjc6z5zgznrg3-glibc-2.40-66-static"
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/cyziynyjdj5syqpspbfyz4dsbwqy6bzm-glibc-2.40-66-debug"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/dj43clc5ff7jjnfmhbaj6q4q0h8kpfpm-glibc-2.40-66-dev"
+            },
+            {
+              "name": "getent",
+              "path": "/nix/store/kzdjnvwrxpg1d7q6mjbnca4s0xawc49g-glibc-2.40-66-getent"
+            }
+          ],
+          "store_path": "/nix/store/j193mfi0f921y0kfs8vjc1znnr45ispv-glibc-2.40-66"
+        }
+      }
     }
   }
 }
