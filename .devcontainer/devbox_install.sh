@@ -10,7 +10,7 @@ fi
 
 # go to project root
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-PROJECT_ROOT=$(cd -- "$SCRIPT_DIR/../.." && pwd)
+PROJECT_ROOT=$(cd -- "$SCRIPT_DIR/.." && pwd)
 SCRIPT_DIR_FROM_PROJECT_ROOT=$("$REALPATH_CMD" --relative-to="$PROJECT_ROOT" "$SCRIPT_DIR")
 
 echo "SCRIPT_DIR=${SCRIPT_DIR}"
