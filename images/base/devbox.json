@@ -19,6 +19,13 @@
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ba/bash-completion/package.nix
     "bash-completion@2.17.0",
 
+    // Terminal multiplexer
+    // https://github.com/tmux/tmux
+    // https://www.nixhub.io/packages/tmux
+    // https://search.nixos.org/packages?show=tmux&query=tmux
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tm/tmux/package.nix
+    "tmux@3.6",
+
     // ============================================================================
     // 証明書・通信
     // ============================================================================
@@ -186,6 +193,12 @@
     // https://www.nixhub.io/packages/delta
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/de/delta/package.nix
     "delta@0.18.2",
+
+    // https://github.com/jj-vcs/jj
+    // https://www.nixhub.io/packages/jujutsu
+    // https://search.nixos.org/packages?show=jujutsu&query=jujutsu
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ju/jujutsu/package.nix
+    "jujutsu@0.37.0",
 
     // ============================================================================
     // リポジトリ/コード統計・解析
