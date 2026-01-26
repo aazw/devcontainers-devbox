@@ -9,39 +9,66 @@
   "customManagers": [],
   "ignorePaths": [],
   "packageRules": [
-    // Dockerfile のベースイメージ更新は最低経過時間を無効化
     {
+      // Dockerfile のベースイメージ更新は最低経過時間を無効化
       "matchManagers": ["dockerfile", "devcontainer"],
       "matchPackageNames": ["*"],
       "minimumReleaseAge": null
     },
-    // images/<dir> 単位で dockerfile + devbox を同一PRにまとめ、<dir> をラベル付与
     {
-      "matchManagers": ["dockerfile", "devbox"],
+      // images/<dir> 単位で dockerfile + devbox を同一PRにまとめ、<dir> をラベル付与
+      "matchManagers": [
+        //
+        "dockerfile",
+        "devbox"
+      ],
       "matchFileNames": [
+        //
         "images/**/.devcontainer/Dockerfile",
         "images/**/devbox.json"
       ],
-      "excludePackageNames": ["python"],
+      "excludePackageNames": [
+        //
+        "python"
+      ],
 
       // packageFileDir から images/<dir> の <dir> 部分を抽出
       "groupName": "images ({{{replace '^images/([^/]+).*' '$1' packageFileDir}}})",
       "groupSlug": "images-{{{replace '^images/([^/]+).*' '$1' packageFileDir}}}",
 
       // 既存の labels: ["Renovate"] は維持しつつ、<dir> ラベルを追加
-      "addLabels": ["{{{replace '^images/([^/]+).*' '$1' packageFileDir}}}"]
-    },
-    // python だけは専用グループにして別PR化
-    // "python313Packages.pip@25.0.1", などで指定されている以上、python3.13用だと思われる
-    // python313Packages.xxxに対して、python314Packages.xxxがないから、pythonだけはPRを延期するために切り離している
-    {
-      "matchManagers": ["devbox"],
-      "matchFileNames": ["images/**/devbox.json"],
-      "matchPackageNames": ["python"],
+      "addLabels": ["{{{replace '^images/([^/]+).*' '$1' packageFileDir}}}"],
 
+      // major と non-major を同一PRに入れる
+      "separateMajorMinor": false
+    },
+    {
+      // python だけは専用グループにして別PR化
+      // "python313Packages.pip@25.0.1", などで指定されている以上、python3.13用だと思われる
+      // python313Packages.xxxに対して、python314Packages.xxxがないから、pythonだけはPRを延期するために切り離している
+      "matchManagers": [
+        //
+        "dockerfile",
+        "devbox"
+      ],
+      "matchFileNames": [
+        //
+        "images/**/devbox.json"
+      ],
+      "matchPackageNames": [
+        //
+        "python"
+      ],
+
+      // packageFileDir から images/<dir> の <dir> 部分を抽出
       "groupName": "images ({{{replace '^images/([^/]+).*' '$1' packageFileDir}}}) - python",
       "groupSlug": "images-{{{replace '^images/([^/]+).*' '$1' packageFileDir}}}-python",
-      "addLabels": ["{{{replace '^images/([^/]+).*' '$1' packageFileDir}}}"]
+
+      // 既存の labels: ["Renovate"] は維持しつつ、<dir> ラベルを追加
+      "addLabels": ["{{{replace '^images/([^/]+).*' '$1' packageFileDir}}}"],
+
+      // major と non-major を同一PRに入れる
+      "separateMajorMinor": false
     }
   ]
 }
