@@ -48,7 +48,7 @@
     // https://search.nixos.org/packages?show=golangci-lint&query=golangci-lint
     // https://www.nixhub.io/packages/golangci-lint
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/golangci-lint/package.nix
-    "golangci-lint@2.7.2",
+    "golangci-lint@2.8.0",
 
     // マイグレーションツール
     // https://github.com/golang-migrate/migrate
