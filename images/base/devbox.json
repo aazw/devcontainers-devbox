@@ -379,6 +379,20 @@
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tr/treefmt/package.nix
     "treefmt@2.4.0",
 
+    // XMLフォーマッターの xmllint 用
+    // https://github.com/GNOME/libxml2
+    // https://www.nixhub.io/packages/libxml2
+    // https://search.nixos.org/packages?show=libxml2&query=libxml2
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/libraries/libxml2/default.nix
+    "libxml2@2.15.1",
+
+    // Markdownフォーマッター
+    // https://github.com/DavidAnson/markdownlint-cli2
+    // https://www.nixhub.io/packages/markdownlint-cli2
+    // https://search.nixos.org/packages?show=markdownlint-cli2&query=markdownlint-cli2
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ma/markdownlint-cli2/package.nix
+    "markdownlint-cli2@0.20.0",
+
     // ============================================================================
     // タスクランナー
     // ============================================================================

@@ -1605,6 +1605,86 @@
         }
       }
     },
+    "libxml2@2.15.1": {
+      "last_modified": "2026-01-20T02:11:35Z",
+      "resolved": "github:NixOS/nixpkgs/ed142ab1b3a092c4d149245d0c4126a5d7ea00b0#libxml2",
+      "source": "devbox-search",
+      "version": "2.15.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/4qfb3xm18gfgwxwz640n3665q48qrl51-libxml2-2.15.1-bin",
+              "default": true
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/48r5zq08j370snpb43x83il9pikmxn02-libxml2-2.15.1"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/9pna2kdj9358d9k9z02vidlbl25ra6hw-libxml2-2.15.1-dev"
+            }
+          ],
+          "store_path": "/nix/store/4qfb3xm18gfgwxwz640n3665q48qrl51-libxml2-2.15.1-bin"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/ckm86lqsa8knk6gkvkibxh9lawdixzf4-libxml2-2.15.1-bin",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/p17klc3qq4nl9ihfwqfpi8cnqvcf92xz-libxml2-2.15.1-dev"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/wfk1mrpj1r5f7iyihjnh0jjixr900z7y-libxml2-2.15.1"
+            }
+          ],
+          "store_path": "/nix/store/ckm86lqsa8knk6gkvkibxh9lawdixzf4-libxml2-2.15.1-bin"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/a0gpzvavak3x4wz1v7f4dk2mixckajpv-libxml2-2.15.1-bin",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/f9z95b0blsfd6ws0jnx99j7ijrghzpfc-libxml2-2.15.1-dev"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/kwj8y03m3s5qsw3105lh3r679drrk7j6-libxml2-2.15.1"
+            }
+          ],
+          "store_path": "/nix/store/a0gpzvavak3x4wz1v7f4dk2mixckajpv-libxml2-2.15.1-bin"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "bin",
+              "path": "/nix/store/mvfalwl76ms34wxrh9jsw6g46fsl9nbh-libxml2-2.15.1-bin",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/5nl2zr46dic7mxcw6cvbq85wa8c2gngh-libxml2-2.15.1-dev"
+            },
+            {
+              "name": "out",
+              "path": "/nix/store/y68hvcdj0j31x7hy9qnijswqykp21wvz-libxml2-2.15.1"
+            }
+          ],
+          "store_path": "/nix/store/mvfalwl76ms34wxrh9jsw6g46fsl9nbh-libxml2-2.15.1-bin"
+        }
+      }
+    },
     "lsd@1.2.0": {
       "last_modified": "2025-11-23T21:50:36Z",
       "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#lsd",
@@ -1650,6 +1730,54 @@
             }
           ],
           "store_path": "/nix/store/aks897zx74r2gc2qra253pxdgsz6y6jz-lsd-1.2.0"
+        }
+      }
+    },
+    "markdownlint-cli2@0.20.0": {
+      "last_modified": "2026-01-20T02:11:35Z",
+      "resolved": "github:NixOS/nixpkgs/ed142ab1b3a092c4d149245d0c4126a5d7ea00b0#markdownlint-cli2",
+      "source": "devbox-search",
+      "version": "0.20.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/pn75mvy495ibm5pslqrsa0fgn7kns0kw-markdownlint-cli2-0.20.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/pn75mvy495ibm5pslqrsa0fgn7kns0kw-markdownlint-cli2-0.20.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/3w1yw7fs5vl5dw3s7wgm1z5k3bpqg2a5-markdownlint-cli2-0.20.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/3w1yw7fs5vl5dw3s7wgm1z5k3bpqg2a5-markdownlint-cli2-0.20.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5yl50ghp8bizlv2v6qmczcxbwwdvwb00-markdownlint-cli2-0.20.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/5yl50ghp8bizlv2v6qmczcxbwwdvwb00-markdownlint-cli2-0.20.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/0n0fy1dicg722hn9dmq1i4jscg6b7c84-markdownlint-cli2-0.20.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/0n0fy1dicg722hn9dmq1i4jscg6b7c84-markdownlint-cli2-0.20.0"
         }
       }
     },
