@@ -1,0 +1,9 @@
+# https://github.com/DavidAnson/markdownlint/blob/v0.40.0/README.md#configuration
+config:
+  default: true
+  MD013:
+    line_length: 200
+  MD040: false # fenced-code-language
+  MD051: false # link-fragments
+  MD060: false # table-column-style
+

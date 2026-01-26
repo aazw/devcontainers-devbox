@@ -32,3 +32,9 @@ command = "taplo"
 options = ["fmt"]
 includes = ["*.toml"]
 excludes = []
+
+[formatter.markdownlint]
+command = "markdownlint-cli2"
+options = ["--fix"]
+includes = ["*.md"]
+excludes = []

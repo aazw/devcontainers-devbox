@@ -2,15 +2,13 @@
 
 Pre-built Docker images for Dev Containers using Devbox as the package manager.
 
-See also: https://github.com/aazw/devcontainers (previous version)
-
+See also: <https://github.com/aazw/devcontainers> (previous version)
 
 ## Motivations
 
 - Centralize devcontainer configurations that are duplicated across projects (DRY principle)
 - Reduce build time by providing pre-built images that can be pulled when needed
 - Ensure build reliability by catching build failures in CI rather than during local development
-
 
 ## Images
 
@@ -44,7 +42,6 @@ Use these when you need a development environment with multiple languages in a s
 |------------|--------|----------|
 | [aazw/devcontainers-devbox-go-js](https://hub.docker.com/r/aazw/devcontainers-devbox-go-js)         | [images/go-js](./images/go-js/)         | Base + Go + JavaScript |
 | [aazw/devcontainers-devbox-python-js](https://hub.docker.com/r/aazw/devcontainers-devbox-python-js) | [images/python-js](./images/python-js/) | Base + Python + JavaScript |
-
 
 ## How to use
 
@@ -86,38 +83,37 @@ docker pull aazw/devcontainers-devbox-js:latest
 }
 ```
 
-
 ## References
 
 ### Dev Container
 
-* Development Containers | Reference  
-  https://containers.dev/implementors/json_reference/
-* GitHub | Development Containers Images  
-  https://github.com/devcontainers/images
-* Visual Studio Code | Dev Container CLI  
-  https://code.visualstudio.com/docs/devcontainers/devcontainer-cli
+- Development Containers | Reference  
+  <https://containers.dev/implementors/json_reference/>
+- GitHub | Development Containers Images  
+  <https://github.com/devcontainers/images>
+- Visual Studio Code | Dev Container CLI  
+  <https://code.visualstudio.com/docs/devcontainers/devcontainer-cli>
 
 ### DevBox
 
-* Portable, Isolated Dev Environments on any Machine  
-  https://www.jetify.com/devbox
-* Instant, easy, and predictable development environments  
-  https://github.com/jetify-com/devbox
-* Devbox docs  
-  https://www.jetify.com/docs/devbox
-* Nix Packages collection & NixOS  
-  https://github.com/NixOS/nixpkgs
-* NixOS Search - Packages  
-  https://search.nixos.org/packages
-* Nixhub.io | Find the Right Nix Package for your Project   
-  https://www.nixhub.io/
+- Portable, Isolated Dev Environments on any Machine  
+  <https://www.jetify.com/devbox>
+- Instant, easy, and predictable development environments  
+  <https://github.com/jetify-com/devbox>
+- Devbox docs  
+  <https://www.jetify.com/docs/devbox>
+- Nix Packages collection & NixOS  
+  <https://github.com/NixOS/nixpkgs>
+- NixOS Search - Packages  
+  <https://search.nixos.org/packages>
+- Nixhub.io | Find the Right Nix Package for your Project
+  <https://www.nixhub.io/>
   
 ### Renovate
 
-* Renovate | Custom Manager Support using Regex | Advanced Capture  
-  https://docs.renovatebot.com/modules/manager/regex/#advanced-capture
-* Renovate | Self-Hosted configuration  
-  https://docs.renovatebot.com/self-hosted-configuration/
-* Renovate | Configuration Options | group  
-  https://docs.renovatebot.com/configuration-options/#group
+- Renovate | Custom Manager Support using Regex | Advanced Capture  
+  <https://docs.renovatebot.com/modules/manager/regex/#advanced-capture>
+- Renovate | Self-Hosted configuration  
+  <https://docs.renovatebot.com/self-hosted-configuration/>
+- Renovate | Configuration Options | group  
+  <https://docs.renovatebot.com/configuration-options/#group>

@@ -244,6 +244,7 @@ cd images/python
 ```
 
 テスト内容：
+
 - mermaid-cli による SVG 生成
 - 言語固有のコード実行（例: `go run`, `python`, `bun` など）
 
@@ -255,6 +256,7 @@ GitHub Actions（`.github/workflows/build-devcontainer-images.yaml`）により�
 - `images/*/.devcontainer/Dockerfile` の変更時
 
 ビルドされたイメージは Docker Hub にプッシュされます：
+
 - `aazw/devcontainers-devbox-<image-name>:latest`
 - `aazw/devcontainers-devbox-<image-name>:<numeric-tag>`
 - `aazw/devcontainers-devbox-<image-name>:<commit-sha>`
