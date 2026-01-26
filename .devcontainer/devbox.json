@@ -17,6 +17,6 @@
     // https://search.nixos.org/packages?show=nodejs&query=nodejs
     // https://www.nixhub.io/packages/nodejs
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/web/nodejs/default.nix
-    "nodejs@25.2.1"
+    "nodejs@25.3.0"
   ]
 }
