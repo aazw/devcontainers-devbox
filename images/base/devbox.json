@@ -185,7 +185,7 @@
     // https://search.nixos.org/packages?show=lazygit&query=lazygit
     // https://www.nixhub.io/packages/lazygit
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/la/lazygit/package.nix
-    "lazygit@0.57.0",
+    "lazygit@0.58.1",
 
     // Git差分の高機能表示
     // https://github.com/dandavison/delta
@@ -223,7 +223,7 @@
     // https://search.nixos.org/packages?show=repomix&query=repomix
     // https://www.nixhub.io/packages/repomix
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/re/repomix/package.nix
-    "repomix@1.11.0",
+    "repomix@1.11.1",
 
     // ============================================================================
     // 構造化データ処理（JSON/YAML/XML）
@@ -281,7 +281,7 @@
     // https://search.nixos.org/packages?show=usql&query=usql
     // https://www.nixhub.io/packages/usql
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/us/usql/package.nix#L9
-    "usql@0.20.0",
+    "usql@0.20.8",
 
     // ============================================================================
     // ブラウザ（自動化/レンダリング）
@@ -321,21 +321,21 @@
     // https://search.nixos.org/packages?show=sql-formatter&query=sql-formatter
     // https://www.nixhub.io/packages/sql-formatter
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sq/sql-formatter/package.nix
-    "sql-formatter@15.6.12",
+    "sql-formatter@15.7.0",
 
     // SQLフォーマッタ その2
     // https://github.com/quarylabs/sqruff
     // https://search.nixos.org/packages?show=sqruff&query=sqruff
     // https://www.nixhub.io/packages/sqruff
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sq/sqruff/package.nix
-    "sqruff@0.29.3",
+    "sqruff@0.34.0",
 
     // YAMLフォーマッタ
     // https://github.com/google/yamlfmt
     // https://search.nixos.org/packages?show=yamlfmt&query=yamlfmt
     // https://www.nixhub.io/packages/yamlfmt
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ya/yamlfmt/package.nix
-    "yamlfmt@0.20.0",
+    "yamlfmt@0.21.0",
 
     // シェルスクリプトフォーマッタ
     // https://github.com/mvdan/sh
@@ -413,14 +413,14 @@
     // https://search.nixos.org/packages?show=claude-code&query=claude-code
     // https://www.nixhub.io/packages/claude-code
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/cl/claude-code/package.nix
-    "claude-code@2.0.76",
+    "claude-code@2.1.12",
 
     // OpenAI Codex CLI
     // https://github.com/openai/codex
     // https://search.nixos.org/packages?show=codex&query=codex
     // https://www.nixhub.io/packages/codex
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/co/codex/package.nix
-    "codex@0.77.0",
+    "codex@0.87.0",
 
     // ============================================================================
     // 依存関係・更新管理
@@ -431,7 +431,7 @@
     // https://search.nixos.org/packages?show=renovate&query=renovate
     // https://www.nixhub.io/packages/renovate
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/re/renovate/package.nix
-    "renovate@42.57.1"
+    "renovate@42.76.4"
   ],
   "nixpkgs": {
     "commit": "d51c554bb9341a10c19893371807431e84ddc96f"
