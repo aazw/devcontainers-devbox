@@ -60,7 +60,7 @@
     // https://search.nixos.org/packages?show=bind&query=bind
     // https://www.nixhub.io/packages/bind
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/bi/bind/package.nix
-    "bind@9.20.16",
+    "bind@9.20.17",
 
     // ============================================================================
     // ロケール（国際化）
