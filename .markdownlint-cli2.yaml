@@ -1,4 +1,4 @@
-# https://github.com/DavidAnson/markdownlint/blob/v0.40.0/README.md#configuration
+# https://github.com/DavidAnson/markdownlint/blob/main/README.md#configuration
 config:
   default: true
 
