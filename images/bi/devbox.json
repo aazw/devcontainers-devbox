@@ -17,12 +17,12 @@
     // https://www.nixhub.io/packages/usql
     // https://search.nixos.org/packages?show=usql&query=usql
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/us/usql/package.nix
-    "usql@0.20.0",
+    "usql@0.20.8",
 
     // https://github.com/dbcli/pgcli
     // https://www.nixhub.io/packages/pgcli
     // https://search.nixos.org/packages?show=pgcli&query=pgcli
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/python-modules/pgcli/default.nix
-    "pgcli@4.3.0"
+    "pgcli@4.4.0"
   ]
 }
