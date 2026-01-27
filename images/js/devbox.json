@@ -10,6 +10,6 @@
     // https://search.nixos.org/packages?show=bun&query=bun
     // https://www.nixhub.io/packages/bun
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/bu/bun/package.nix
-    "bun@1.3.5"
+    "bun@1.3.6"
   ]
 }
