@@ -240,7 +240,7 @@ core.*
 # DevContainer利用時のセッション/キャッシュ (完全にローカル)
 .devcontainer/.state
 .devcontainer/.state/
-.devcontainer/.state/***
+.devcontainer/.state/*
 
 # Devbox：ローカル開発環境用の設定／状態ディレクトリを除外
 .devbox
