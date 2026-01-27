@@ -10,7 +10,7 @@ COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.lock devbox.lock
 RUN devbox install
 
 
-FROM aazw/devcontainers-devbox-python:5 AS runtime
+FROM aazw/devcontainers-devbox-python:6 AS runtime
 
 USER root
 COPY --from=builder /nix/store /nix/store

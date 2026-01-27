@@ -85,67 +85,67 @@
       "last_modified": "2026-01-09T13:41:53Z",
       "resolved": "github:NixOS/nixpkgs/5f02c91314c8ba4afe83b256b023756412218535?lastModified=1767966113&narHash=sha256-mSTsvXa4WveSRJexsmCbm9dY17B1fKp7NLpJxllpQw4%3D"
     },
-    "pgcli@4.3.0": {
-      "last_modified": "2025-12-31T03:27:36Z",
-      "resolved": "github:NixOS/nixpkgs/f665af0cdb70ed27e1bd8f9fdfecaf451260fc55#pgcli",
+    "pgcli@4.4.0": {
+      "last_modified": "2026-01-13T11:13:53Z",
+      "resolved": "github:NixOS/nixpkgs/61db79b0c6b838d9894923920b612048e1201926#pgcli",
       "source": "devbox-search",
-      "version": "4.3.0",
+      "version": "4.4.0",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/zmhadkhx78flzyfcpllaiz06y0pq4053-python3.13-pgcli-4.3.0",
+              "path": "/nix/store/17kxk8qmv4b85m7zdrnr2nbxdd1xgzgz-python3.13-pgcli-4.4.0",
               "default": true
             },
             {
               "name": "dist",
-              "path": "/nix/store/f5bjqgr80zqxj9f2yiyddki0jw9f83ri-python3.13-pgcli-4.3.0-dist"
+              "path": "/nix/store/xkj7l6j4r9133ycmjx533jqc8c6fq0ki-python3.13-pgcli-4.4.0-dist"
             }
           ],
-          "store_path": "/nix/store/zmhadkhx78flzyfcpllaiz06y0pq4053-python3.13-pgcli-4.3.0"
+          "store_path": "/nix/store/17kxk8qmv4b85m7zdrnr2nbxdd1xgzgz-python3.13-pgcli-4.4.0"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/8sig82ck6mcnmsd6l9d2aizjwpzzvdmg-python3.13-pgcli-4.3.0",
+              "path": "/nix/store/2bvxwcdy7ydjg5qm3xn6bb66siikdls5-python3.13-pgcli-4.4.0",
               "default": true
             },
             {
               "name": "dist",
-              "path": "/nix/store/q7803zsmjsq3z6p4qv4lwz3yr80c19m1-python3.13-pgcli-4.3.0-dist"
+              "path": "/nix/store/gpw62pl8wd5555l0yfg71ws9c6xdcdq1-python3.13-pgcli-4.4.0-dist"
             }
           ],
-          "store_path": "/nix/store/8sig82ck6mcnmsd6l9d2aizjwpzzvdmg-python3.13-pgcli-4.3.0"
+          "store_path": "/nix/store/2bvxwcdy7ydjg5qm3xn6bb66siikdls5-python3.13-pgcli-4.4.0"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/v0zjqd8nm5yvdg1qk078drp6v31hq4h3-python3.13-pgcli-4.3.0",
+              "path": "/nix/store/2a9sz3i12ynnfrh8pgxsqrbmkw1cnl0z-python3.13-pgcli-4.4.0",
               "default": true
             },
             {
               "name": "dist",
-              "path": "/nix/store/1lkcs1947jfrf3z38iavrxjnsfy3hwcp-python3.13-pgcli-4.3.0-dist"
+              "path": "/nix/store/zm9li6qwp2h476ip0rjk77rwzcq6j3si-python3.13-pgcli-4.4.0-dist"
             }
           ],
-          "store_path": "/nix/store/v0zjqd8nm5yvdg1qk078drp6v31hq4h3-python3.13-pgcli-4.3.0"
+          "store_path": "/nix/store/2a9sz3i12ynnfrh8pgxsqrbmkw1cnl0z-python3.13-pgcli-4.4.0"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/lzxkyfsa5h7mz4lgb24bs14d3f1fcnf0-python3.13-pgcli-4.3.0",
+              "path": "/nix/store/adrhgiasxs7qfm91p5lxlyy5n54rjlsv-python3.13-pgcli-4.4.0",
               "default": true
             },
             {
               "name": "dist",
-              "path": "/nix/store/6pn3nay4mfb5bb9m56gmbxci79s3682z-python3.13-pgcli-4.3.0-dist"
+              "path": "/nix/store/cjgqz0cjj3cf6y0pzsniqh19x0033f6w-python3.13-pgcli-4.4.0-dist"
             }
           ],
-          "store_path": "/nix/store/lzxkyfsa5h7mz4lgb24bs14d3f1fcnf0-python3.13-pgcli-4.3.0"
+          "store_path": "/nix/store/adrhgiasxs7qfm91p5lxlyy5n54rjlsv-python3.13-pgcli-4.4.0"
         }
       }
     },
@@ -273,51 +273,51 @@
         }
       }
     },
-    "usql@0.20.0": {
-      "last_modified": "2025-12-31T03:27:36Z",
-      "resolved": "github:NixOS/nixpkgs/f665af0cdb70ed27e1bd8f9fdfecaf451260fc55#usql",
+    "usql@0.20.8": {
+      "last_modified": "2026-01-16T13:18:18Z",
+      "resolved": "github:NixOS/nixpkgs/be5afa0fcb31f0a96bf9ecba05a516c66fcd8114#usql",
       "source": "devbox-search",
-      "version": "0.20.0",
+      "version": "0.20.8",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/3mmh1c2rs2faq3fjdqbf9s7153qgr47f-usql-0.20.0",
+              "path": "/nix/store/a2by9z1589qz6s0g2ayj07dkbp1l21h1-usql-0.20.8",
               "default": true
             }
           ],
-          "store_path": "/nix/store/3mmh1c2rs2faq3fjdqbf9s7153qgr47f-usql-0.20.0"
+          "store_path": "/nix/store/a2by9z1589qz6s0g2ayj07dkbp1l21h1-usql-0.20.8"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/g9r5051a7wklan49h7xs5vch1pzc0sa9-usql-0.20.0",
+              "path": "/nix/store/c64gdnx93wkxkvby6nsx9qqspv5ggqsv-usql-0.20.8",
               "default": true
             }
           ],
-          "store_path": "/nix/store/g9r5051a7wklan49h7xs5vch1pzc0sa9-usql-0.20.0"
+          "store_path": "/nix/store/c64gdnx93wkxkvby6nsx9qqspv5ggqsv-usql-0.20.8"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/yrv3yd4zsk193k8f8knjifmwvip41cl6-usql-0.20.0",
+              "path": "/nix/store/q3rfr31b6ah1qww4dxqrk4hprgb1gmx6-usql-0.20.8",
               "default": true
             }
           ],
-          "store_path": "/nix/store/yrv3yd4zsk193k8f8knjifmwvip41cl6-usql-0.20.0"
+          "store_path": "/nix/store/q3rfr31b6ah1qww4dxqrk4hprgb1gmx6-usql-0.20.8"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/pf6ij1ya2kfrm41m3q5z9fdik737bljq-usql-0.20.0",
+              "path": "/nix/store/4m04nb7sh6kgwxgjzbyzg9k78ffg6zag-usql-0.20.8",
               "default": true
             }
           ],
-          "store_path": "/nix/store/pf6ij1ya2kfrm41m3q5z9fdik737bljq-usql-0.20.0"
+          "store_path": "/nix/store/4m04nb7sh6kgwxgjzbyzg9k78ffg6zag-usql-0.20.8"
         }
       }
     }
