@@ -8,6 +8,8 @@
   "minimumReleaseAge": "7 days",
   "customManagers": [
     {
+      // images/swift/.devcontainer/Dockerfile の apt-get パッケージの検出
+      // Advanced Capture:
       // https://docs.renovatebot.com/modules/manager/regex/#advanced-capture
       "customType": "regex",
       "managerFilePatterns": [
