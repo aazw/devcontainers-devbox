@@ -6,7 +6,21 @@
   "prHourlyLimit": 0,
   "prConcurrentLimit": 20,
   "minimumReleaseAge": "7 days",
-  "customManagers": [],
+  "customManagers": [
+    {
+      // https://docs.renovatebot.com/modules/manager/regex/#advanced-capture
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/|\\.)Dockerfile$/",
+        "/(^|/)Dockerfile\\.[^/]*$/"
+      ],
+      "matchStrings": [
+        "#\\s*renovate:\\s*?(suite=(?<suite>.*?))?\\s*depName=(?<depName>.*?)?\\s*\\n\\s*ENV\\s+.*?_VERSION=\"(?<currentValue>.*)\""
+      ],
+      "registryUrlTemplate": "https://deb.debian.org/debian?suite={{#if suite}}{{suite}}{{else}}bookworm{{/if}}&components=main&binaryArch=arm64",
+      "datasourceTemplate": "deb"
+    }
+  ],
   "ignorePaths": [],
   "packageRules": [
     {
