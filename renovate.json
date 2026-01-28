@@ -11,11 +11,10 @@
       // https://docs.renovatebot.com/modules/manager/regex/#advanced-capture
       "customType": "regex",
       "managerFilePatterns": [
-        "/(^|/|\\.)Dockerfile$/",
-        "/(^|/)Dockerfile\\.[^/]*$/"
+        "/^images\\/swift\\/\\.devcontainer\\/Dockerfile$/"
       ],
       "matchStrings": [
-        "#\\s*renovate:\\s*?(suite=(?<suite>.*?))?\\s*depName=(?<depName>.*?)?\\s*\\n\\s*ARG\\s+.*?_VERSION=\"(?<currentValue>.*)\""
+        "#\\s*renovate:\\s*?(?:suite=(?<suite>\\S+))?\\s*depName=(?<depName>\\S+)\\s*(?:\\r\\n|\\r|\\n)+\\s*ARG\\s+\\S+_VERSION\\s*=\\s*\"?(?<currentValue>[^\"\\s]+)\"?"
       ],
       "registryUrlTemplate": "https://deb.debian.org/debian?suite={{#if suite}}{{suite}}{{else}}bookworm{{/if}}&components=main&binaryArch=arm64",
       "datasourceTemplate": "deb"
