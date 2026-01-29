@@ -10,7 +10,7 @@
     // https://search.nixos.org/packages?show=python&query=python
     // https://www.nixhub.io/packages/python
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/interpreters/python/cpython/default.nix
-    "python@3.13.0",
+    "python@3.14.0",
 
     // ============================================================================
     // パッケージ管理
