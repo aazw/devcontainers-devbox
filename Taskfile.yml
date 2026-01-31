@@ -27,7 +27,7 @@ tasks:
       # キャッシュクリア (skillsの読み込み時にcacheが悪さすることが多い)
       - rm -rf ./.devcontainer/.state/claude/plugins/cache/*
       # npm
-      - cd utils/generate_devbox && npm install
+      - cd tools/merge_devbox && npm install
     silent: false
 
   fmt:

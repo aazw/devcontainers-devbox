@@ -192,13 +192,13 @@ docker build -f .devcontainer/Dockerfile -t test-python .
 
 ## 3. 複数イメージのマージ
 
-`utils/generate_devbox/` スクリプトを使用して、複数の `devbox.json` をマージできます。
+`tools/merge_devbox/` スクリプトを使用して、複数の `devbox.json` をマージできます。
 
 ### 使用方法
 
 ```bash
 # 例: go と js をマージして go-js を生成
-utils/generate_devbox/generate_devbox.sh \
+tools/merge_devbox/merge_devbox.sh \
   images/go/devbox.json \
   images/js/devbox.json \
   > images/go-js/devbox.json

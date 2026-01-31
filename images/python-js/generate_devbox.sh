@@ -15,7 +15,7 @@ echo "  - images/js/devbox.json"
 echo "  -> ${OUTPUT_FILE}"
 
 # 汎用スクリプトを呼び出してマージ（相対パスで渡す）
-"${PROJECT_ROOT}/utils/generate_devbox/generate_devbox.sh" \
+"${PROJECT_ROOT}/tools/merge_devbox/merge_devbox.sh" \
 	"images/python/devbox.json" \
 	"images/js/devbox.json" \
 	>"${OUTPUT_FILE}"
