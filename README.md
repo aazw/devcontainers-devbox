@@ -18,7 +18,7 @@ Common base image for DevContainers. This serves as the foundation for all other
 
 | Docker Hub | Source | Includes |
 |------------|--------|----------|
-| [aazw/devcontainers-devbox-base](https://hub.docker.com/r/aazw/devcontainers-devbox-base)     | [images/base](./images/base/)     | Base image |
+| [aazw/devcontainers-devbox-base:9](https://hub.docker.com/r/aazw/devcontainers-devbox-base)     | [images/base](./images/base/)     | Base image |
 
 ### Single-language images
 
@@ -26,12 +26,12 @@ Images with a specific language and related tools added to the Base image.
 
 | Docker Hub | Source | Includes |
 |------------|--------|----------|
-| [aazw/devcontainers-devbox-go](https://hub.docker.com/r/aazw/devcontainers-devbox-go)         | [images/go](./images/go/)         | Base + Go |
-| [aazw/devcontainers-devbox-python](https://hub.docker.com/r/aazw/devcontainers-devbox-python) | [images/python](./images/python/) | Base + Python |
-| [aazw/devcontainers-devbox-rust](https://hub.docker.com/r/aazw/devcontainers-devbox-rust)     | [images/rust](./images/rust/)     | Base + Rust |
-| [aazw/devcontainers-devbox-java](https://hub.docker.com/r/aazw/devcontainers-devbox-java)     | [images/java](./images/java/)     | Base + Java |
-| [aazw/devcontainers-devbox-swift](https://hub.docker.com/r/aazw/devcontainers-devbox-swift)   | [images/swift](./images/swift/)   | Base + Swift |
-| [aazw/devcontainers-devbox-js](https://hub.docker.com/r/aazw/devcontainers-devbox-js)         | [images/js](./images/js/)         | Base + JavaScript |
+| [aazw/devcontainers-devbox-go:9](https://hub.docker.com/r/aazw/devcontainers-devbox-go)         | [images/go](./images/go/)         | Base + Go |
+| [aazw/devcontainers-devbox-python:6](https://hub.docker.com/r/aazw/devcontainers-devbox-python) | [images/python](./images/python/) | Base + Python |
+| [aazw/devcontainers-devbox-rust:7](https://hub.docker.com/r/aazw/devcontainers-devbox-rust)     | [images/rust](./images/rust/)     | Base + Rust |
+| [aazw/devcontainers-devbox-java:6](https://hub.docker.com/r/aazw/devcontainers-devbox-java)     | [images/java](./images/java/)     | Base + Java |
+| [aazw/devcontainers-devbox-swift:13](https://hub.docker.com/r/aazw/devcontainers-devbox-swift)   | [images/swift](./images/swift/)   | Base + Swift |
+| [aazw/devcontainers-devbox-js:5](https://hub.docker.com/r/aazw/devcontainers-devbox-js)         | [images/js](./images/js/)         | Base + JavaScript |
 
 ### Multi-language images
 
@@ -40,8 +40,14 @@ Use these when you need a development environment with multiple languages in a s
 
 | Docker Hub | Source | Includes |
 |------------|--------|----------|
-| [aazw/devcontainers-devbox-go-js](https://hub.docker.com/r/aazw/devcontainers-devbox-go-js)         | [images/go-js](./images/go-js/)         | Base + Go + JavaScript |
-| [aazw/devcontainers-devbox-python-js](https://hub.docker.com/r/aazw/devcontainers-devbox-python-js) | [images/python-js](./images/python-js/) | Base + Python + JavaScript |
+| [aazw/devcontainers-devbox-go-js:6](https://hub.docker.com/r/aazw/devcontainers-devbox-go-js)         | [images/go-js](./images/go-js/)         | Base + Go + JavaScript |
+| [aazw/devcontainers-devbox-python-js:6](https://hub.docker.com/r/aazw/devcontainers-devbox-python-js) | [images/python-js](./images/python-js/) | Base + Python + JavaScript |
+
+### Specific-purpose images
+
+| Docker Hub | Source | Includes |
+|------------|--------|----------|
+| [aazw/devcontainers-devbox-bi:2](https://hub.docker.com/r/aazw/devcontainers-devbox-bi) | [images/bi](./images/bi/) | Base + BI |
 
 ## How to use
 
