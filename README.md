@@ -18,7 +18,7 @@ Common base image for DevContainers. This serves as the foundation for all other
 
 | Docker Hub | Source | Includes |
 |------------|--------|----------|
-| [aazw/devcontainers-devbox-base:9](https://hub.docker.com/r/aazw/devcontainers-devbox-base)     | [images/base](./images/base/)     | Base image |
+| [aazw/devcontainers-devbox-base:10](https://hub.docker.com/r/aazw/devcontainers-devbox-base)     | [images/base](./images/base/)     | Base image |
 
 ### Single-language images
 
