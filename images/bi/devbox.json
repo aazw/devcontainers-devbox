@@ -5,7 +5,7 @@
     // https://www.nixhub.io/packages/sqlite
     // https://search.nixos.org/packages?show=sqlite&query=sqlite
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/libraries/sqlite/default.nix
-    "sqlite@3.51.1",
+    "sqlite@3.51.2",
 
     // https://github.com/duckdb/duckdb
     // https://www.nixhub.io/packages/duckdb
