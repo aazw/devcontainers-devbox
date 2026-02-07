@@ -22,6 +22,7 @@
         "tamasfe.even-better-toml",
         "anthropic.claude-code",
         "openai.chatgpt",
+        // devbox
         "jetpack-io.devbox"
       ],
       "settings": {
