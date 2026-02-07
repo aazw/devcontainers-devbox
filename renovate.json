@@ -42,9 +42,9 @@
         "images/**/.devcontainer/Dockerfile",
         "images/**/devbox.json"
       ],
-      "excludePackageNames": [
-        //
-        "python"
+      "matchPackageNames": [
+        // pythonを除外 (!は新しい書き方)
+        "!python"
       ],
 
       // packageFileDir から images/<dir> の <dir> 部分を抽出
