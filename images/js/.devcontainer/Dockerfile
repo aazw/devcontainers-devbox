@@ -18,3 +18,7 @@ COPY --from=builder /code/js/.devbox /code/js/.devbox
 USER vscode
 
 ENV PATH="/code/js/.devbox/nix/profile/default/bin:${PATH}"
+
+# 権限問題あるのでrootでの作成不可
+RUN mkdir -p /home/vscode/.bun/bin
+ENV PATH="/home/vscode/.bun/bin:${PATH}"
