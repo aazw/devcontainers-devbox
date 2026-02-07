@@ -21,5 +21,6 @@ echo "LOCAL_WORKSPACE_FOLDER=${LOCAL_WORKSPACE_FOLDER:-}"
 docker run -it --rm \
 	-v "${LOCAL_WORKSPACE_FOLDER:-$PROJECT_ROOT}/${SCRIPT_DIR_FROM_PROJECT_ROOT}:/tmp/app" \
 	-w /tmp/app \
+	-e DEVBOX_DEBUG=1 \
 	jetpackio/devbox:0.16.0 \
 	devbox install
