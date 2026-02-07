@@ -31,6 +31,16 @@
       "minimumReleaseAge": null
     },
     {
+      // 特定のパッケージは最低経過時間を無効化
+      "matchPackageNames": [
+        //
+        "claude-code",
+        "codex",
+        "renovate"
+      ],
+      "minimumReleaseAge": null
+    },
+    {
       // images/<dir> 単位で dockerfile + devbox を同一PRにまとめ、<dir> をラベル付与
       "matchManagers": [
         //
