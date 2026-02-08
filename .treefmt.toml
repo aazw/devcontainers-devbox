@@ -11,6 +11,12 @@ options = ["-n", "-w"]
 includes = ["**/Dockerfile"]
 excludes = []
 
+[formatter.editorconfig]
+command = "editorconfig-checker"
+options = []
+includes = ["**/*"]
+excludes = []
+
 [formatter.githubactions]
 command = "actionlint"
 options = []
