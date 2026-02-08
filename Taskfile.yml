@@ -23,7 +23,10 @@ tasks:
     dir: "{{ .TASKFILE_DIR }}"
     cmds:
       # pre-commit
+      ## pre-commit フック（pre-commit ステージ）をインストール
       - pre-commit install --install-hooks
+      ## commit-msg フックをインストール（commitlint 用追加ステージ）
+      - pre-commit install --hook-type commit-msg
       # remove system files
       - task remove_system_files
       # キャッシュクリア (skillsの読み込み時にcacheが悪さすることが多い)
