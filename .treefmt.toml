@@ -29,7 +29,13 @@ options = ["--fix"]
 includes = ["*.md"]
 excludes = []
 
-[formatter.shellscript]
+[formatter.shellscript_shellcheck]
+command = "shellcheck"
+options = []
+includes = ["*.sh"]
+excludes = []
+
+[formatter.shellscript_shfmt]
 command = "shfmt"
 options = ["-w"]
 includes = ["*.sh"]
