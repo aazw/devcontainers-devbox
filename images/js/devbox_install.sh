@@ -24,3 +24,5 @@ docker run -it --rm \
 	-e DEVBOX_DEBUG=1 \
 	jetpackio/devbox:0.16.0 \
 	devbox install
+
+echo "Devbox build completed successfully."
