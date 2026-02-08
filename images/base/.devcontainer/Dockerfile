@@ -36,7 +36,7 @@ ENV NIX_SSL_CERT_FILE="/code/base/.devbox/nix/profile/default/etc/ssl/certs/ca-b
 ENV GIT_SSL_CAINFO="/code/base/.devbox/nix/profile/default/etc/ssl/certs/ca-bundle.crt"
 
 # mermaid-cliでsvg等出力時に文字が描画されない問題対応
-ENV XDG_DATA_DIRS="/code/base/.devbox/nix/profile/default/share:${XDG_DATA_DIRS}"
+ENV XDG_DATA_DIRS="/code/base/.devbox/nix/profile/default/share"
 
 # 日本語表示だけで日本語ロケール固有の動作（日付形式等）が不要
 ENV LANG=C.UTF-8
