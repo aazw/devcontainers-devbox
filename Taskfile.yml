@@ -22,6 +22,8 @@ tasks:
   init:
     dir: "{{ .TASKFILE_DIR }}"
     cmds:
+      # pre-commit
+      - pre-commit install --install-hooks
       # remove system files
       - task remove_system_files
       # キャッシュクリア (skillsの読み込み時にcacheが悪さすることが多い)
