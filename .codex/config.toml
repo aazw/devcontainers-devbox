@@ -1,2 +1,42 @@
-[features]
-web_search_request = true
+# https://developers.openai.com/codex/config-reference
+
+# Codex が使用する主モデル
+model = "gpt-5.3-codex"
+
+# 推論強度（Responses API 対応モデル） (デフォルト: medium)
+# 設定可能値: minimal | low | medium | high | xhigh
+model_reasoning_effort = "high"
+
+# 推論サマリの出力方針 (デフォルト: auto)
+# 設定可能値: auto | concise | detailed | none
+model_reasoning_summary = "detailed"
+
+# 対応モデル向けの既定コミュニケーションスタイル (デフォルト: 未設定)
+# 設定可能値: none | friendly | pragmatic
+# model_personality = "pragmatic"
+
+# 追加の開発者指示（AGENTS.md より前に注入） (デフォルト: 未設定)
+developer_instructions = "AGENTS.mdを必ず読むこと"
+
+# コマンド実行前の承認タイミング (デフォルト: on-request)
+# 設定可能値: untrusted | on-failure | on-request | never
+approval_policy = "on-request"
+
+# ファイルシステム/ネットワークのサンドボックス方針 (デフォルト: read-only)
+# 設定可能値: read-only | workspace-write | danger-full-access
+sandbox_mode = "workspace-write"
+
+# Web 検索モード (デフォルト: cached)
+# 設定可能値: disabled | cached | live
+#   cached: OpenAI 管理の検索インデックス
+#   live: 実際の Web ページへリアルタイムアクセス
+web_search = "live"
+
+# sandbox_mode="workspace-write" 時のみの設定項目
+[sandbox_workspace_write]
+# サンドボックス内 outbound ネットワーク許可 (デフォルト: false)
+network_access = true
+
+[feedback]
+# /feedback を有効化 (デフォルト: true)
+enabled = false
