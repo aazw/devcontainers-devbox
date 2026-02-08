@@ -11,6 +11,14 @@ repos:
 
   - repo: local
     hooks:
+      - id: treefmt
+        name: treefmt
+        entry: task fmt
+        language: system
+        pass_filenames: false
+
+  - repo: local
+    hooks:
       - id: commitlint
         name: commitlint
         entry: commitlint --edit
