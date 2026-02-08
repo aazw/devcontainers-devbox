@@ -309,21 +309,35 @@
     // フォーマッタ／リンタ
     // ============================================================================
 
-    // コードフォーマッタ（JS/TS/HTML等）
+    // リポジトリ全体のフォーマット統一（複数フォーマッタの実行統制）
+    // https://github.com/numtide/treefmt
+    // https://search.nixos.org/packages?show=treefmt&query=treefmt
+    // https://www.nixhub.io/packages/treefmt
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tr/treefmt/package.nix
+    "treefmt@2.4.0",
+
+    // コミット前フックの管理・実行（事前チェック統制）
+    // https://github.com/pre-commit/pre-commit
+    // https://www.nixhub.io/packages/pre-commit
+    // https://search.nixos.org/packages?show=pre-commit&query=pre-commit
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/pr/pre-commit/package.nix
+    "pre-commit@4.5.1",
+
+    // 汎用コードフォーマッタ（JS/TS/JSON/HTML/CSS等）
     // https://github.com/prettier/prettier
     // https://search.nixos.org/packages?show=prettier&query=prettier
     // https://www.nixhub.io/packages/prettier
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/pr/prettier/package.nix
     "prettier@3.6.2",
 
-    // SQLフォーマッタ
+    // SQLフォーマッタ（sql-formatter）
     // https://github.com/sql-formatter-org/sql-formatter
     // https://search.nixos.org/packages?show=sql-formatter&query=sql-formatter
     // https://www.nixhub.io/packages/sql-formatter
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sq/sql-formatter/package.nix
     "sql-formatter@15.7.0",
 
-    // SQLフォーマッタ その2
+    // SQLリンタ/フォーマッタ（sqruff）
     // https://github.com/quarylabs/sqruff
     // https://search.nixos.org/packages?show=sqruff&query=sqruff
     // https://www.nixhub.io/packages/sqruff
@@ -337,14 +351,21 @@
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ya/yamlfmt/package.nix
     "yamlfmt@0.21.0",
 
-    // シェルスクリプトフォーマッタ
+    // YAML静的解析（lint）
+    // https://github.com/adrienverge/yamllint
+    // https://www.nixhub.io/packages/yamllint
+    // https://search.nixos.org/packages?show=yamllint&query=yamllint
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/python-modules/yamllint/default.nix
+    "yamllint@1.37.1",
+
+    // シェルスクリプトフォーマッタ（POSIX/Bash等）
     // https://github.com/mvdan/sh
     // https://search.nixos.org/packages?show=shfmt&query=shfmt
     // https://www.nixhub.io/packages/shfmt
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sh/shfmt/package.nix
     "shfmt@3.12.0",
 
-    // シェルスクリプト静的解析
+    // シェルスクリプト静的解析（ShellCheck）
     // https://github.com/koalaman/shellcheck
     // https://search.nixos.org/packages?show=shellcheck&query=shellcheck
     // https://www.nixhub.io/packages/shellcheck
@@ -358,40 +379,151 @@
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/do/dockerfmt/package.nix
     "dockerfmt@0.3.9",
 
-    // Dockerfileリンタ
+    // Dockerfile静的解析（Hadolint）
     // https://github.com/hadolint/hadolint
     // https://search.nixos.org/packages?show=hadolint&query=hadolint
     // https://www.nixhub.io/packages/hadolint
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/haskell-modules/hackage-packages.nix#L291958-L292032
     "hadolint@2.14.0",
 
-    // TOMLフォーマッタ/リンタ
+    // TOMLフォーマッタ/リンタ（Taplo）
     // https://github.com/tamasfe/taplo
     // https://search.nixos.org/packages?show=taplo&query=taplo
     // https://www.nixhub.io/packages/taplo
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ta/taplo/package.nix
     "taplo@0.10.0",
 
-    // リポジトリ単位のフォーマット統制
-    // https://github.com/numtide/treefmt
-    // https://search.nixos.org/packages?show=treefmt&query=treefmt
-    // https://www.nixhub.io/packages/treefmt
-    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tr/treefmt/package.nix
-    "treefmt@2.4.0",
+    // TOMLフォーマッタ/リンタ（tombi）
+    // https://github.com/tombi-toml/tombi
+    // https://www.nixhub.io/packages/tombi
+    // https://search.nixos.org/packages?show=tombi&query=tombi
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/to/tombi/package.nix
+    "tombi@0.7.12",
 
-    // XMLフォーマッターの xmllint 用
+    // TOMLキー順ソート/整形
+    // https://github.com/pappasam/toml-sort
+    // https://www.nixhub.io/packages/toml-sort
+    // https://search.nixos.org/packages?show=toml-sort&query=toml-sort
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/to/toml-sort/package.nix
+    "toml-sort@0.24.3",
+
+    // XML検証/整形（xmllint 提供）
     // https://github.com/GNOME/libxml2
     // https://www.nixhub.io/packages/libxml2
     // https://search.nixos.org/packages?show=libxml2&query=libxml2
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/libraries/libxml2/default.nix
     "libxml2@2.15.1",
 
-    // Markdownフォーマッター
+    // Markdown静的解析（markdownlint-cli2）
     // https://github.com/DavidAnson/markdownlint-cli2
     // https://www.nixhub.io/packages/markdownlint-cli2
     // https://search.nixos.org/packages?show=markdownlint-cli2&query=markdownlint-cli2
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ma/markdownlint-cli2/package.nix
     "markdownlint-cli2@0.20.0",
+
+    // Markdownリンタ/フォーマッタ（rumdl）
+    // https://github.com/rvben/rumdl
+    // https://www.nixhub.io/packages/rumdl
+    // https://search.nixos.org/packages?show=rumdl&query=rumdl
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ru/rumdl/package.nix
+    "rumdl@0.1.2",
+
+    // GitHub Actionsワークフロー静的解析（actionlint）
+    // https://github.com/rhysd/actionlint
+    // https://www.nixhub.io/packages/actionlint
+    // https://search.nixos.org/packages?show=actionlint&query=actionlint
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ac/actionlint/package.nix
+    "actionlint@1.7.10",
+
+    // .editorconfig 準拠チェック
+    // https://github.com/editorconfig-checker/editorconfig-checker
+    // https://www.nixhub.io/packages/editorconfig-checker
+    // https://search.nixos.org/packages?show=editorconfig-checker&query=editorconfig-checker
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ed/editorconfig-checker/package.nix
+    "editorconfig-checker@3.6.1",
+
+    // ソースコード向けタイポ検出（辞書不要）
+    // https://github.com/crate-ci/typos
+    // https://www.nixhub.io/packages/typos
+    // https://search.nixos.org/packages?show=typos&query=typos
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ty/typos/package.nix
+    "typos@1.42.1",
+
+    // 辞書ベースのスペルチェック（cspell）
+    // https://github.com/streetsidesoftware/cspell
+    // https://www.nixhub.io/packages/cspell
+    // https://search.nixos.org/packages?show=cspell&query=cspell
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/cs/cspell/package.nix
+    "cspell@9.6.2",
+
+    // 文章校正・スタイルガイドチェック（Vale）
+    // https://github.com/errata-ai/vale
+    // https://www.nixhub.io/packages/vale
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/va/vale/package.nix
+    "vale@3.13.0",
+
+    // コミットメッセージ規約チェック（Conventional Commits等）
+    // https://github.com/conventional-changelog/commitlint
+    // https://www.nixhub.io/packages/commitlint
+    // https://search.nixos.org/packages?show=commitlint&query=commitlint
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/co/commitlint/package.nix
+    "commitlint@20.3.1",
+
+    // リンク切れチェック（リンクチェッカー）
+    // https://github.com/lycheeverse/lychee
+    // https://www.nixhub.io/packages/lychee
+    // https://search.nixos.org/packages?show=lychee&query=lychee
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ly/lychee/package.nix
+    "lychee@0.21.0",
+
+    // 依存関係の脆弱性スキャン（OSV）
+    // https://github.com/google/osv-scanner
+    // https://www.nixhub.io/packages/osv-scanner
+    // https://search.nixos.org/packages?show=osv-scanner&query=osv-scanner
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/os/osv-scanner/package.nix
+    "osv-scanner@2.3.2",
+
+    // コンテナ/依存関係の脆弱性スキャン（Trivy）
+    // https://github.com/aquasecurity/trivy
+    // https://www.nixhub.io/packages/trivy
+    // https://search.nixos.org/packages?show=trivy&query=trivy
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tr/trivy/package.nix
+    "trivy@0.68.2",
+
+    // ライセンス表記/REUSE準拠チェック
+    // https://github.com/fsfe/reuse-tool
+    // https://www.nixhub.io/packages/reuse
+    // https://search.nixos.org/packages?show=reuse&query=reuse
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/python-modules/reuse/default.nix
+    "reuse@6.2.0",
+
+    // SBOM生成（ソフトウェア部品表）
+    // https://github.com/anchore/syft
+    // https://www.nixhub.io/packages/syft
+    // https://search.nixos.org/packages?show=syft&query=syft
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sy/syft/package.nix
+    "syft@1.41.0",
+
+    // シークレット検出（認証情報漏えい検知）
+    // https://github.com/trufflesecurity/trufflehog
+    // https://www.nixhub.io/packages/trufflehog
+    // https://search.nixos.org/packages?show=trufflehog&query=trufflehog
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tr/trufflehog/package.nix
+    "trufflehog@3.92.5",
+
+    // JSON Schema 検証（YAML/JSON対応）
+    // https://github.com/python-jsonschema/check-jsonschema
+    // https://www.nixhub.io/packages/check-jsonschema
+    // https://search.nixos.org/packages?show=check-jsonschema&query=check-jsonschema
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ch/check-jsonschema/package.nix
+    "check-jsonschema@0.36.1",
+
+    // GitHub Actionsワークフローのセキュリティ静的解析（監査）
+    // https://github.com/zizmorcore/zizmor
+    // https://www.nixhub.io/packages/zizmor
+    // https://search.nixos.org/packages?show=zizmor&query=zizmor
+    // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/zi/zizmor/package.nix
+    "zizmor@1.22.0",
 
     // ============================================================================
     // タスクランナー
