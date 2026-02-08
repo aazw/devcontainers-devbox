@@ -47,8 +47,14 @@ options = ["--in-place"]
 includes = [".treefmt.toml"]
 excludes = []
 
-[formatter.yaml]
+[formatter.yaml_yamlfmt]
 command = "yamlfmt"
 options = []
-includes = ["*.yaml", "*.yml", ".yamlfmt"]
+includes = ["*.yaml", "*.yml", ".yamlfmt", ".yamllint"]
+excludes = []
+
+[formatter.yaml_yamllint]
+command = "yamllint"
+options = []
+includes = ["*.yaml", "*.yml", ".yamlfmt", ".yamllint"]
 excludes = []

@@ -1,0 +1,12 @@
+# Lint rules aligned with yamlfmt config in .yamlfmt.
+extends: default
+
+ignore: |
+  .devcontainer/.state/*
+  .vale/*
+
+# Avoid conflicts with formatting; let yamlfmt own layout.
+rules:
+  indentation: disable
+  line-length: disable
+  document-start: disable
