@@ -2,7 +2,7 @@ FROM jetpackio/devbox:0.16.0 AS builder
 
 WORKDIR /code/python-js
 USER root:root
-RUN mkdir -p /code/python-js && chown ${DEVBOX_USER}:${DEVBOX_USER} /code/python-js
+RUN mkdir -p /code/python-js && chown "${DEVBOX_USER}:${DEVBOX_USER}" /code/python-js
 USER ${DEVBOX_USER}:${DEVBOX_USER}
 
 COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.json devbox.json

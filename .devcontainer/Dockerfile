@@ -12,6 +12,7 @@
 # Debian Bookworm (安定版) の軽量イメージを使用
 # slim版はドキュメントや不要なパッケージを除外し、イメージサイズを削減
 FROM debian:bookworm-slim
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # -----------------------------------------------------------------------------
 # ビルド引数の定義
@@ -34,6 +35,7 @@ ARG USER_GID=$USER_UID
 # git: バージョン管理 (Devboxの一部機能でも使用)
 # --no-install-recommends: 推奨パッケージを除外しイメージサイズを削減
 # 最後にapt cacheを削除してイメージサイズを削減
+# hadolint ignore=DL3008
 RUN apt-get update && apt-get install -y \
     curl \
     sudo \
@@ -49,9 +51,9 @@ RUN apt-get update && apt-get install -y \
 # セキュリティのため非rootユーザーで開発環境を実行
 # グループを作成し、ユーザーを作成してホームディレクトリを自動生成
 # sudoを パスワードなしで実行可能にして開発時の利便性を確保
-RUN groupadd --gid $USER_GID $USERNAME
-RUN useradd --uid $USER_UID --gid $USER_GID -m -s /bin/bash $USERNAME
-RUN echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m -s /bin/bash $USERNAME \
+    && echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers
 
 # -----------------------------------------------------------------------------
 # Nix用ディレクトリの準備

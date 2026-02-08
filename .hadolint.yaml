@@ -1,0 +1,38 @@
+# https://github.com/hadolint/hadolint?tab=readme-ov-file#configure
+
+# name of threshold level (error | warning | info | style | ignore | none)
+failure-threshold: info
+
+# Output format (tty | json | checkstyle | codeclimate | gitlab_codeclimate | gnu | codacy)
+format: tty
+
+# list of rules
+ignored: []
+
+# See Linting Labels below for specific label-schema details
+label-schema: {}
+
+# true | false
+no-color: false
+
+# true | false
+no-fail: false
+
+override:
+  # list of rules
+  error: []
+  # list of rules
+  warning: []
+  # list of rules
+  info: []
+  # list of rules
+  style: []
+
+# true | false
+strict-labels: false
+
+# true | false
+disable-ignore-pragma: false
+
+# registry or list of registries
+trustedRegistries: []

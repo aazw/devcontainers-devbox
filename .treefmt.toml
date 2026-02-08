@@ -5,9 +5,15 @@ excludes = [
   ".vale/*"
 ]
 
-[formatter.dockerfile]
+[formatter.dockerfile_dockerfmt]
 command = "dockerfmt"
 options = ["-n", "-w"]
+includes = ["**/Dockerfile"]
+excludes = []
+
+[formatter.dockerfile_hadolint]
+command = "hadolint"
+options = []
 includes = ["**/Dockerfile"]
 excludes = []
 

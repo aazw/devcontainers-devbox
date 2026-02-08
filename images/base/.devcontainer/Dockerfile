@@ -2,7 +2,7 @@ FROM jetpackio/devbox:0.16.0 AS builder
 
 WORKDIR /code/base
 USER root:root
-RUN mkdir -p /code/base && chown ${DEVBOX_USER}:${DEVBOX_USER} /code/base
+RUN mkdir -p /code/base && chown "${DEVBOX_USER}:${DEVBOX_USER}" /code/base
 USER ${DEVBOX_USER}:${DEVBOX_USER}
 
 COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.json devbox.json

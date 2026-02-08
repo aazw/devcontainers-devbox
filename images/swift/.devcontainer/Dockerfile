@@ -10,7 +10,7 @@ FROM jetpackio/devbox:0.16.0 AS builder
 
 WORKDIR /code/swift
 USER root:root
-RUN mkdir -p /code/swift && chown ${DEVBOX_USER}:${DEVBOX_USER} /code/swift
+RUN mkdir -p /code/swift && chown "${DEVBOX_USER}:${DEVBOX_USER}" /code/swift
 USER ${DEVBOX_USER}:${DEVBOX_USER}
 
 COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.json devbox.json
@@ -18,6 +18,7 @@ COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.lock devbox.lock
 RUN devbox install
 
 FROM aazw/devcontainers-devbox-base:9 AS runtime
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
 
