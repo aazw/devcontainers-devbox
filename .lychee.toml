@@ -1,0 +1,21 @@
+# lychee.toml
+exclude = [
+  #
+  "localhost",
+  "127\\.0\\.0\\.1",
+]
+
+# パス除外（正規表現）
+exclude_path = [
+  #
+  "(^|/)node_modules(/|$)",
+  "(^|/)\\.git(/|$)",
+  "(^|/)(dist|build)(/|$)",
+  "(^|/)\\.devcontainer(/|$)",
+  "(^|/)\\.devcontainer/\\.state(/|$)",
+  "(^|/)\\.devbox(/|$)",
+]
+
+require_https = true
+no_progress = true
+offline = true

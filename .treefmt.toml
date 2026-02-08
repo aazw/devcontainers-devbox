@@ -35,6 +35,12 @@ options = ["-w"]
 includes = ["*.json"]
 excludes = []
 
+[formatter.links]
+command = "lychee"
+options = ["--config", ".lychee.toml"]
+includes = ["*.md"]
+excludes = []
+
 [formatter.markdown]
 command = "markdownlint-cli2"
 options = ["--fix"]
