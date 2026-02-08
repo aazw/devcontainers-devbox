@@ -1,0 +1,54 @@
+excludes = [
+  # DevContainerのVolumeMountによるキャッシュ
+  ".devcontainer/.state/*",
+  # vale で取得したstyleファイル等
+  ".vale/*"
+]
+
+[formatter.dockerfile]
+command = "dockerfmt"
+options = ["-n", "-w"]
+includes = ["**/Dockerfile"]
+excludes = []
+
+[formatter.githubactions]
+command = "actionlint"
+options = []
+includes = [".github/workflows/*"]
+excludes = []
+
+[formatter.json]
+command = "prettier"
+options = ["-w"]
+includes = ["*.json"]
+excludes = []
+
+[formatter.markdown]
+command = "markdownlint-cli2"
+options = ["--fix"]
+includes = ["*.md"]
+excludes = []
+
+[formatter.shellscript]
+command = "shfmt"
+options = ["-w"]
+includes = ["*.sh"]
+excludes = []
+
+[formatter.toml]
+command = "taplo"
+options = ["fmt"]
+includes = ["*.toml"]
+excludes = []
+
+[formatter.toml-sort]
+command = "toml-sort"
+options = ["--in-place"]
+includes = [".treefmt.toml"]
+excludes = []
+
+[formatter.yaml]
+command = "yamlfmt"
+options = []
+includes = ["*.yaml", "*.yml", ".yamlfmt"]
+excludes = []
