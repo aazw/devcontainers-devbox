@@ -18,7 +18,7 @@ Common base image for DevContainers. This serves as the foundation for all other
 
 | Docker Hub | Source | Includes |
 |------------|--------|----------|
-| [aazw/devcontainers-devbox-base:10](https://hub.docker.com/r/aazw/devcontainers-devbox-base)     | [images/base](./images/base/)     | Base image |
+| [aazw/devcontainers-devbox-base:11](https://hub.docker.com/r/aazw/devcontainers-devbox-base)     | [images/base](./images/base/)     | Base image |
 
 ### Single-language images
 
@@ -31,7 +31,7 @@ Images with a specific language and related tools added to the Base image.
 | [aazw/devcontainers-devbox-rust:7](https://hub.docker.com/r/aazw/devcontainers-devbox-rust)     | [images/rust](./images/rust/)     | Base + Rust |
 | [aazw/devcontainers-devbox-java:6](https://hub.docker.com/r/aazw/devcontainers-devbox-java)     | [images/java](./images/java/)     | Base + Java |
 | [aazw/devcontainers-devbox-swift:13](https://hub.docker.com/r/aazw/devcontainers-devbox-swift)   | [images/swift](./images/swift/)   | Base + Swift |
-| [aazw/devcontainers-devbox-js:5](https://hub.docker.com/r/aazw/devcontainers-devbox-js)         | [images/js](./images/js/)         | Base + JavaScript |
+| [aazw/devcontainers-devbox-js:6](https://hub.docker.com/r/aazw/devcontainers-devbox-js)         | [images/js](./images/js/)         | Base + JavaScript |
 
 ### Multi-language images
 
