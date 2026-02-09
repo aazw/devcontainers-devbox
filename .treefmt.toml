@@ -10,6 +10,20 @@ excludes = [
   ".vale/*"
 ]
 
+[formatter.dependencies]
+command = "osv-scanner"
+options = ["scan", "source", "--lockfile"]
+includes = [
+  #
+  "**/go.sum",
+  "**/Cargo.lock",
+  "**/package-lock.json",
+  "**/pnpm-lock.yaml",
+  "**/yarn.lock",
+  "**/bun.lock"
+]
+excludes = []
+
 [formatter.dockerfile_dockerfmt]
 command = "dockerfmt"
 options = ["-n", "-w"]
