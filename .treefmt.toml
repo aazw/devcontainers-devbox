@@ -71,6 +71,12 @@ options = ["--in-place"]
 includes = [".treefmt.toml"]
 excludes = []
 
+[formatter.typos]
+command = "typos"
+options = []
+includes = ["*"]
+excludes = []
+
 [formatter.yaml_yamlfmt]
 command = "yamlfmt"
 options = []
