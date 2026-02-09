@@ -1,0 +1,139 @@
+cacert: ""
+cache:
+  backend: memory
+  dir: /home/vscode/.cache/trivy
+  redis:
+    ca: ""
+    cert: ""
+    key: ""
+    tls: false
+  ttl: 0s
+config: trivy.yaml
+db:
+  download-java-only: false
+  download-only: false
+  java-repository:
+    - mirror.gcr.io/aquasec/trivy-java-db:1
+    - ghcr.io/aquasecurity/trivy-java-db:1
+  java-skip-update: false
+  no-progress: false
+  repository:
+    - mirror.gcr.io/aquasec/trivy-db:2
+    - ghcr.io/aquasecurity/trivy-db:2
+  skip-update: false
+debug: false
+dependency-tree: false
+exit-code: 0
+format: table
+ignore-policy: ""
+ignorefile: .trivyignore
+insecure: false
+license:
+  confidencelevel: "0.9"
+  full: false
+  ignored: []
+list-all-pkgs: true
+misconfiguration:
+  checks-bundle-repository: mirror.gcr.io/aquasec/trivy-checks:1
+  cloudformation:
+    params: []
+  config-file-schemas: []
+  helm:
+    api-versions: []
+    kube-version: ""
+    set: []
+    set-file: []
+    set-string: []
+    values: []
+  include-non-failures: false
+  raw-config-scanners: []
+  render-cause: []
+  scanners:
+    - azure-arm
+    - cloudformation
+    - dockerfile
+    - helm
+    - kubernetes
+    - terraform
+    - terraformplan-json
+    - terraformplan-snapshot
+  terraform:
+    exclude-downloaded-modules: false
+    vars: []
+module:
+  dir: /home/vscode/.trivy/modules
+  enable-modules: []
+output: ""
+output-plugin-arg: ""
+pkg:
+  include-dev-deps: false
+  relationships:
+    - unknown
+    - root
+    - workspace
+    - direct
+    - indirect
+  types:
+    - os
+    - library
+quiet: false
+registry:
+  password: []
+  password-stdin: false
+  token: ""
+  username: []
+rego:
+  check: []
+  data: []
+  error-limit: 10
+  include-deprecated-checks: false
+  namespaces: []
+  skip-check-update: false
+  trace: false
+report: all
+scan:
+  detection-priority: precise
+  disable-telemetry: false
+  distro: ""
+  file-patterns: []
+  offline: false
+  parallel: 5
+  rekor-url: https://rekor.sigstore.dev
+  sbom-sources: []
+  scanners:
+    - vuln
+    - secret
+  show-suppressed: false
+  skip-dirs:
+    - "**/node_modules"
+    - "**/.devbox"
+    - "**/.devcontainer/.state"
+  skip-files:
+    - "**/*.lock"
+  skip-version-check: false
+secret:
+  config: trivy-secret.yaml
+server:
+  addr: ""
+  custom-headers: []
+  token: ""
+  token-header: Trivy-Token
+severity:
+  - UNKNOWN
+  - LOW
+  - MEDIUM
+  - HIGH
+  - CRITICAL
+table-mode:
+  - summary
+  - detailed
+template: ""
+timeout: 5m0s
+version: false
+vulnerability:
+  ignore-status: []
+  ignore-unfixed: false
+  severity-source:
+    - auto
+  skip-vex-repo-update: false
+  vex: []

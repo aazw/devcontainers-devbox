@@ -126,3 +126,12 @@ words:
   - "windo"
   - "worktree"
   - "wscript"
+  # trivy.yaml
+  - "aquasec"
+  - "aquasecurity"
+  - "ignorefile"
+  - "confidencelevel"
+  - "pkgs"
+  - "terraformplan"
+  - "rego"
+  - "rekor"

@@ -101,6 +101,12 @@ options = ["--in-place"]
 includes = [".treefmt.toml"]
 excludes = []
 
+[formatter.trivy]
+command = "bash"
+options = ["-lc", "trivy fs --config trivy.yaml ."]
+includes = ["trivy.yaml"] # trivy.yaml を見つけたときに1回だけ実行する. 全体実行は引数で固定
+excludes = []
+
 [formatter.typos]
 command = "typos"
 options = []
