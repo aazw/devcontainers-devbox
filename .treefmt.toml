@@ -1,6 +1,11 @@
 excludes = [
   # DevContainerのVolumeMountによるキャッシュ
   ".devcontainer/.state/*",
+  # 各イメージ検証中に作られうるシステムファイル・ディレクトリ
+  "*/.git/*",
+  "*/.devbox",
+  "*/node_modules/*",
+  "*/.venv/*",
   # vale で取得したstyleファイル等
   ".vale/*"
 ]
@@ -59,6 +64,15 @@ options = ["-w"]
 includes = ["*.sh"]
 excludes = []
 
+[formatter.spell]
+command = "cspell"
+options = ["lint", "--verbose"]
+includes = ["*"]
+excludes = [
+  # typos側で例外処理しているものが引っかかる(可能性がある)ので外す
+  ".typos.toml"
+]
+
 [formatter.toml]
 command = "taplo"
 options = ["fmt"]
@@ -75,7 +89,10 @@ excludes = []
 command = "typos"
 options = []
 includes = ["*"]
-excludes = []
+excludes = [
+  # cspell側で辞書登録しているものが引っかかるので外す
+  ".cspell.config.yaml"
+]
 
 [formatter.yaml_yamlfmt]
 command = "yamlfmt"
