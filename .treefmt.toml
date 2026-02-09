@@ -70,7 +70,9 @@ options = ["lint", "--verbose"]
 includes = ["*"]
 excludes = [
   # typos側で例外処理しているものが引っかかる(可能性がある)ので外す
-  ".typos.toml"
+  ".typos.toml",
+  # 既定で対象外にするため、これを通すとファイル数0で、exit 1になるため除外
+  "**/package-lock.json"
 ]
 
 [formatter.toml]
