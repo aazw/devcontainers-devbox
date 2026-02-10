@@ -135,3 +135,7 @@ words:
   - "terraformplan"
   - "rego"
   - "rekor"
+  # zizmor.yml
+  - "basenames"
+  # .treefmt.toml
+  - "zizmor"

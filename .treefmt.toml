@@ -42,8 +42,14 @@ options = []
 includes = ["**/*"]
 excludes = []
 
-[formatter.githubactions]
+[formatter.githubactions_actionlint]
 command = "actionlint"
+options = []
+includes = [".github/workflows/*"]
+excludes = []
+
+[formatter.githubactions_zizmor]
+command = "zizmor"
 options = []
 includes = [".github/workflows/*"]
 excludes = []

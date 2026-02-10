@@ -1,0 +1,5 @@
+rules:
+  template-injection:
+    ignore:
+      # `rules.*.ignore` expects workflow basenames (not full paths).
+      - build-devcontainer-images.yaml
