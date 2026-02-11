@@ -1,0 +1,9 @@
+Dev
+Devbox
+devbox
+DevContainer
+devcontainer
+devcontainers
+Dockerfile
+Nixhub
+JSONC

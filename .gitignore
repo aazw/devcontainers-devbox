@@ -244,3 +244,10 @@ core.*
 
 # Devbox：ローカル開発環境用の設定／状態ディレクトリを除外
 .devbox
+
+# vale: vale sync で取得したstylesを除外 (ライセンス的な意味合いで)
+.vale/styles/*
+!.vale/styles/config/
+!.vale/styles/config/vocabularies/
+!.vale/styles/config/vocabularies/DevTerms/
+!.vale/styles/config/vocabularies/DevTerms/accept.txt

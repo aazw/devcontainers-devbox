@@ -158,6 +158,12 @@ excludes = [
   ".cspell.config.yaml"
 ]
 
+[formatter.vale]
+command = "vale"
+options = []
+includes = ["*.md"]
+excludes = []
+
 [formatter.yaml_yamlfmt]
 command = "yamlfmt"
 options = []

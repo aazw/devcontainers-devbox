@@ -31,6 +31,8 @@ tasks:
       - task remove_system_files
       # キャッシュクリア (skillsの読み込み時にcacheが悪さすることが多い)
       - rm -rf ./.devcontainer/.state/claude/plugins/cache/*
+      # vale
+      - vale sync
       # npm
       - cd tools/merge_devbox && npm install
     silent: false
