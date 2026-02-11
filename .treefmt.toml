@@ -10,20 +10,6 @@ excludes = [
   ".vale/*"
 ]
 
-[formatter.dependencies]
-command = "osv-scanner"
-options = ["scan", "source", "--lockfile"]
-includes = [
-  #
-  "**/go.sum",
-  "**/Cargo.lock",
-  "**/package-lock.json",
-  "**/pnpm-lock.yaml",
-  "**/yarn.lock",
-  "**/bun.lock"
-]
-excludes = []
-
 [formatter.dockerfile_dockerfmt]
 command = "dockerfmt"
 options = ["-n", "-w"]
@@ -34,12 +20,6 @@ excludes = []
 command = "hadolint"
 options = []
 includes = ["**/Dockerfile"]
-excludes = []
-
-[formatter.editorconfig]
-command = "editorconfig-checker"
-options = []
-includes = ["**/*"]
 excludes = []
 
 [formatter.githubactions_actionlint]
@@ -54,7 +34,7 @@ options = []
 includes = [".github/workflows/*"]
 excludes = []
 
-[formatter.json]
+[formatter.json_prettier]
 command = "prettier"
 options = ["-w"]
 includes = ["*.json"]
@@ -90,17 +70,49 @@ includes = [
 ]
 excludes = []
 
-[formatter.links]
+[formatter.markdown_lychee]
 command = "lychee"
 options = ["--config", ".lychee.toml"]
 includes = ["*.md"]
 excludes = []
 
-[formatter.markdown]
+[formatter.markdown_markdownlint-cli2]
 command = "markdownlint-cli2"
 options = ["--fix"]
 includes = ["*.md"]
 excludes = []
+
+[formatter.markdown_vale]
+command = "vale"
+options = []
+includes = ["*.md"]
+excludes = []
+
+[formatter.security_osv-scanner]
+command = "osv-scanner"
+options = ["scan", "source", "--lockfile"]
+includes = [
+  #
+  "**/go.sum",
+  "**/Cargo.lock",
+  "**/package-lock.json",
+  "**/pnpm-lock.yaml",
+  "**/yarn.lock",
+  "**/bun.lock"
+]
+excludes = []
+
+[formatter.security_trivy]
+command = "bash"
+options = ["-lc", "trivy fs --config trivy.yaml ."]
+includes = ["trivy.yaml"] # trivy.yaml を見つけたときに1回だけ実行する. 全体実行は引数で固定
+excludes = []
+
+[formatter.security_trufflehog]
+command = "trufflehog"
+options = ["filesystem"]
+includes = ["*"]
+excludes = ["*/devbox.lock"]
 
 [formatter.shellscript_shellcheck]
 command = "shellcheck"
@@ -114,9 +126,9 @@ options = ["-w"]
 includes = ["*.sh"]
 excludes = []
 
-[formatter.spell]
+[formatter.text_cspell]
 command = "cspell"
-options = ["lint", "--verbose"]
+options = ["lint", "--verbose", "--no-must-find-files"]
 includes = ["*"]
 excludes = [
   # typos側で例外処理しているものが引っかかる(可能性がある)ので外す
@@ -125,31 +137,13 @@ excludes = [
   "**/package-lock.json"
 ]
 
-[formatter.toml]
-command = "taplo"
-options = ["fmt"]
-includes = ["*.toml"]
+[formatter.text_editorconfig-checker]
+command = "editorconfig-checker"
+options = []
+includes = ["**/*"]
 excludes = []
 
-[formatter.toml-sort]
-command = "toml-sort"
-options = ["--in-place"]
-includes = [".treefmt.toml"]
-excludes = []
-
-[formatter.trivy]
-command = "bash"
-options = ["-lc", "trivy fs --config trivy.yaml ."]
-includes = ["trivy.yaml"] # trivy.yaml を見つけたときに1回だけ実行する. 全体実行は引数で固定
-excludes = []
-
-[formatter.trufflehog]
-command = "trufflehog"
-options = ["filesystem"]
-includes = ["*"]
-excludes = ["*/devbox.lock"]
-
-[formatter.typos]
+[formatter.text_typos]
 command = "typos"
 options = []
 includes = ["*"]
@@ -158,10 +152,16 @@ excludes = [
   ".cspell.config.yaml"
 ]
 
-[formatter.vale]
-command = "vale"
-options = []
-includes = ["*.md"]
+[formatter.toml_taplo]
+command = "taplo"
+options = ["fmt"]
+includes = ["*.toml"]
+excludes = []
+
+[formatter.toml_toml-sort]
+command = "toml-sort"
+options = ["--in-place"]
+includes = [".treefmt.toml"]
 excludes = []
 
 [formatter.yaml_yamlfmt]
