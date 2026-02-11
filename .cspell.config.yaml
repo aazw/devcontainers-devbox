@@ -139,3 +139,6 @@ words:
   - "basenames"
   # .treefmt.toml
   - "zizmor"
+  - "jsonschema"
+  # tools/merge_devbox/jsonc2json.js
+  - "schemafile"

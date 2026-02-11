@@ -60,6 +60,36 @@ options = ["-w"]
 includes = ["*.json"]
 excludes = []
 
+[formatter.jsonschema_githubactions]
+command = "check-jsonschema"
+options = ["--builtin-schema", "vendor.github-workflows"]
+includes = [
+  # github actions
+  ".github/workflows/*"
+]
+excludes = []
+
+[formatter.jsonschema_renovate_json]
+command = "bash"
+options = [
+  "-lc",
+  "node tools/merge_devbox/jsonc2json.js renovate.json | check-jsonschema --builtin-schema vendor.renovate -"
+]
+includes = [
+  # renovate
+  "renovate.json"
+]
+excludes = []
+
+[formatter.jsonschema_taskfile_yml]
+command = "check-jsonschema"
+options = ["--builtin-schema", "vendor.taskfile"]
+includes = [
+  # taskfile
+  "Taskfile.yml"
+]
+excludes = []
+
 [formatter.links]
 command = "lychee"
 options = ["--config", ".lychee.toml"]
