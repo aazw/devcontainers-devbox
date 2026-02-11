@@ -113,6 +113,12 @@ options = ["-lc", "trivy fs --config trivy.yaml ."]
 includes = ["trivy.yaml"] # trivy.yaml を見つけたときに1回だけ実行する. 全体実行は引数で固定
 excludes = []
 
+[formatter.trufflehog]
+command = "trufflehog"
+options = ["filesystem"]
+includes = ["*"]
+excludes = ["*/devbox.lock"]
+
 [formatter.typos]
 command = "typos"
 options = []
