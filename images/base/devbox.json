@@ -60,7 +60,7 @@
     // https://search.nixos.org/packages?show=bind&query=bind
     // https://www.nixhub.io/packages/bind
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/bi/bind/package.nix
-    "bind@9.20.16",
+    "bind@9.20.18",
 
     // ============================================================================
     // ロケール（国際化）
@@ -198,7 +198,7 @@
     // https://www.nixhub.io/packages/jujutsu
     // https://search.nixos.org/packages?show=jujutsu&query=jujutsu
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ju/jujutsu/package.nix
-    "jujutsu@0.37.0",
+    "jujutsu@0.38.0",
 
     // ============================================================================
     // リポジトリ/コード統計・解析
@@ -241,7 +241,7 @@
     // https://search.nixos.org/packages?show=yq-go&query=yq-go
     // https://www.nixhub.io/packages/yq-go
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/yq/yq-go/package.nix
-    "yq-go@4.50.1",
+    "yq-go@4.52.2",
 
     // XML/JSON変換・加工
     // https://github.com/sibprogrammer/xq
@@ -342,7 +342,7 @@
     // https://search.nixos.org/packages?show=sqruff&query=sqruff
     // https://www.nixhub.io/packages/sqruff
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sq/sqruff/package.nix
-    "sqruff@0.34.0",
+    "sqruff@0.34.1",
 
     // YAMLフォーマッタ
     // https://github.com/google/yamlfmt
@@ -398,7 +398,7 @@
     // https://www.nixhub.io/packages/tombi
     // https://search.nixos.org/packages?show=tombi&query=tombi
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/to/tombi/package.nix
-    "tombi@0.7.12",
+    "tombi@0.7.27",
 
     // TOMLキー順ソート/整形
     // https://github.com/pappasam/toml-sort
@@ -426,7 +426,7 @@
     // https://www.nixhub.io/packages/rumdl
     // https://search.nixos.org/packages?show=rumdl&query=rumdl
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ru/rumdl/package.nix
-    "rumdl@0.1.2",
+    "rumdl@0.1.10",
 
     // GitHub Actionsワークフロー静的解析（actionlint）
     // https://github.com/rhysd/actionlint
@@ -447,14 +447,14 @@
     // https://www.nixhub.io/packages/typos
     // https://search.nixos.org/packages?show=typos&query=typos
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ty/typos/package.nix
-    "typos@1.42.1",
+    "typos@1.42.3",
 
     // 辞書ベースのスペルチェック（cspell）
     // https://github.com/streetsidesoftware/cspell
     // https://www.nixhub.io/packages/cspell
     // https://search.nixos.org/packages?show=cspell&query=cspell
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/cs/cspell/package.nix
-    "cspell@9.6.2",
+    "cspell@9.6.4",
 
     // 文章校正・スタイルガイドチェック（Vale）
     // https://github.com/errata-ai/vale
@@ -488,7 +488,7 @@
     // https://www.nixhub.io/packages/trivy
     // https://search.nixos.org/packages?show=trivy&query=trivy
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tr/trivy/package.nix
-    "trivy@0.68.2",
+    "trivy@0.69.0",
 
     // ライセンス表記/REUSE準拠チェック
     // https://github.com/fsfe/reuse-tool
@@ -502,14 +502,14 @@
     // https://www.nixhub.io/packages/syft
     // https://search.nixos.org/packages?show=syft&query=syft
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sy/syft/package.nix
-    "syft@1.41.0",
+    "syft@1.41.1",
 
     // シークレット検出（認証情報漏えい検知）
     // https://github.com/trufflesecurity/trufflehog
     // https://www.nixhub.io/packages/trufflehog
     // https://search.nixos.org/packages?show=trufflehog&query=trufflehog
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tr/trufflehog/package.nix
-    "trufflehog@3.92.5",
+    "trufflehog@3.93.0",
 
     // JSON Schema 検証（YAML/JSON対応）
     // https://github.com/python-jsonschema/check-jsonschema
@@ -534,7 +534,7 @@
     // https://search.nixos.org/packages?show=go-task&query=go-task
     // https://www.nixhub.io/packages/go-task
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/go/go-task/package.nix
-    "go-task@3.45.5",
+    "go-task@3.48.0",
 
     // ============================================================================
     // AI コーディング支援
@@ -545,14 +545,14 @@
     // https://search.nixos.org/packages?show=claude-code&query=claude-code
     // https://www.nixhub.io/packages/claude-code
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/cl/claude-code/package.nix
-    "claude-code@2.1.17",
+    "claude-code@2.1.25",
 
     // OpenAI Codex CLI
     // https://github.com/openai/codex
     // https://search.nixos.org/packages?show=codex&query=codex
     // https://www.nixhub.io/packages/codex
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/co/codex/package.nix
-    "codex@0.89.0",
+    "codex@0.92.0",
 
     // ============================================================================
     // 依存関係・更新管理
