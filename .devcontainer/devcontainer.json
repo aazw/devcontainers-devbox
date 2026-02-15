@@ -20,10 +20,13 @@
         "ms-azuretools.vscode-containers",
         "ms-azuretools.vscode-docker",
         "tamasfe.even-better-toml",
+        // Coding Agent
         "anthropic.claude-code",
         "openai.chatgpt",
-        // devbox
-        "jetpack-io.devbox"
+        // DevBox
+        "jetpack-io.devbox",
+        // Mermaid
+        "mermaidchart.vscode-mermaid-chart"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"

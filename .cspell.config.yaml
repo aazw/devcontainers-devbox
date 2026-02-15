@@ -31,6 +31,7 @@ words:
   - "tamasfe"
   - "jetpack"
   - "worktree"
+  - "mermaidchart"
   # .devcontainer/Dockerfile
   - "pipefail"
   - "nopasswd"
