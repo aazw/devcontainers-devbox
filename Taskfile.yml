@@ -17,6 +17,8 @@ tasks:
       - find . -name ".DS_Store" -type f -delete -print
       - find . -name "core" -type f -delete -print
       - find . -name "node_modules" -type d -print -exec rm -rf {} +
+      - find . -name ".devbox" -type d -print -exec rm -rf {} +
+      - find ./images/ -name "*.mmd.svg" -type f -delete -print
     silent: false
 
   init:
