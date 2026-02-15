@@ -1,0 +1,4 @@
+.devbox
+
+test/*
+!test/*.mmd
