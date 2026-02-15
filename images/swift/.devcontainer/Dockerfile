@@ -17,7 +17,7 @@ COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.json devbox.json
 COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.lock devbox.lock
 RUN devbox install
 
-FROM aazw/devcontainers-devbox-base:9 AS runtime
+FROM aazw/devcontainers-devbox-base:13 AS runtime
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 USER root
