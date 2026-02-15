@@ -11,7 +11,7 @@
     // https://search.nixos.org/packages?show=clang&query=clang
     // https://www.nixhub.io/packages/clang
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/llvm/common/clang/default.nix
-    "clang@21.1.7",
+    "clang@21.1.8",
 
     // LLVM リンカ（高速リンク）
     // Rust のリンク時間を大幅に短縮
@@ -19,7 +19,7 @@
     // https://search.nixos.org/packages?show=lld&query=lld
     // https://www.nixhub.io/packages/lld
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/llvm/common/lld/default.nix
-    "lld@21.1.7",
+    "lld@21.1.8",
 
     // GNU バイナリユーティリティ（ar, nm, objdump など）
     // ネイティブライブラリの操作やデバッグに使用
@@ -38,7 +38,7 @@
     // https://search.nixos.org/packages?show=rustc&query=rustc
     // https://www.nixhub.io/packages/rustc
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/rust/rustc.nix
-    "rustc@1.91.1",
+    "rustc@1.92.0",
 
     // ============================================================================
     // パッケージ管理・ビルド
@@ -49,7 +49,7 @@
     // https://search.nixos.org/packages?show=cargo&query=cargo
     // https://www.nixhub.io/packages/cargo
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/rust/cargo.nix
-    "cargo@1.91.1",
+    "cargo@1.92.0",
 
     // ============================================================================
     // リンタ／フォーマッタ
@@ -60,14 +60,14 @@
     // https://search.nixos.org/packages?show=rustfmt&query=rustfmt
     // https://www.nixhub.io/packages/rustfmt
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/rust/rustfmt.nix
-    "rustfmt@1.91.1",
+    "rustfmt@1.92.0",
 
     // Rust リンタ
     // https://github.com/rust-lang/rust-clippy
     // https://search.nixos.org/packages?show=clippy&query=clippy
     // https://www.nixhub.io/packages/clippy
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/compilers/rust/clippy.nix
-    "clippy@1.91.1",
+    "clippy@1.92.0",
 
     // ============================================================================
     // 開発ツール
