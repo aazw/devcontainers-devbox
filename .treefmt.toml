@@ -128,7 +128,7 @@ excludes = []
 
 [formatter.text_cspell]
 command = "cspell"
-options = ["lint", "--verbose", "--no-must-find-files"]
+options = ["lint", "--no-cache", "--verbose", "--no-must-find-files"]
 includes = ["*"]
 excludes = [
   # typos側で例外処理しているものが引っかかる(可能性がある)ので外す
