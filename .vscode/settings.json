@@ -36,7 +36,16 @@
   "files.associations": {
     "devbox.json": "jsonc",
     "devbox.lock": "jsonc",
-    ".yamlfmt": "yaml"
+    ".dockerignore": "ignore",
+    ".editorconfig": "ini",
+    ".gitattributes": "properties",
+    ".gitignore": "ignore",
+    ".prettierignore": "ignore",
+    ".shellcheckrc": "properties",
+    ".sqruff": "ini",
+    ".trivyignore": "ignore",
+    ".yamlfmt": "yaml",
+    ".yamllint": "yaml"
   },
   // 折り返し無効化
   "editor.wordWrap": "off",
