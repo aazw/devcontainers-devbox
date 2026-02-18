@@ -42,7 +42,7 @@
     // https://search.nixos.org/packages?show=uv&query=uv
     // https://www.nixhub.io/packages/uv
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/uv/uv/package.nix
-    "uv@0.9.30",
+    "uv@0.10.2",
 
     // ============================================================================
     // リンタ／フォーマッタ
