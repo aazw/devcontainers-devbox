@@ -6,8 +6,8 @@
     "python313Packages.pip@25.0.1",
     "python313Packages.pipx@1.8.0",
     "python313Packages.wheel@0.46.1",
-    "uv@0.9.26",
-    "ruff@0.14.13",
-    "bun@1.3.6"
+    "uv@0.10.2",
+    "ruff@0.15.0",
+    "bun@1.3.9"
   ]
 }
