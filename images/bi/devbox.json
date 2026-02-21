@@ -11,7 +11,7 @@
     // https://www.nixhub.io/packages/duckdb
     // https://search.nixos.org/packages?show=duckdb&query=duckdb
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/du/duckdb/package.nix
-    "duckdb@1.4.3",
+    "duckdb@1.4.4",
 
     // https://github.com/xo/usql
     // https://www.nixhub.io/packages/usql
