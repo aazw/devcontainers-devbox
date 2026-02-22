@@ -117,7 +117,7 @@
     // https://search.nixos.org/packages?show=tree&query=tree
     // https://www.nixhub.io/packages/tree
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tr/tree/package.nix
-    "tree@2.2.1",
+    "tree@2.3.1",
 
     // 対話型ファイルブラウザ
     // https://github.com/Canop/broot
@@ -185,7 +185,7 @@
     // https://search.nixos.org/packages?show=lazygit&query=lazygit
     // https://www.nixhub.io/packages/lazygit
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/la/lazygit/package.nix
-    "lazygit@0.58.1",
+    "lazygit@0.59.0",
 
     // Git差分の高機能表示
     // https://github.com/dandavison/delta
@@ -398,7 +398,7 @@
     // https://www.nixhub.io/packages/tombi
     // https://search.nixos.org/packages?show=tombi&query=tombi
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/to/tombi/package.nix
-    "tombi@0.7.27",
+    "tombi@0.7.28",
 
     // TOMLキー順ソート/整形
     // https://github.com/pappasam/toml-sort
@@ -426,7 +426,7 @@
     // https://www.nixhub.io/packages/rumdl
     // https://search.nixos.org/packages?show=rumdl&query=rumdl
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ru/rumdl/package.nix
-    "rumdl@0.1.10",
+    "rumdl@0.1.18",
 
     // GitHub Actionsワークフロー静的解析（actionlint）
     // https://github.com/rhysd/actionlint
@@ -447,7 +447,7 @@
     // https://www.nixhub.io/packages/typos
     // https://search.nixos.org/packages?show=typos&query=typos
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/ty/typos/package.nix
-    "typos@1.42.3",
+    "typos@1.43.4",
 
     // 辞書ベースのスペルチェック（cspell）
     // https://github.com/streetsidesoftware/cspell
@@ -460,14 +460,14 @@
     // https://github.com/errata-ai/vale
     // https://www.nixhub.io/packages/vale
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/va/vale/package.nix
-    "vale@3.13.0",
+    "vale@3.13.1",
 
     // コミットメッセージ規約チェック（Conventional Commits等）
     // https://github.com/conventional-changelog/commitlint
     // https://www.nixhub.io/packages/commitlint
     // https://search.nixos.org/packages?show=commitlint&query=commitlint
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/co/commitlint/package.nix
-    "commitlint@20.3.1",
+    "commitlint@20.4.1",
 
     // リンク切れチェック（リンクチェッカー）
     // https://github.com/lycheeverse/lychee
@@ -502,14 +502,14 @@
     // https://www.nixhub.io/packages/syft
     // https://search.nixos.org/packages?show=syft&query=syft
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/sy/syft/package.nix
-    "syft@1.41.1",
+    "syft@1.41.2",
 
     // シークレット検出（認証情報漏えい検知）
     // https://github.com/trufflesecurity/trufflehog
     // https://www.nixhub.io/packages/trufflehog
     // https://search.nixos.org/packages?show=trufflehog&query=trufflehog
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/tr/trufflehog/package.nix
-    "trufflehog@3.93.0",
+    "trufflehog@3.93.2",
 
     // JSON Schema 検証（YAML/JSON対応）
     // https://github.com/python-jsonschema/check-jsonschema
@@ -545,7 +545,7 @@
     // https://search.nixos.org/packages?show=claude-code&query=claude-code
     // https://www.nixhub.io/packages/claude-code
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/cl/claude-code/package.nix
-    "claude-code@2.1.25",
+    "claude-code@2.1.39",
 
     // OpenAI Codex CLI
     // https://github.com/openai/codex
@@ -563,7 +563,7 @@
     // https://search.nixos.org/packages?show=renovate&query=renovate
     // https://www.nixhub.io/packages/renovate
     // https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/re/renovate/package.nix
-    "renovate@42.83.1"
+    "renovate@43.4.0"
   ],
   "nixpkgs": {
     "commit": "d51c554bb9341a10c19893371807431e84ddc96f"
